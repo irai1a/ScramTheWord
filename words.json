@@ -1,0 +1,3650 @@
+{
+  "3": [
+    {
+      "word": "CAT",
+      "description": "A curious hunter that purrs softly in warm sunlight.",
+      "hints": [
+        "A curious hunter that purrs softly in warm sunlight.",
+        "A beloved household pet known for agile jumps and climbing high perches.",
+        "Equipped with retractable claws, sharp whiskers, and keen night vision.",
+        "Chases laser dots and playful balls of yarn with stealthy pounces.",
+        "A 3-letter feline that rhymes with 'BAT' and 'HAT'."
+      ]
+    },
+    {
+      "word": "DOG",
+      "description": "A devoted companion whose tail wags with boundless excitement.",
+      "hints": [
+        "A devoted companion whose tail wags with boundless excitement.",
+        "Known as humankind's most faithful and loyal four-legged friend.",
+        "Has an extraordinary sense of smell and loves fetching wooden sticks in the park.",
+        "Greets you warmly at the front door with energetic barks and happy panting.",
+        "A 3-letter canine that starts with 'D' and rhymes with 'FOG'."
+      ]
+    },
+    {
+      "word": "SUN",
+      "description": "The blazing golden orb that awakens every morning.",
+      "hints": [
+        "The blazing golden orb that awakens every morning.",
+        "The celestial furnace at the heart of our solar system warming the Earth.",
+        "Casts brilliant daylight and long shadows across hills and forests.",
+        "Plants reach upward to bathe in its radiant photosynthetic beams.",
+        "A 3-letter solar giant that begins with 'S' and rhymes with 'RUN'."
+      ]
+    },
+    {
+      "word": "MAP",
+      "description": "A folded parchment that guides wandering footsteps through the unknown.",
+      "hints": [
+        "A folded parchment that guides wandering footsteps through the unknown.",
+        "A navigational chart showing roads, rivers, mountains, and continents.",
+        "Adventurers trace compass lines upon its paper surface to discover hidden treasure.",
+        "Helps lost travelers orient their direction and reach their destination safely.",
+        "A 3-letter guide that starts with 'M' and rhymes with 'CAP'."
+      ]
+    },
+    {
+      "word": "PEN",
+      "description": "A slender tool that spills ink into lasting thoughts.",
+      "hints": [
+        "A slender tool that spills ink into lasting thoughts.",
+        "A handheld instrument used to craft letters, signatures, and poems.",
+        "Mightier than the sword according to an ancient literary adage.",
+        "Glides gracefully across smooth sheets of paper leaving dark ink trails.",
+        "A 3-letter writing instrument starting with 'P' and rhymes with 'TEN'."
+      ]
+    },
+    {
+      "word": "FOX",
+      "description": "A clever russet trickster that slips silently through shadows.",
+      "hints": [
+        "A clever russet trickster that slips silently through shadows.",
+        "A bushy-tailed woodland mammal renowned in folklore for sly intelligence.",
+        "Hunts field mice through snowy burrows with precise acrobatic leaps.",
+        "Lives in peaceful underground dens beneath ancient tree roots.",
+        "A 3-letter woodland animal starting with 'F' and ending with 'X'."
+      ]
+    },
+    {
+      "word": "CUP",
+      "description": "A small hollow vessel made to hold your warm brew.",
+      "hints": [
+        "A small hollow vessel made to hold your warm brew.",
+        "Found in kitchen cabinets with a rounded handle made for sipping tea or coffee.",
+        "Holds nourishing warm liquids alongside sweet breakfast saucers.",
+        "Can be crafted from glazed porcelain, smooth glass, or polished wood.",
+        "A 3-letter drinkware vessel starting with 'C' and rhymes with 'UP'."
+      ]
+    },
+    {
+      "word": "BUS",
+      "description": "A lumbering giant carrying a crowd from stop to stop.",
+      "hints": [
+        "A lumbering giant carrying a crowd from stop to stop.",
+        "A large public vehicle that travels scheduled city routes on heavy rubber wheels.",
+        "Passengers board with tickets and ring the bell when approaching their stop.",
+        "Bright yellow versions safely transport school students every morning.",
+        "A 3-letter passenger transport that rhymes with 'US'."
+      ]
+    },
+    {
+      "word": "SKY",
+      "description": "An endless ceiling of blue that turns dark with stars.",
+      "hints": [
+        "An endless ceiling of blue that turns dark with stars.",
+        "The vast atmospheric canopy arching high above trees and mountains.",
+        "Where fluffy white clouds drift and migrating birds soar on gentle breezes.",
+        "Blushes in brilliant shades of amber, violet, and gold at sunset.",
+        "A 3-letter heavenly dome starting with 'S' and ending with 'Y'."
+      ]
+    },
+    {
+      "word": "OWL",
+      "description": "A silent night watcher whose wide eyes pierce the dark.",
+      "hints": [
+        "A silent night watcher whose wide eyes pierce the dark.",
+        "A nocturnal bird of prey perched quietly upon tall forest branches.",
+        "Can rotate its feathered head almost completely around in both directions.",
+        "Known for its deep twilight hoot echoing through peaceful woodlands.",
+        "A 3-letter nocturnal bird starting with 'O' and rhymes with 'HOWL'."
+      ]
+    },
+    {
+      "word": "GEM",
+      "description": "A precious mineral cut to sparkle with rare brilliance.",
+      "hints": [
+        "A precious mineral cut to sparkle with rare brilliance.",
+        "Mined from deep rocky caverns and polished by master jewelers.",
+        "Set into royal golden crowns, gleaming rings, and ornate pendants.",
+        "Examples include ruby, sapphire, emerald, and dazzling diamond.",
+        "A 3-letter treasure starting with 'G' and ending with 'M'."
+      ]
+    },
+    {
+      "word": "KEY",
+      "description": "A notched piece of metal that unlocks hidden secrets.",
+      "hints": [
+        "A notched piece of metal that unlocks hidden secrets.",
+        "Inserted into brass locks and turned to grant access to homes and vaults.",
+        "Carried on jingling metal rings alongside house fobs and car remotes.",
+        "Both physical doors and encrypted digital passwords share this symbolic name.",
+        "A 3-letter lock opener starting with 'K' and ending with 'Y'."
+      ]
+    },
+    {
+      "word": "ICE",
+      "description": "Water stilled and hardened by the winter cold.",
+      "hints": [
+        "Water stilled and hardened by the winter cold.",
+        "Glacial crystal that forms on freezing ponds and chills summer beverages.",
+        "Slippery frozen surface where skaters glide and penguins waddle.",
+        "Melts swiftly back into liquid water when warm sunlight touches it.",
+        "A 3-letter frozen substance starting with 'I' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "RUN",
+      "description": "To move on two feet faster than walking.",
+      "hints": [
+        "To move on two feet faster than walking.",
+        "An athletic sprint where feet lift swiftly in rapid stride.",
+        "Athletes do this in races to cross the finish line first.",
+        "Elevates the heartbeat and leaves you breathing deeply with adrenaline.",
+        "A 3-letter sprint that rhymes with 'FUN' and 'SUN'."
+      ]
+    },
+    {
+      "word": "JOY",
+      "description": "A bright fluttering feeling that makes the heart smile.",
+      "hints": [
+        "A bright fluttering feeling that makes the heart smile.",
+        "An uplifting emotion of pure delight, warmth, and radiant happiness.",
+        "Experienced when reuniting with loved ones or achieving a long-sought goal.",
+        "Brings genuine laughter and glowing smiles to everyone nearby.",
+        "A 3-letter word for happiness that rhymes with 'BOY'."
+      ]
+    },
+    {
+      "word": "BOX",
+      "description": "A six-sided container ready to hide or protect treasures.",
+      "hints": [
+        "A six-sided container ready to hide or protect treasures.",
+        "Made of sturdy brown cardboard or carved timber to store packaged gifts.",
+        "Sealed with tape and labeled when mailing parcels across the world.",
+        "Curious cats famously love folding themselves comfortably inside it.",
+        "A 3-letter container starting with 'B' and ending with 'X'."
+      ]
+    },
+    {
+      "word": "HAT",
+      "description": "A wearable crown of cloth shielding your brow from sun.",
+      "hints": [
+        "A wearable crown of cloth shielding your brow from sun.",
+        "Rests comfortably atop your head to provide shade, warmth, or stylish flair.",
+        "Types include fedoras, baseball caps, beanies, and wide sombreros.",
+        "Tipped politely in greeting or tossed into the air in cheerful celebration.",
+        "A 3-letter headwear piece starting with 'H' and rhymes with 'CAT'."
+      ]
+    },
+    {
+      "word": "BAT",
+      "description": "A winged creature of dusk that flies without feathers.",
+      "hints": [
+        "A winged creature of dusk that flies without feathers.",
+        "The only mammal capable of true sustained flight, resting upside-down in caves.",
+        "Uses echolocation sonar clicks to navigate through pitch-black nights.",
+        "Also the wooden or metal club swung by players to hit balls in baseball.",
+        "A 3-letter flying mammal or sports tool starting with 'B'."
+      ]
+    },
+    {
+      "word": "SEA",
+      "description": "A vast expanse of rolling saltwater touching distant shores.",
+      "hints": [
+        "A vast expanse of rolling saltwater touching distant shores.",
+        "The boundless oceanic realm where tidal waves crest and coral reefs thrive.",
+        "Home to leaping dolphins, gentle sea turtles, and ancient whales.",
+        "Sailors journey across its deep turquoise waters beneath starry skies.",
+        "A 3-letter saltwater body starting with 'S' and rhyming with 'TEA'."
+      ]
+    },
+    {
+      "word": "AIR",
+      "description": "An invisible breath that fills your lungs and stirs the leaves.",
+      "hints": [
+        "An invisible breath that fills your lungs and stirs the leaves.",
+        "The invisible atmospheric gas mixture of nitrogen and oxygen surrounding us.",
+        "Carries scents, sound waves, and lifts the wings of soaring birds.",
+        "Felt as a refreshing cool breeze brushing against your cheeks on windy days.",
+        "A 3-letter invisible substance starting with 'A' and rhyming with 'BEAR'."
+      ]
+    },
+    {
+      "word": "COW",
+      "description": "A gentle grazing bovine that produces rich fresh milk.",
+      "hints": [
+        "A gentle grazing bovine that produces rich fresh milk.",
+        "Found chewing grass peacefully in rural farm pastures.",
+        "Known for its distinct black and white spotted coat and calm demeanor.",
+        "Says 'moo' and gives us cream, cheese, and butter.",
+        "A 3-letter farm animal starting with 'C' and rhyming with 'HOW'."
+      ]
+    },
+    {
+      "word": "PIE",
+      "description": "A warm baked pastry with golden crust and sweet fruit filling.",
+      "hints": [
+        "A warm baked pastry with golden crust and sweet fruit filling.",
+        "Commonly cooled on windowsills with steam wafting from sliced vents.",
+        "Popular varieties include apple, cherry, pumpkin, and pecan.",
+        "Also sounds identical to the famous mathematical constant pi.",
+        "A 3-letter dessert starting with 'P' and rhyming with 'TIE'."
+      ]
+    },
+    {
+      "word": "JAM",
+      "description": "A sweet spread made by simmering fruit with sugar.",
+      "hints": [
+        "A sweet spread made by simmering fruit with sugar.",
+        "Spread thickly across hot buttered toast in the morning.",
+        "Packed into glass jars with berries and fruit preserves.",
+        "Also means to get stuck or play spontaneous musical melodies with a band.",
+        "A 3-letter pantry treat starting with 'J' and rhyming with 'HAM'."
+      ]
+    },
+    {
+      "word": "NUT",
+      "description": "A hard-shelled seed filled with a crunchy edible kernel.",
+      "hints": [
+        "A hard-shelled seed filled with a crunchy edible kernel.",
+        "Gathered diligently by forest squirrels before frosty winter days.",
+        "Types include acorn, walnut, pecan, hazelnut, and almond.",
+        "Also pairs with a metal bolt to fasten machinery tight.",
+        "A 3-letter forest treasure starting with 'N' and rhyming with 'HUT'."
+      ]
+    },
+    {
+      "word": "FLY",
+      "description": "A tiny buzzing winged insect with multifaceted eyes.",
+      "hints": [
+        "A tiny buzzing winged insect with multifaceted eyes.",
+        "Hovering agilely through the air on translucent beating wings.",
+        "Also describes the act of soaring high across clouds like a bird.",
+        "Fishermen cast colorful imitation lures to catch river trout.",
+        "A 3-letter soaring word starting with 'F' and rhyming with 'SKY'."
+      ]
+    },
+    {
+      "word": "WEB",
+      "description": "An intricate silky snare woven meticulously by spiders.",
+      "hints": [
+        "An intricate silky snare woven meticulously by spiders.",
+        "Spun from sticky gossamer threads glistening with morning dew.",
+        "Traps wandering insects in its geometric spiral strands.",
+        "Also describes the global interconnected network of the internet.",
+        "A 3-letter spider creation starting with 'W'."
+      ]
+    },
+    {
+      "word": "BED",
+      "description": "A cozy mattress layered with pillows and warm blankets.",
+      "hints": [
+        "A cozy mattress layered with pillows and warm blankets.",
+        "Where tired dreamers rest and recharge their weary minds each night.",
+        "Tucked into with soft sheets and a fluffy down comforter.",
+        "Sleeping well in this leads to sweet morning waking.",
+        "A 3-letter sleeping haven starting with 'B' and rhyming with 'RED'."
+      ]
+    },
+    {
+      "word": "RED",
+      "description": "The bold primary color of ripe strawberries and glowing rubies.",
+      "hints": [
+        "The bold primary color of ripe strawberries and glowing rubies.",
+        "The color of vibrant stop signs, autumn maple leaves, and fire trucks.",
+        "Evokes warmth, passion, energy, and radiant scarlet sunsets.",
+        "The first and warmest color arc seen in a bright rainbow.",
+        "A 3-letter color starting with 'R' and rhyming with 'BED'."
+      ]
+    },
+    {
+      "word": "TEA",
+      "description": "An aromatic hot beverage steeped from dried fragrant leaves.",
+      "hints": [
+        "An aromatic hot beverage steeped from dried fragrant leaves.",
+        "Served in delicate porcelain cups with honey or a splash of milk.",
+        "Popular varieties include green, chamomile, earl grey, and black.",
+        "A comforting afternoon ritual enjoyed around the globe.",
+        "A 3-letter beverage starting with 'T' and rhyming with 'SEA'."
+      ]
+    },
+    {
+      "word": "ZOO",
+      "description": "A public sanctuary where diverse exotic animals are housed.",
+      "hints": [
+        "A public sanctuary where diverse exotic animals are housed.",
+        "Where families stroll to observe lions, giraffes, penguins, and bears.",
+        "Dedicated to conservation, wildlife education, and animal welfare.",
+        "Filled with roaring, chirping, and trumpeting sounds of nature.",
+        "A 3-letter sanctuary starting with 'Z' and ending with double 'O'."
+      ]
+    },
+    {
+      "word": "HEN",
+      "description": "A motherly domestic bird that lays fresh eggs in farm coops.",
+      "hints": [
+        "A motherly domestic bird that lays fresh eggs in farm coops.",
+        "Scratches the farmyard soil looking for grains and seeds.",
+        "Clucks gently to guide her flock of fluffy yellow chicks.",
+        "Roosts warmly in straw nests inside the wooden coop.",
+        "A 3-letter farm bird starting with 'H' and rhyming with 'PEN'."
+      ]
+    },
+    {
+      "word": "BEE",
+      "description": "A buzzing striped insect that pollinates blossoms and crafts sweet golden honey.",
+      "hints": [
+        "A buzzing striped insect that pollinates blossoms and crafts sweet golden honey.",
+        "An everyday concept or woodland item: buzzing.",
+        "This word is 3 letters long with vowels: E.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'B' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "ELK",
+      "description": "A magnificent antlered beast that roams alpine forests.",
+      "hints": [
+        "A magnificent antlered beast that roams alpine forests.",
+        "An everyday concept or woodland item: magnificent.",
+        "This word is 3 letters long with vowels: E.",
+        "The word concludes with the letter 'K'.",
+        "Starts with 'E' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "OAK",
+      "description": "A mighty enduring tree that sprouts from a humble acorn.",
+      "hints": [
+        "A mighty enduring tree that sprouts from a humble acorn.",
+        "An everyday concept or woodland item: mighty.",
+        "This word is 3 letters long with vowels: A, O.",
+        "The word concludes with the letter 'K'.",
+        "Starts with 'O' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "LOG",
+      "description": "A fallen tree trunk resting quietly on the mossy forest ground.",
+      "hints": [
+        "A fallen tree trunk resting quietly on the mossy forest ground.",
+        "An everyday concept or woodland item: fallen.",
+        "This word is 3 letters long with vowels: O.",
+        "The word concludes with the letter 'G'.",
+        "Starts with 'L' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "DEN",
+      "description": "A hidden sheltered lair where woodland critters sleep.",
+      "hints": [
+        "A hidden sheltered lair where woodland critters sleep.",
+        "An everyday concept or woodland item: hidden.",
+        "This word is 3 letters long with vowels: E.",
+        "The word concludes with the letter 'N'.",
+        "Starts with 'D' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "MUD",
+      "description": "Wet squishy earth loved by splashing forest critters.",
+      "hints": [
+        "Wet squishy earth loved by splashing forest critters.",
+        "An everyday concept or woodland item: squishy.",
+        "This word is 3 letters long with vowels: U.",
+        "The word concludes with the letter 'D'.",
+        "Starts with 'M' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "DEW",
+      "description": "Sparkling droplets of moisture resting on morning leaves.",
+      "hints": [
+        "Sparkling droplets of moisture resting on morning leaves.",
+        "An everyday concept or woodland item: droplets.",
+        "This word is 3 letters long with vowels: E.",
+        "The word concludes with the letter 'W'.",
+        "Starts with 'D' and ends with 'W'."
+      ]
+    },
+    {
+      "word": "FOG",
+      "description": "A thick misty blanket that obscures morning valleys.",
+      "hints": [
+        "A thick misty blanket that obscures morning valleys.",
+        "An everyday concept or woodland item: thick.",
+        "This word is 3 letters long with vowels: O.",
+        "The word concludes with the letter 'G'.",
+        "Starts with 'F' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "RAY",
+      "description": "A bright beam of sunlight piercing through thick tree foliage.",
+      "hints": [
+        "A bright beam of sunlight piercing through thick tree foliage.",
+        "An everyday concept or woodland item: bright.",
+        "This word is 3 letters long with vowels: A, Y.",
+        "The word concludes with the letter 'Y'.",
+        "Starts with 'R' and ends with 'Y'."
+      ]
+    },
+    {
+      "word": "POD",
+      "description": "A slender natural casing holding seeds until they burst.",
+      "hints": [
+        "A slender natural casing holding seeds until they burst.",
+        "An everyday concept or woodland item: slender.",
+        "This word is 3 letters long with vowels: O.",
+        "The word concludes with the letter 'D'.",
+        "Starts with 'P' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "ORE",
+      "description": "Raw mineral-rich rock mined from subterranean depths.",
+      "hints": [
+        "Raw mineral-rich rock mined from subterranean depths.",
+        "An everyday concept or woodland item: mineral-rich.",
+        "This word is 3 letters long with vowels: E, O.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'O' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "BOW",
+      "description": "A curved wooden weapon used to loose swift arrows.",
+      "hints": [
+        "A curved wooden weapon used to loose swift arrows.",
+        "An everyday concept or woodland item: curved.",
+        "This word is 3 letters long with vowels: O.",
+        "The word concludes with the letter 'W'.",
+        "Starts with 'B' and ends with 'W'."
+      ]
+    },
+    {
+      "word": "AXE",
+      "description": "A sharp steel blade on a wooden haft for felling deadwood.",
+      "hints": [
+        "A sharp steel blade on a wooden haft for felling deadwood.",
+        "An everyday concept or woodland item: sharp.",
+        "This word is 3 letters long with vowels: A, E.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'A' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "HUT",
+      "description": "A rustic shelter built of timber and pine boughs.",
+      "hints": [
+        "A rustic shelter built of timber and pine boughs.",
+        "An everyday concept or woodland item: rustic.",
+        "This word is 3 letters long with vowels: U.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'H' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "NET",
+      "description": "A woven mesh used to scoop leaping fish from clear brooks.",
+      "hints": [
+        "A woven mesh used to scoop leaping fish from clear brooks.",
+        "An everyday concept or woodland item: woven.",
+        "This word is 3 letters long with vowels: E.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'N' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "ROD",
+      "description": "A flexible slender pole cast into river eddies.",
+      "hints": [
+        "A flexible slender pole cast into river eddies.",
+        "An everyday concept or woodland item: flexible.",
+        "This word is 3 letters long with vowels: O.",
+        "The word concludes with the letter 'D'.",
+        "Starts with 'R' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "OAR",
+      "description": "A wooden paddle used to row canoes across quiet lakes.",
+      "hints": [
+        "A wooden paddle used to row canoes across quiet lakes.",
+        "An everyday concept or woodland item: wooden.",
+        "This word is 3 letters long with vowels: A, O.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'O' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "ROW",
+      "description": "To propel a wooden boat rhythmically through calm waters.",
+      "hints": [
+        "To propel a wooden boat rhythmically through calm waters.",
+        "An everyday concept or woodland item: propel.",
+        "This word is 3 letters long with vowels: O.",
+        "The word concludes with the letter 'W'.",
+        "Starts with 'R' and ends with 'W'."
+      ]
+    },
+    {
+      "word": "HOP",
+      "description": "A joyful spring into the air like a lively hamster.",
+      "hints": [
+        "A joyful spring into the air like a lively hamster.",
+        "An everyday concept or woodland item: joyful.",
+        "This word is 3 letters long with vowels: O.",
+        "The word concludes with the letter 'P'.",
+        "Starts with 'H' and ends with 'P'."
+      ]
+    },
+    {
+      "word": "DIG",
+      "description": "To burrow diligently into soft forest earth.",
+      "hints": [
+        "To burrow diligently into soft forest earth.",
+        "An everyday concept or woodland item: burrow.",
+        "This word is 3 letters long with vowels: I.",
+        "The word concludes with the letter 'G'.",
+        "Starts with 'D' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "EAT",
+      "description": "To chew and savor delicious sunflower seeds and berries.",
+      "hints": [
+        "To chew and savor delicious sunflower seeds and berries.",
+        "An everyday concept or woodland item: chew.",
+        "This word is 3 letters long with vowels: A, E.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'E' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "NAP",
+      "description": "A peaceful brief slumber taken curled inside a warm burrow.",
+      "hints": [
+        "A peaceful brief slumber taken curled inside a warm burrow.",
+        "An everyday concept or woodland item: peaceful.",
+        "This word is 3 letters long with vowels: A.",
+        "The word concludes with the letter 'P'.",
+        "Starts with 'N' and ends with 'P'."
+      ]
+    }
+  ],
+  "4": [
+    {
+      "word": "GAME",
+      "description": "A contest of skill and strategy where victory is pursued.",
+      "hints": [
+        "A contest of skill and strategy where victory is pursued.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'G'.",
+        "Spelled with 4 letters, starts with 'G' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "WORD",
+      "description": "A single unit of speech shaped from scattered letters.",
+      "hints": [
+        "A single unit of speech shaped from scattered letters.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'W'.",
+        "Spelled with 4 letters, starts with 'W' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "STAR",
+      "description": "A distant diamond burning quietly through midnight skies.",
+      "hints": [
+        "A distant diamond burning quietly through midnight skies.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'S'.",
+        "Spelled with 4 letters, starts with 'S' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "BLUE",
+      "description": "The serene hue shared by clear waters and midday skies.",
+      "hints": [
+        "The serene hue shared by clear waters and midday skies.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'B'.",
+        "Spelled with 4 letters, starts with 'B' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "CODE",
+      "description": "A language of logic and symbols that instructs machines.",
+      "hints": [
+        "A language of logic and symbols that instructs machines.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'C'.",
+        "Spelled with 4 letters, starts with 'C' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "PLAY",
+      "description": "To engage in joyful amusement and carefree competition.",
+      "hints": [
+        "To engage in joyful amusement and carefree competition.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'P'.",
+        "Spelled with 4 letters, starts with 'P' and ends with 'Y'."
+      ]
+    },
+    {
+      "word": "GOLD",
+      "description": "A glittering yellow treasure coveted by monarchs throughout ages.",
+      "hints": [
+        "A glittering yellow treasure coveted by monarchs throughout ages.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'G'.",
+        "Spelled with 4 letters, starts with 'G' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "FIRE",
+      "description": "A dancing flame of heat and light born of sparks.",
+      "hints": [
+        "A dancing flame of heat and light born of sparks.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'F'.",
+        "Spelled with 4 letters, starts with 'F' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "LION",
+      "description": "The majestic golden predator heralded as monarch of the savanna.",
+      "hints": [
+        "The majestic golden predator heralded as monarch of the savanna.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'L'.",
+        "Spelled with 4 letters, starts with 'L' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "MOON",
+      "description": "A pale nocturnal sphere orbiting quietly in the dark.",
+      "hints": [
+        "A pale nocturnal sphere orbiting quietly in the dark.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'M'.",
+        "Spelled with 4 letters, starts with 'M' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "SHIP",
+      "description": "A grand vessel built to carve through cresting ocean waves.",
+      "hints": [
+        "A grand vessel built to carve through cresting ocean waves.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'S'.",
+        "Spelled with 4 letters, starts with 'S' and ends with 'P'."
+      ]
+    },
+    {
+      "word": "WIND",
+      "description": "An invisible force that sighs through branches and turns windmills.",
+      "hints": [
+        "An invisible force that sighs through branches and turns windmills.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'W'.",
+        "Spelled with 4 letters, starts with 'W' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "BIRD",
+      "description": "A feathered singer that takes flight upon whispering breezes.",
+      "hints": [
+        "A feathered singer that takes flight upon whispering breezes.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'B'.",
+        "Spelled with 4 letters, starts with 'B' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "HERO",
+      "description": "One who rises above fear to protect others in peril.",
+      "hints": [
+        "One who rises above fear to protect others in peril.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'H'.",
+        "Spelled with 4 letters, starts with 'H' and ends with 'O'."
+      ]
+    },
+    {
+      "word": "RING",
+      "description": "A timeless circular band worn as a token of devotion.",
+      "hints": [
+        "A timeless circular band worn as a token of devotion.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'R'.",
+        "Spelled with 4 letters, starts with 'R' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "BOOK",
+      "description": "A bound world of ink pages waiting to be explored.",
+      "hints": [
+        "A bound world of ink pages waiting to be explored.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'B'.",
+        "Spelled with 4 letters, starts with 'B' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "TREE",
+      "description": "A tall living tower rooted deep and crowned in leaves.",
+      "hints": [
+        "A tall living tower rooted deep and crowned in leaves.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'T'.",
+        "Spelled with 4 letters, starts with 'T' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "FISH",
+      "description": "A sleek scaled swimmer gliding through quiet depths.",
+      "hints": [
+        "A sleek scaled swimmer gliding through quiet depths.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'F'.",
+        "Spelled with 4 letters, starts with 'F' and ends with 'H'."
+      ]
+    },
+    {
+      "word": "SNOW",
+      "description": "Delicate frozen crystals falling softly in silent winter air.",
+      "hints": [
+        "Delicate frozen crystals falling softly in silent winter air.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'S'.",
+        "Spelled with 4 letters, starts with 'S' and ends with 'W'."
+      ]
+    },
+    {
+      "word": "ROSE",
+      "description": "A fragrant crimson bloom guarded by sharp, hidden thorns.",
+      "hints": [
+        "A fragrant crimson bloom guarded by sharp, hidden thorns.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'R'.",
+        "Spelled with 4 letters, starts with 'R' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "KING",
+      "description": "A sovereign ruler bearing a crown atop a golden throne.",
+      "hints": [
+        "A sovereign ruler bearing a crown atop a golden throne.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'K'.",
+        "Spelled with 4 letters, starts with 'K' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "TIME",
+      "description": "A steady river that flows forward without ever turning back.",
+      "hints": [
+        "A steady river that flows forward without ever turning back.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'T'.",
+        "Spelled with 4 letters, starts with 'T' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "MIND",
+      "description": "The quiet realm within where thoughts, memory, and dreams reside.",
+      "hints": [
+        "The quiet realm within where thoughts, memory, and dreams reside.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'M'.",
+        "Spelled with 4 letters, starts with 'M' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "ROCK",
+      "description": "An ancient solid fragment of earth shaped by ages of pressure.",
+      "hints": [
+        "An ancient solid fragment of earth shaped by ages of pressure.",
+        "A recognized 4-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 4 letters, beginning with the letter 'R'.",
+        "Spelled with 4 letters, starts with 'R' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "SEED",
+      "description": "A tiny dormant grain containing the promise of a tall tree.",
+      "hints": [
+        "A tiny dormant grain containing the promise of a tall tree.",
+        "Planted into dark fertile soil and nourished with rain and light.",
+        "Bursts open with green sprouts that blossom into colorful gardens.",
+        "Carried by wandering winds or tucked away by clever squirrels.",
+        "A 4-letter botanical starter starting with 'S' and rhyming with 'FEED'."
+      ]
+    },
+    {
+      "word": "PARK",
+      "description": "A scenic public green space with trees, paths, and benches.",
+      "hints": [
+        "A scenic public green space with trees, paths, and benches.",
+        "Where people jog, picnic under shady oaks, and walk playful dogs.",
+        "Equipped with swings, slides, and grassy lawns for games.",
+        "Also describes maneuvering a car into a designated spot.",
+        "A 4-letter recreation area starting with 'P' and rhyming with 'BARK'."
+      ]
+    },
+    {
+      "word": "COIN",
+      "description": "A stamped disc of precious metal used as currency.",
+      "hints": [
+        "A stamped disc of precious metal used as currency.",
+        "Jingles merrily inside deep pockets and festive piggy banks.",
+        "Made of bronze, silver, or gold with portraits embossed on its face.",
+        "Flipped into the air to make fair choices between heads and tails.",
+        "A 4-letter monetary token starting with 'C' and rhyming with 'JOIN'."
+      ]
+    },
+    {
+      "word": "DRUM",
+      "description": "A hollow percussion instrument sounded by striking with sticks.",
+      "hints": [
+        "A hollow percussion instrument sounded by striking with sticks.",
+        "Maintains the driving rhythmic pulse and heartbeat of songs.",
+        "Made of stretched membranes over circular wooden or brass frames.",
+        "Played with rhythmic beats, rolls, and rim shots in bands.",
+        "A 4-letter instrument starting with 'D' and rhyming with 'HUM'."
+      ]
+    },
+    {
+      "word": "WOLF",
+      "description": "A wild lupine predator that roams in packs and howls at the moon.",
+      "hints": [
+        "A wild lupine predator that roams in packs and howls at the moon.",
+        "A stealthy hunter with keen amber eyes and thick winter fur.",
+        "Works together with its pack across frozen tundra and deep woods.",
+        "Ancestor to all domestic dogs with a haunting twilight cry.",
+        "A 4-letter predator starting with 'W' and ending with 'F'."
+      ]
+    },
+    {
+      "word": "NEST",
+      "description": "A cozy cup of twigs and moss built to nurture hatchlings.",
+      "hints": [
+        "A cozy cup of twigs and moss built to nurture hatchlings.",
+        "Constructed carefully high in tree branches by winged parents.",
+        "Lined with soft downy feathers to keep speckled eggs safe and warm.",
+        "Where baby chicks chirp for worms in the early spring dawn.",
+        "A 4-letter shelter starting with 'N' and rhyming with 'BEST'."
+      ]
+    },
+    {
+      "word": "RAIN",
+      "description": "Cool liquid droplets descending from overcast skies to water earth.",
+      "hints": [
+        "Cool liquid droplets descending from overcast skies to water earth.",
+        "Pours from stormy clouds to replenish thirsty lakes and rivers.",
+        "Taps a relaxing rhythmic melody upon tin roofs and window panes.",
+        "Essential for rainbow arches and blooming meadow wildflowers.",
+        "A 4-letter precipitation starting with 'R' and rhyming with 'TRAIN'."
+      ]
+    },
+    {
+      "word": "SAND",
+      "description": "Fine granules of weathered rock lining beaches and ocean shores.",
+      "hints": [
+        "Fine granules of weathered rock lining beaches and ocean shores.",
+        "Sculpted into magnificent castles decorated with seashells.",
+        "Warmed by midday sun and washed by tumbling oceanic waves.",
+        "Traced through hourglasses to measure the passage of fleeting time.",
+        "A 4-letter coastal ground starting with 'S' and rhyming with 'LAND'."
+      ]
+    },
+    {
+      "word": "PINE",
+      "description": "An evergreen tree with fragrant needles and woody cones.",
+      "hints": [
+        "An evergreen tree with fragrant needles and woody cones.",
+        "An everyday concept or woodland item: evergreen.",
+        "This word is 4 letters long with vowels: E, I.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'P' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "BARK",
+      "description": "The protective textured outer skin of tree trunks.",
+      "hints": [
+        "The protective textured outer skin of tree trunks.",
+        "An everyday concept or woodland item: protective.",
+        "This word is 4 letters long with vowels: A.",
+        "The word concludes with the letter 'K'.",
+        "Starts with 'B' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "MOSS",
+      "description": "A soft velvety green carpet coating damp boulders and roots.",
+      "hints": [
+        "A soft velvety green carpet coating damp boulders and roots.",
+        "An everyday concept or woodland item: soft.",
+        "This word is 4 letters long with vowels: O.",
+        "The word concludes with the letter 'S'.",
+        "Starts with 'M' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "LEAF",
+      "description": "A vibrant green solar collector swaying in the woodland breeze.",
+      "hints": [
+        "A vibrant green solar collector swaying in the woodland breeze.",
+        "An everyday concept or woodland item: vibrant.",
+        "This word is 4 letters long with vowels: A, E.",
+        "The word concludes with the letter 'F'.",
+        "Starts with 'L' and ends with 'F'."
+      ]
+    },
+    {
+      "word": "TWIG",
+      "description": "A slender woody shoot branching from a forest bough.",
+      "hints": [
+        "A slender woody shoot branching from a forest bough.",
+        "An everyday concept or woodland item: slender.",
+        "This word is 4 letters long with vowels: I.",
+        "The word concludes with the letter 'G'.",
+        "Starts with 'T' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "ROOT",
+      "description": "The anchoring underground network drinking deep forest moisture.",
+      "hints": [
+        "The anchoring underground network drinking deep forest moisture.",
+        "An everyday concept or woodland item: anchoring.",
+        "This word is 4 letters long with vowels: O.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'R' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "FERN",
+      "description": "A feathery green plant unfurling fiddleheads in shaded hollows.",
+      "hints": [
+        "A feathery green plant unfurling fiddleheads in shaded hollows.",
+        "An everyday concept or woodland item: feathery.",
+        "This word is 4 letters long with vowels: E.",
+        "The word concludes with the letter 'N'.",
+        "Starts with 'F' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "ACID",
+      "description": "A sharp sour substance found in citrus and berries.",
+      "hints": [
+        "A sharp sour substance found in citrus and berries.",
+        "An everyday concept or woodland item: sharp.",
+        "This word is 4 letters long with vowels: A, I.",
+        "The word concludes with the letter 'D'.",
+        "Starts with 'A' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "DEER",
+      "description": "A graceful gentle herbivore with keen ears and swift hooves.",
+      "hints": [
+        "A graceful gentle herbivore with keen ears and swift hooves.",
+        "An everyday concept or woodland item: graceful.",
+        "This word is 4 letters long with vowels: E.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'D' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "FROG",
+      "description": "An amphibious croaker that leaps between lily pads.",
+      "hints": [
+        "An amphibious croaker that leaps between lily pads.",
+        "An everyday concept or woodland item: amphibious.",
+        "This word is 4 letters long with vowels: O.",
+        "The word concludes with the letter 'G'.",
+        "Starts with 'F' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "TOAD",
+      "description": "A bumpy terrestrial hopper hunting beetles in damp forest leaf litter.",
+      "hints": [
+        "A bumpy terrestrial hopper hunting beetles in damp forest leaf litter.",
+        "An everyday concept or woodland item: bumpy.",
+        "This word is 4 letters long with vowels: A, O.",
+        "The word concludes with the letter 'D'.",
+        "Starts with 'T' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "MOLE",
+      "description": "A velvety underground digger tunneling beneath grassy knolls.",
+      "hints": [
+        "A velvety underground digger tunneling beneath grassy knolls.",
+        "An everyday concept or woodland item: velvety.",
+        "This word is 4 letters long with vowels: E, O.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'M' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "DUCK",
+      "description": "A web-footed waterfowl paddling across quiet woodland ponds.",
+      "hints": [
+        "A web-footed waterfowl paddling across quiet woodland ponds.",
+        "An everyday concept or woodland item: web-footed.",
+        "This word is 4 letters long with vowels: U.",
+        "The word concludes with the letter 'K'.",
+        "Starts with 'D' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "BEAR",
+      "description": "A massive omnivore that hibernates through snowy winter months.",
+      "hints": [
+        "A massive omnivore that hibernates through snowy winter months.",
+        "An everyday concept or woodland item: massive.",
+        "This word is 4 letters long with vowels: A, E.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'B' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "HARE",
+      "description": "A swift long-eared rabbit bounding through grassy glades.",
+      "hints": [
+        "A swift long-eared rabbit bounding through grassy glades.",
+        "An everyday concept or woodland item: swift.",
+        "This word is 4 letters long with vowels: A, E.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'H' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "PATH",
+      "description": "A winding dirt trail trampled by forest explorers.",
+      "hints": [
+        "A winding dirt trail trampled by forest explorers.",
+        "An everyday concept or woodland item: winding.",
+        "This word is 4 letters long with vowels: A.",
+        "The word concludes with the letter 'H'.",
+        "Starts with 'P' and ends with 'H'."
+      ]
+    },
+    {
+      "word": "CAVE",
+      "description": "A dark hollow cavern carved into limestone bluffs.",
+      "hints": [
+        "A dark hollow cavern carved into limestone bluffs.",
+        "An everyday concept or woodland item: dark.",
+        "This word is 4 letters long with vowels: A, E.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'C' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "HILL",
+      "description": "A gentle grassy rise overlooking rolling woodlands.",
+      "hints": [
+        "A gentle grassy rise overlooking rolling woodlands.",
+        "An everyday concept or woodland item: gentle.",
+        "This word is 4 letters long with vowels: I.",
+        "The word concludes with the letter 'L'.",
+        "Starts with 'H' and ends with 'L'."
+      ]
+    },
+    {
+      "word": "WOOD",
+      "description": "Sturdy fibrous timber harvested from woodland trees.",
+      "hints": [
+        "Sturdy fibrous timber harvested from woodland trees.",
+        "An everyday concept or woodland item: fibrous.",
+        "This word is 4 letters long with vowels: O.",
+        "The word concludes with the letter 'D'.",
+        "Starts with 'W' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "CAMP",
+      "description": "A temporary outdoor shelter where adventurers rest beneath stars.",
+      "hints": [
+        "A temporary outdoor shelter where adventurers rest beneath stars.",
+        "An everyday concept or woodland item: temporary.",
+        "This word is 4 letters long with vowels: A.",
+        "The word concludes with the letter 'P'.",
+        "Starts with 'C' and ends with 'P'."
+      ]
+    },
+    {
+      "word": "TENT",
+      "description": "A canvas shelter pitched under tall pines for the night.",
+      "hints": [
+        "A canvas shelter pitched under tall pines for the night.",
+        "An everyday concept or woodland item: canvas.",
+        "This word is 4 letters long with vowels: E.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'T' and ends with 'T'."
+      ]
+    }
+  ],
+  "5": [
+    {
+      "word": "BRAIN",
+      "description": "The intricate master organ orchestrating every thought and sensation.",
+      "hints": [
+        "The intricate master organ orchestrating every thought and sensation.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'B'.",
+        "Spelled with 5 letters, starts with 'B' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "PLANT",
+      "description": "A leafy sprout that feeds on sunlight and drinks from soil.",
+      "hints": [
+        "A leafy sprout that feeds on sunlight and drinks from soil.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'P'.",
+        "Spelled with 5 letters, starts with 'P' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "LIGHT",
+      "description": "A luminous glow that dispels gloom and reveals the world.",
+      "hints": [
+        "A luminous glow that dispels gloom and reveals the world.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'L'.",
+        "Spelled with 5 letters, starts with 'L' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "STORM",
+      "description": "A tempest of roaring winds, flashing lightning, and heavy rain.",
+      "hints": [
+        "A tempest of roaring winds, flashing lightning, and heavy rain.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'S'.",
+        "Spelled with 5 letters, starts with 'S' and ends with 'M'."
+      ]
+    },
+    {
+      "word": "QUEST",
+      "description": "A heroic journey undertaken in pursuit of a lofty prize.",
+      "hints": [
+        "A heroic journey undertaken in pursuit of a lofty prize.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'Q'.",
+        "Spelled with 5 letters, starts with 'Q' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "MAGIC",
+      "description": "An arcane art that bends reality through mysterious enchantment.",
+      "hints": [
+        "An arcane art that bends reality through mysterious enchantment.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'M'.",
+        "Spelled with 5 letters, starts with 'M' and ends with 'C'."
+      ]
+    },
+    {
+      "word": "CLOUD",
+      "description": "A fluffy white wanderer drifting gently across high skies.",
+      "hints": [
+        "A fluffy white wanderer drifting gently across high skies.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'C'.",
+        "Spelled with 5 letters, starts with 'C' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "SPACE",
+      "description": "A boundless dark void sprinkled with galaxies and silence.",
+      "hints": [
+        "A boundless dark void sprinkled with galaxies and silence.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'S'.",
+        "Spelled with 5 letters, starts with 'S' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "TIGER",
+      "description": "A striped apex hunter stalking through dense emerald jungles.",
+      "hints": [
+        "A striped apex hunter stalking through dense emerald jungles.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'T'.",
+        "Spelled with 5 letters, starts with 'T' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "OCEAN",
+      "description": "An immense blue wilderness concealing unfathomable marine depths.",
+      "hints": [
+        "An immense blue wilderness concealing unfathomable marine depths.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'O'.",
+        "Spelled with 5 letters, starts with 'O' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "FLAME",
+      "description": "A hungry tongue of radiant fire consuming wood and spark.",
+      "hints": [
+        "A hungry tongue of radiant fire consuming wood and spark.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'F'.",
+        "Spelled with 5 letters, starts with 'F' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "SHINE",
+      "description": "To emit a brilliant beam or sparkle against the gloom.",
+      "hints": [
+        "To emit a brilliant beam or sparkle against the gloom.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'S'.",
+        "Spelled with 5 letters, starts with 'S' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "RIVER",
+      "description": "A winding serpent of fresh water flowing steadily toward the sea.",
+      "hints": [
+        "A winding serpent of fresh water flowing steadily toward the sea.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'R'.",
+        "Spelled with 5 letters, starts with 'R' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "CHESS",
+      "description": "A tactical battle of kings, queens, and pawns upon sixty-four squares.",
+      "hints": [
+        "A tactical battle of kings, queens, and pawns upon sixty-four squares.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'C'.",
+        "Spelled with 5 letters, starts with 'C' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "SWORD",
+      "description": "A honed steel blade forged for duel and battle honor.",
+      "hints": [
+        "A honed steel blade forged for duel and battle honor.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'S'.",
+        "Spelled with 5 letters, starts with 'S' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "DREAM",
+      "description": "A fleeting story woven by the mind while deep in slumber.",
+      "hints": [
+        "A fleeting story woven by the mind while deep in slumber.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'D'.",
+        "Spelled with 5 letters, starts with 'D' and ends with 'M'."
+      ]
+    },
+    {
+      "word": "CROWN",
+      "description": "An ornate golden headpiece signaling majesty and supreme rule.",
+      "hints": [
+        "An ornate golden headpiece signaling majesty and supreme rule.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'C'.",
+        "Spelled with 5 letters, starts with 'C' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "MUSIC",
+      "description": "A harmonious tapestry of rhythm and tone that stirs emotion.",
+      "hints": [
+        "A harmonious tapestry of rhythm and tone that stirs emotion.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'M'.",
+        "Spelled with 5 letters, starts with 'M' and ends with 'C'."
+      ]
+    },
+    {
+      "word": "GHOST",
+      "description": "A lingering translucent spirit whispering from beyond the veil.",
+      "hints": [
+        "A lingering translucent spirit whispering from beyond the veil.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'G'.",
+        "Spelled with 5 letters, starts with 'G' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "BEACH",
+      "description": "A shoreline of golden sand kissed by rhythmic ocean tides.",
+      "hints": [
+        "A shoreline of golden sand kissed by rhythmic ocean tides.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'B'.",
+        "Spelled with 5 letters, starts with 'B' and ends with 'H'."
+      ]
+    },
+    {
+      "word": "SPARK",
+      "description": "A tiny incandescent ember capable of kindling great fires.",
+      "hints": [
+        "A tiny incandescent ember capable of kindling great fires.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'S'.",
+        "Spelled with 5 letters, starts with 'S' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "EARTH",
+      "description": "Our living blue sanctuary cradle orbiting through the cosmic void.",
+      "hints": [
+        "Our living blue sanctuary cradle orbiting through the cosmic void.",
+        "A recognized 5-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 5 letters, beginning with the letter 'E'.",
+        "Spelled with 5 letters, starts with 'E' and ends with 'H'."
+      ]
+    },
+    {
+      "word": "HEART",
+      "description": "The muscular engine that pumps lifeblood through every pulse.",
+      "hints": [
+        "The muscular engine that pumps lifeblood through every pulse.",
+        "Beats steadfastly inside the chest with rhythmic lub-dub tempos.",
+        "Universal poetic symbol of love, compassion, courage, and feeling.",
+        "Quickens its tempo with excitement, joy, or spirited athletics.",
+        "A 5-letter life symbol starting with 'H' and ending with 'T'."
+      ]
+    },
+    {
+      "word": "APPLE",
+      "description": "A crisp orchard fruit with sweet red, green, or yellow skin.",
+      "hints": [
+        "A crisp orchard fruit with sweet red, green, or yellow skin.",
+        "Picked from heavy branches on crisp autumn afternoon harvest trips.",
+        "Baked into pies, pressed into sweet cider, or eaten fresh off the core.",
+        "Keeps the doctor away when enjoyed once daily according to legend.",
+        "A 5-letter orchard fruit starting with 'A' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "SMILE",
+      "description": "A cheerful curve of the lips expressing warmth and happiness.",
+      "hints": [
+        "A cheerful curve of the lips expressing warmth and happiness.",
+        "A universal greeting that lights up the face and brightens the room.",
+        "Infectious expression of amusement, gratitude, or heartfelt joy.",
+        "Crinkles the corners of eyes with genuine positive delight.",
+        "A 5-letter expression starting with 'S' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "ROBOT",
+      "description": "An automated mechanical machine capable of programmable actions.",
+      "hints": [
+        "An automated mechanical machine capable of programmable actions.",
+        "Constructed of silicon chips, gears, motors, and steel limbs.",
+        "Explores distant planetary surfaces and assists in high-tech factories.",
+        "Speaks in synthesized voices and computes logic at lightning speeds.",
+        "A 5-letter tech creation starting with 'R' and ending with 'T'."
+      ]
+    },
+    {
+      "word": "PEARL",
+      "description": "A lustrous iridescent gem formed inside an oyster's shell.",
+      "hints": [
+        "A lustrous iridescent gem formed inside an oyster's shell.",
+        "Created when an oyster coats a tiny grain of sand with smooth nacre.",
+        "Drawn from ocean depths to be strung into classic elegant necklaces.",
+        "Gleams with milky white, silvery, and soft rainbow luster.",
+        "A 5-letter jewel starting with 'P' and ending with 'L'."
+      ]
+    },
+    {
+      "word": "ZEBRA",
+      "description": "An African equine celebrated for its bold black and white stripes.",
+      "hints": [
+        "An African equine celebrated for its bold black and white stripes.",
+        "Gallops across open savannahs in large protective family herds.",
+        "Every individual displays a unique striping pattern like a fingerprint.",
+        "Keeps sharp lookouts for prowling savannah predators in the grass.",
+        "A 5-letter striped grazer starting with 'Z' and ending with 'A'."
+      ]
+    },
+    {
+      "word": "ACORN",
+      "description": "A smooth oval nut in a cupule dropped by majestic oak trees.",
+      "hints": [
+        "A smooth oval nut in a cupule dropped by majestic oak trees.",
+        "An everyday concept or woodland item: smooth.",
+        "This word is 5 letters long with vowels: A, O.",
+        "The word concludes with the letter 'N'.",
+        "Starts with 'A' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "BIRCH",
+      "description": "A slender woodland tree with papery chalk-white bark.",
+      "hints": [
+        "A slender woodland tree with papery chalk-white bark.",
+        "An everyday concept or woodland item: slender.",
+        "This word is 5 letters long with vowels: I.",
+        "The word concludes with the letter 'H'.",
+        "Starts with 'B' and ends with 'H'."
+      ]
+    },
+    {
+      "word": "BEECH",
+      "description": "A broadleaf tree with smooth silver bark and edible three-cornered nuts.",
+      "hints": [
+        "A broadleaf tree with smooth silver bark and edible three-cornered nuts.",
+        "An everyday concept or woodland item: broadleaf.",
+        "This word is 5 letters long with vowels: E.",
+        "The word concludes with the letter 'H'.",
+        "Starts with 'B' and ends with 'H'."
+      ]
+    },
+    {
+      "word": "CEDAR",
+      "description": "A fragrant evergreen tree with durable aromatic timber.",
+      "hints": [
+        "A fragrant evergreen tree with durable aromatic timber.",
+        "An everyday concept or woodland item: fragrant.",
+        "This word is 5 letters long with vowels: A, E.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'C' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "MAPLE",
+      "description": "A deciduous tree whose sweet sap is boiled into golden syrup.",
+      "hints": [
+        "A deciduous tree whose sweet sap is boiled into golden syrup.",
+        "An everyday concept or woodland item: deciduous.",
+        "This word is 5 letters long with vowels: A, E.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'M' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "GROVE",
+      "description": "A tranquil cluster of trees standing together in a meadow.",
+      "hints": [
+        "A tranquil cluster of trees standing together in a meadow.",
+        "An everyday concept or woodland item: tranquil.",
+        "This word is 5 letters long with vowels: E, O.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'G' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "BROOK",
+      "description": "A babbling freshwater stream meandering over mossy pebbles.",
+      "hints": [
+        "A babbling freshwater stream meandering over mossy pebbles.",
+        "An everyday concept or woodland item: babbling.",
+        "This word is 5 letters long with vowels: O.",
+        "The word concludes with the letter 'K'.",
+        "Starts with 'B' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "CREEK",
+      "description": "A small winding watercourse rippling through shaded forests.",
+      "hints": [
+        "A small winding watercourse rippling through shaded forests.",
+        "An everyday concept or woodland item: small.",
+        "This word is 5 letters long with vowels: E.",
+        "The word concludes with the letter 'K'.",
+        "Starts with 'C' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "LODGE",
+      "description": "A cozy timber dwelling nestled deep in mountain woods.",
+      "hints": [
+        "A cozy timber dwelling nestled deep in mountain woods.",
+        "An everyday concept or woodland item: cozy.",
+        "This word is 5 letters long with vowels: E, O.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'L' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "BERRY",
+      "description": "A juicy sweet forest fruit plucked by foraging hamsters.",
+      "hints": [
+        "A juicy sweet forest fruit plucked by foraging hamsters.",
+        "An everyday concept or woodland item: juicy.",
+        "This word is 5 letters long with vowels: E, Y.",
+        "The word concludes with the letter 'Y'.",
+        "Starts with 'B' and ends with 'Y'."
+      ]
+    },
+    {
+      "word": "FRUIT",
+      "description": "The delicious sweet seed-bearing bounty of flowering plants.",
+      "hints": [
+        "The delicious sweet seed-bearing bounty of flowering plants.",
+        "An everyday concept or woodland item: delicious.",
+        "This word is 5 letters long with vowels: I, U.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'F' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "TRAIL",
+      "description": "A beaten woodland footpath winding through wild nature.",
+      "hints": [
+        "A beaten woodland footpath winding through wild nature.",
+        "An everyday concept or woodland item: beaten.",
+        "This word is 5 letters long with vowels: A, I.",
+        "The word concludes with the letter 'L'.",
+        "Starts with 'T' and ends with 'L'."
+      ]
+    },
+    {
+      "word": "CLIFF",
+      "description": "A sheer precipice of bare rock towering above the forest.",
+      "hints": [
+        "A sheer precipice of bare rock towering above the forest.",
+        "An everyday concept or woodland item: sheer.",
+        "This word is 5 letters long with vowels: I.",
+        "The word concludes with the letter 'F'.",
+        "Starts with 'C' and ends with 'F'."
+      ]
+    },
+    {
+      "word": "SLOPE",
+      "description": "An inclined hillside covered in pine trees and wild blossoms.",
+      "hints": [
+        "An inclined hillside covered in pine trees and wild blossoms.",
+        "An everyday concept or woodland item: inclined.",
+        "This word is 5 letters long with vowels: E, O.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'S' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "RIDGE",
+      "description": "A long elevated crest of mountain rock separating valleys.",
+      "hints": [
+        "A long elevated crest of mountain rock separating valleys.",
+        "An everyday concept or woodland item: long.",
+        "This word is 5 letters long with vowels: E, I.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'R' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "STONE",
+      "description": "A smooth compact pebble shaped by centuries of rushing waters.",
+      "hints": [
+        "A smooth compact pebble shaped by centuries of rushing waters.",
+        "An everyday concept or woodland item: smooth.",
+        "This word is 5 letters long with vowels: E, O.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'S' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "FLORA",
+      "description": "The collective plant life flourishing in a particular ecosystem.",
+      "hints": [
+        "The collective plant life flourishing in a particular ecosystem.",
+        "An everyday concept or woodland item: collective.",
+        "This word is 5 letters long with vowels: A, O.",
+        "The word concludes with the letter 'A'.",
+        "Starts with 'F' and ends with 'A'."
+      ]
+    },
+    {
+      "word": "FAUNA",
+      "description": "The animal kingdom inhabiting a wild habitat.",
+      "hints": [
+        "The animal kingdom inhabiting a wild habitat.",
+        "An everyday concept or woodland item: animal.",
+        "This word is 5 letters long with vowels: A, U.",
+        "The word concludes with the letter 'A'.",
+        "Starts with 'F' and ends with 'A'."
+      ]
+    },
+    {
+      "word": "GRASS",
+      "description": "A verdant carpet of slender green blades blanketing the soil.",
+      "hints": [
+        "A verdant carpet of slender green blades blanketing the soil.",
+        "An everyday concept or woodland item: verdant.",
+        "This word is 5 letters long with vowels: A.",
+        "The word concludes with the letter 'S'.",
+        "Starts with 'G' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "GRAIN",
+      "description": "Small harvested edible seeds like wheat, barley, and millet.",
+      "hints": [
+        "Small harvested edible seeds like wheat, barley, and millet.",
+        "An everyday concept or woodland item: harvested.",
+        "This word is 5 letters long with vowels: A, I.",
+        "The word concludes with the letter 'N'.",
+        "Starts with 'G' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "MAIZE",
+      "description": "Golden corn kernels beloved by foraging rodents.",
+      "hints": [
+        "Golden corn kernels beloved by foraging rodents.",
+        "An everyday concept or woodland item: corn.",
+        "This word is 5 letters long with vowels: A, E, I.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'M' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "BLOOM",
+      "description": "A colorful flower blossoming open to greet the morning sun.",
+      "hints": [
+        "A colorful flower blossoming open to greet the morning sun.",
+        "An everyday concept or woodland item: colorful.",
+        "This word is 5 letters long with vowels: O.",
+        "The word concludes with the letter 'M'.",
+        "Starts with 'B' and ends with 'M'."
+      ]
+    },
+    {
+      "word": "PETAL",
+      "description": "A delicate colorful segment of a fragrant blossoming flower.",
+      "hints": [
+        "A delicate colorful segment of a fragrant blossoming flower.",
+        "An everyday concept or woodland item: delicate.",
+        "This word is 5 letters long with vowels: A, E.",
+        "The word concludes with the letter 'L'.",
+        "Starts with 'P' and ends with 'L'."
+      ]
+    },
+    {
+      "word": "SPORE",
+      "description": "A microscopic reproductive cell released by forest mushrooms.",
+      "hints": [
+        "A microscopic reproductive cell released by forest mushrooms.",
+        "An everyday concept or woodland item: microscopic.",
+        "This word is 5 letters long with vowels: E, O.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'S' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "FUNGI",
+      "description": "A kingdom of organisms including mushrooms, lichens, and yeasts.",
+      "hints": [
+        "A kingdom of organisms including mushrooms, lichens, and yeasts.",
+        "An everyday concept or woodland item: kingdom.",
+        "This word is 5 letters long with vowels: I, U.",
+        "The word concludes with the letter 'I'.",
+        "Starts with 'F' and ends with 'I'."
+      ]
+    },
+    {
+      "word": "CHEST",
+      "description": "A sturdy wooden box with an iron latch holding treasures.",
+      "hints": [
+        "A sturdy wooden box with an iron latch holding treasures.",
+        "An everyday concept or woodland item: sturdy.",
+        "This word is 5 letters long with vowels: E.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'C' and ends with 'T'."
+      ]
+    }
+  ],
+  "6": [
+    {
+      "word": "PUZZLE",
+      "description": "A challenge of scattered pieces demanding patience to solve.",
+      "hints": [
+        "A challenge of scattered pieces demanding patience to solve.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'P'.",
+        "Spelled with 6 letters, starts with 'P' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "WIZARD",
+      "description": "A scholar of the mystic arts wielding spell and staff.",
+      "hints": [
+        "A scholar of the mystic arts wielding spell and staff.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'W'.",
+        "Spelled with 6 letters, starts with 'W' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "CASTLE",
+      "description": "A fortified stone citadel guarding lords behind thick ramparts.",
+      "hints": [
+        "A fortified stone citadel guarding lords behind thick ramparts.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'C'.",
+        "Spelled with 6 letters, starts with 'C' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "DRAGON",
+      "description": "A legendary scaled beast breathing fire from mountain lairs.",
+      "hints": [
+        "A legendary scaled beast breathing fire from mountain lairs.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'D'.",
+        "Spelled with 6 letters, starts with 'D' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "KNIGHT",
+      "description": "An armored champion bound by an oath of chivalric honor.",
+      "hints": [
+        "An armored champion bound by an oath of chivalric honor.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'K'.",
+        "Spelled with 6 letters, starts with 'K' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "PLANET",
+      "description": "A celestial sphere tracing an eternal path around its star.",
+      "hints": [
+        "A celestial sphere tracing an eternal path around its star.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'P'.",
+        "Spelled with 6 letters, starts with 'P' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "SILVER",
+      "description": "A luminous grey metal prized for coin and refined jewelry.",
+      "hints": [
+        "A luminous grey metal prized for coin and refined jewelry.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'S'.",
+        "Spelled with 6 letters, starts with 'S' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "GALAXY",
+      "description": "A swirling cosmic island containing billions of distant suns.",
+      "hints": [
+        "A swirling cosmic island containing billions of distant suns.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'G'.",
+        "Spelled with 6 letters, starts with 'G' and ends with 'Y'."
+      ]
+    },
+    {
+      "word": "STREAM",
+      "description": "A murmuring ribbon of fresh water bubbling through stony woods.",
+      "hints": [
+        "A murmuring ribbon of fresh water bubbling through stony woods.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'S'.",
+        "Spelled with 6 letters, starts with 'S' and ends with 'M'."
+      ]
+    },
+    {
+      "word": "FOREST",
+      "description": "A dense sanctuary of towering timber sheltering wild woodland creatures.",
+      "hints": [
+        "A dense sanctuary of towering timber sheltering wild woodland creatures.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'F'.",
+        "Spelled with 6 letters, starts with 'F' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "SHADOW",
+      "description": "A dark silhouette cast where light is blocked from falling.",
+      "hints": [
+        "A dark silhouette cast where light is blocked from falling.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'S'.",
+        "Spelled with 6 letters, starts with 'S' and ends with 'W'."
+      ]
+    },
+    {
+      "word": "BRIDGE",
+      "description": "An arching span built to carry travelers over deep divides.",
+      "hints": [
+        "An arching span built to carry travelers over deep divides.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'B'.",
+        "Spelled with 6 letters, starts with 'B' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "FALCON",
+      "description": "A swift raptor diving from high heavens with lethal grace.",
+      "hints": [
+        "A swift raptor diving from high heavens with lethal grace.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'F'.",
+        "Spelled with 6 letters, starts with 'F' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "VIKING",
+      "description": "A seafaring Norse warrior famed for longships and northern raids.",
+      "hints": [
+        "A seafaring Norse warrior famed for longships and northern raids.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'V'.",
+        "Spelled with 6 letters, starts with 'V' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "SPIRIT",
+      "description": "The immaterial essence that animates will, courage, and soul.",
+      "hints": [
+        "The immaterial essence that animates will, courage, and soul.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'S'.",
+        "Spelled with 6 letters, starts with 'S' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "ROCKET",
+      "description": "A pillar of thrusters built to pierce the planet's atmosphere.",
+      "hints": [
+        "A pillar of thrusters built to pierce the planet's atmosphere.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'R'.",
+        "Spelled with 6 letters, starts with 'R' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "SUNSET",
+      "description": "The evening twilight when skies catch fire with amber and rose.",
+      "hints": [
+        "The evening twilight when skies catch fire with amber and rose.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'S'.",
+        "Spelled with 6 letters, starts with 'S' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "SPRING",
+      "description": "The season of renewal when slumbering blossoms awaken to warm rains.",
+      "hints": [
+        "The season of renewal when slumbering blossoms awaken to warm rains.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'S'.",
+        "Spelled with 6 letters, starts with 'S' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "NATURE",
+      "description": "The living tapestry of flora, fauna, and wilderness across the globe.",
+      "hints": [
+        "The living tapestry of flora, fauna, and wilderness across the globe.",
+        "A recognized 6-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 6 letters, beginning with the letter 'N'.",
+        "Spelled with 6 letters, starts with 'N' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "SHIELD",
+      "description": "A defensive plate of armor carried to deflect incoming blows.",
+      "hints": [
+        "A defensive plate of armor carried to deflect incoming blows.",
+        "Crafted of polished steel or reinforced wood with painted heraldry.",
+        "Held firmly on the forearm by valiant knights and brave guardians.",
+        "Protects soldiers from flying arrows and heavy sword strikes in battle.",
+        "A 6-letter defensive armor starting with 'S' and ending with 'D'."
+      ]
+    },
+    {
+      "word": "MONKEY",
+      "description": "An agile, clever primate that swings gracefully through jungle trees.",
+      "hints": [
+        "An agile, clever primate that swings gracefully through jungle trees.",
+        "Uses its grasping hands, feet, and prehensile tail to leap branch to branch.",
+        "Known for curious playful behavior and grooming its troop companions.",
+        "Loves peeling bananas and chattering excitedly from the canopy.",
+        "A 6-letter jungle climber starting with 'M' and ending with 'Y'."
+      ]
+    },
+    {
+      "word": "ISLAND",
+      "description": "A peaceful body of land surrounded on all sides by open water.",
+      "hints": [
+        "A peaceful body of land surrounded on all sides by open water.",
+        "Often dotted with coconut palm trees and surrounded by coral reefs.",
+        "Reachable only by sailing boat, ferry, or seafaring seaplane.",
+        "Classic setting for tropical paradises and hidden pirate treasure maps.",
+        "A 6-letter geographic landform starting with 'I' and ending with 'D'."
+      ]
+    },
+    {
+      "word": "GUITAR",
+      "description": "A six-stringed wooden instrument strummed to produce musical harmonies.",
+      "hints": [
+        "A six-stringed wooden instrument strummed to produce musical harmonies.",
+        "Features a hollow resonant wooden body, fretboard, and tuning pegs.",
+        "Played with fingerstyle picking or plucking with a thin plectrum.",
+        "Central to folk, rock, classical, and acoustic campfire sing-alongs.",
+        "A 6-letter instrument starting with 'G' and ending with 'R'."
+      ]
+    },
+    {
+      "word": "CANDLE",
+      "description": "A cylinder of wax encasing a wick that burns with gentle light.",
+      "hints": [
+        "A cylinder of wax encasing a wick that burns with gentle light.",
+        "Lit with a match to cast cozy flickering golden ambient glow.",
+        "Scented with vanilla, lavender, or cinnamon to freshen quiet rooms.",
+        "Blown out by birthday celebrants after making secret wishes.",
+        "A 6-letter wax light starting with 'C' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "PIRATE",
+      "description": "A swashbuckling seafaring rogue who sails in search of treasure.",
+      "hints": [
+        "A swashbuckling seafaring rogue who sails in search of treasure.",
+        "Commands tall galleons flying ominous black Jolly Roger flags.",
+        "Often depicted with an eyepatch, peg leg, and a colorful squawking parrot.",
+        "Follows weathered parchment maps to dig up chests of buried gold doubloons.",
+        "A 6-letter seafaring rogue starting with 'P' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "VIOLIN",
+      "description": "A graceful four-stringed wooden instrument played with a horsehair bow.",
+      "hints": [
+        "A graceful four-stringed wooden instrument played with a horsehair bow.",
+        "Tucked gently beneath the player's chin and rested against the shoulder.",
+        "Produces soaring, expressive melodies in grand symphony orchestras.",
+        "Also known as a fiddle when playing lively rustic country reels.",
+        "A 6-letter wooden instrument starting with 'V' and ending with 'N'."
+      ]
+    },
+    {
+      "word": "TIMBER",
+      "description": "Sturdy wooden logs prepared for carpentry and craftsmanship.",
+      "hints": [
+        "Sturdy wooden logs prepared for carpentry and craftsmanship.",
+        "An everyday concept or woodland item: wooden.",
+        "This word is 6 letters long with vowels: E, I.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'T' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "BRANCH",
+      "description": "A woody limb extending outward from the main trunk.",
+      "hints": [
+        "A woody limb extending outward from the main trunk.",
+        "An everyday concept or woodland item: woody.",
+        "This word is 6 letters long with vowels: A.",
+        "The word concludes with the letter 'H'.",
+        "Starts with 'B' and ends with 'H'."
+      ]
+    },
+    {
+      "word": "CANOPY",
+      "description": "The high leafy ceiling of the forest shielding the ground.",
+      "hints": [
+        "The high leafy ceiling of the forest shielding the ground.",
+        "An everyday concept or woodland item: high.",
+        "This word is 6 letters long with vowels: A, O, Y.",
+        "The word concludes with the letter 'Y'.",
+        "Starts with 'C' and ends with 'Y'."
+      ]
+    },
+    {
+      "word": "VALLEY",
+      "description": "A low lush expanse of fertile land nestled between mountains.",
+      "hints": [
+        "A low lush expanse of fertile land nestled between mountains.",
+        "An everyday concept or woodland item: low.",
+        "This word is 6 letters long with vowels: A, E, Y.",
+        "The word concludes with the letter 'Y'.",
+        "Starts with 'V' and ends with 'Y'."
+      ]
+    },
+    {
+      "word": "MEADOW",
+      "description": "A sunny open field carpeted with wild grasses and buttercups.",
+      "hints": [
+        "A sunny open field carpeted with wild grasses and buttercups.",
+        "An everyday concept or woodland item: sunny.",
+        "This word is 6 letters long with vowels: A, E, O.",
+        "The word concludes with the letter 'W'.",
+        "Starts with 'M' and ends with 'W'."
+      ]
+    },
+    {
+      "word": "CANYON",
+      "description": "A deep narrow ravine carved by a river through bedrock.",
+      "hints": [
+        "A deep narrow ravine carved by a river through bedrock.",
+        "An everyday concept or woodland item: deep.",
+        "This word is 6 letters long with vowels: A, O, Y.",
+        "The word concludes with the letter 'N'.",
+        "Starts with 'C' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "HOLLOW",
+      "description": "A small sheltered sunken valley or cavity inside an old tree.",
+      "hints": [
+        "A small sheltered sunken valley or cavity inside an old tree.",
+        "An everyday concept or woodland item: small.",
+        "This word is 6 letters long with vowels: O.",
+        "The word concludes with the letter 'W'.",
+        "Starts with 'H' and ends with 'W'."
+      ]
+    },
+    {
+      "word": "BURROW",
+      "description": "A cozy underground tunnel system excavated by a hamster.",
+      "hints": [
+        "A cozy underground tunnel system excavated by a hamster.",
+        "An everyday concept or woodland item: cozy.",
+        "This word is 6 letters long with vowels: O, U.",
+        "The word concludes with the letter 'W'.",
+        "Starts with 'B' and ends with 'W'."
+      ]
+    },
+    {
+      "word": "RODENT",
+      "description": "A gnawing mammal with sharp incisors, like hamsters and mice.",
+      "hints": [
+        "A gnawing mammal with sharp incisors, like hamsters and mice.",
+        "An everyday concept or woodland item: gnawing.",
+        "This word is 6 letters long with vowels: E, O.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'R' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "ANIMAL",
+      "description": "A living sentient creature that moves and breathes in nature.",
+      "hints": [
+        "A living sentient creature that moves and breathes in nature.",
+        "An everyday concept or woodland item: living.",
+        "This word is 6 letters long with vowels: A, I.",
+        "The word concludes with the letter 'L'.",
+        "Starts with 'A' and ends with 'L'."
+      ]
+    },
+    {
+      "word": "BEETLE",
+      "description": "An armored insect with hardened wing cases crawling through moss.",
+      "hints": [
+        "An armored insect with hardened wing cases crawling through moss.",
+        "An everyday concept or woodland item: armored.",
+        "This word is 6 letters long with vowels: E.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'B' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "BADGER",
+      "description": "A stout burrowing carnivore with distinctive black and white stripes.",
+      "hints": [
+        "A stout burrowing carnivore with distinctive black and white stripes.",
+        "An everyday concept or woodland item: stout.",
+        "This word is 6 letters long with vowels: A, E.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'B' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "RABBIT",
+      "description": "A soft furry hopper with long twitching ears and a fluffy tail.",
+      "hints": [
+        "A soft furry hopper with long twitching ears and a fluffy tail.",
+        "An everyday concept or woodland item: soft.",
+        "This word is 6 letters long with vowels: A, I.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'R' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "FLOWER",
+      "description": "The colorful blossoming reproductive head of a flowering plant.",
+      "hints": [
+        "The colorful blossoming reproductive head of a flowering plant.",
+        "An everyday concept or woodland item: colorful.",
+        "This word is 6 letters long with vowels: E, O.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'F' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "HERBAL",
+      "description": "Relating to medicinal or fragrant wild plants and leaves.",
+      "hints": [
+        "Relating to medicinal or fragrant wild plants and leaves.",
+        "An everyday concept or woodland item: to.",
+        "This word is 6 letters long with vowels: A, E.",
+        "The word concludes with the letter 'L'.",
+        "Starts with 'H' and ends with 'L'."
+      ]
+    },
+    {
+      "word": "AUTUMN",
+      "description": "The crisp colorful season when deciduous leaves turn gold and scarlet.",
+      "hints": [
+        "The crisp colorful season when deciduous leaves turn gold and scarlet.",
+        "An everyday concept or woodland item: crisp.",
+        "This word is 6 letters long with vowels: A, U.",
+        "The word concludes with the letter 'N'.",
+        "Starts with 'A' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "WINTER",
+      "description": "The cold snowy season when the forest slumbers beneath frost.",
+      "hints": [
+        "The cold snowy season when the forest slumbers beneath frost.",
+        "An everyday concept or woodland item: cold.",
+        "This word is 6 letters long with vowels: E, I.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'W' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "SUMMER",
+      "description": "The warm sunny season when berries ripen and flora thrives.",
+      "hints": [
+        "The warm sunny season when berries ripen and flora thrives.",
+        "An everyday concept or woodland item: warm.",
+        "This word is 6 letters long with vowels: E, U.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'S' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "BREEZE",
+      "description": "A gentle refreshing breath of cool air dancing through the leaves.",
+      "hints": [
+        "A gentle refreshing breath of cool air dancing through the leaves.",
+        "An everyday concept or woodland item: gentle.",
+        "This word is 6 letters long with vowels: E.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'B' and ends with 'E'."
+      ]
+    }
+  ],
+  "7": [
+    {
+      "word": "CRYSTAL",
+      "description": "A geometrically faceted mineral reflecting rainbows of ambient light.",
+      "hints": [
+        "A geometrically faceted mineral reflecting rainbows of ambient light.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'C'.",
+        "Spelled with 7 letters, starts with 'C' and ends with 'L'."
+      ]
+    },
+    {
+      "word": "MYSTERY",
+      "description": "A secretive enigma that entices the curious mind to unravel.",
+      "hints": [
+        "A secretive enigma that entices the curious mind to unravel.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'M'.",
+        "Spelled with 7 letters, starts with 'M' and ends with 'Y'."
+      ]
+    },
+    {
+      "word": "KINGDOM",
+      "description": "A sovereign realm governed by royalty and bound by common law.",
+      "hints": [
+        "A sovereign realm governed by royalty and bound by common law.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'K'.",
+        "Spelled with 7 letters, starts with 'K' and ends with 'M'."
+      ]
+    },
+    {
+      "word": "PHOENIX",
+      "description": "A mythical bird that bursts into flame and rises anew from ashes.",
+      "hints": [
+        "A mythical bird that bursts into flame and rises anew from ashes.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'P'.",
+        "Spelled with 7 letters, starts with 'P' and ends with 'X'."
+      ]
+    },
+    {
+      "word": "WARRIOR",
+      "description": "A disciplined combatant skilled in the fierce trials of combat.",
+      "hints": [
+        "A disciplined combatant skilled in the fierce trials of combat.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'W'.",
+        "Spelled with 7 letters, starts with 'W' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "JOURNEY",
+      "description": "An expedition across changing landscapes in search of purpose.",
+      "hints": [
+        "An expedition across changing landscapes in search of purpose.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'J'.",
+        "Spelled with 7 letters, starts with 'J' and ends with 'Y'."
+      ]
+    },
+    {
+      "word": "THUNDER",
+      "description": "The rumbling sonic roar echoing after a flash of lightning.",
+      "hints": [
+        "The rumbling sonic roar echoing after a flash of lightning.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'T'.",
+        "Spelled with 7 letters, starts with 'T' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "DIAMOND",
+      "description": "The hardest natural gem born deep under tremendous heat and weight.",
+      "hints": [
+        "The hardest natural gem born deep under tremendous heat and weight.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'D'.",
+        "Spelled with 7 letters, starts with 'D' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "LANTERN",
+      "description": "A portable beacon casting warmth and guidance through pitch darkness.",
+      "hints": [
+        "A portable beacon casting warmth and guidance through pitch darkness.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'L'.",
+        "Spelled with 7 letters, starts with 'L' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "COURAGE",
+      "description": "The quiet inner resolve that confronts danger despite rising fear.",
+      "hints": [
+        "The quiet inner resolve that confronts danger despite rising fear.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'C'.",
+        "Spelled with 7 letters, starts with 'C' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "HORIZON",
+      "description": "The distant edge where earth appears to meet the open sky.",
+      "hints": [
+        "The distant edge where earth appears to meet the open sky.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'H'.",
+        "Spelled with 7 letters, starts with 'H' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "COMPASS",
+      "description": "A magnetic needle that always points toward the true north.",
+      "hints": [
+        "A magnetic needle that always points toward the true north.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'C'.",
+        "Spelled with 7 letters, starts with 'C' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "BLOSSOM",
+      "description": "A delicate floral bud opening its petals to springtime breezes.",
+      "hints": [
+        "A delicate floral bud opening its petals to springtime breezes.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'B'.",
+        "Spelled with 7 letters, starts with 'B' and ends with 'M'."
+      ]
+    },
+    {
+      "word": "RAINBOW",
+      "description": "An ethereal arc of spectral colors painted across rain-washed skies.",
+      "hints": [
+        "An ethereal arc of spectral colors painted across rain-washed skies.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'R'.",
+        "Spelled with 7 letters, starts with 'R' and ends with 'W'."
+      ]
+    },
+    {
+      "word": "CAPTAIN",
+      "description": "The commanding mariner entrusted with a vessel and its loyal crew.",
+      "hints": [
+        "The commanding mariner entrusted with a vessel and its loyal crew.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'C'.",
+        "Spelled with 7 letters, starts with 'C' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "FORTUNE",
+      "description": "A sudden windfall of prosperity or the unpredictable twist of destiny.",
+      "hints": [
+        "A sudden windfall of prosperity or the unpredictable twist of destiny.",
+        "A recognized 7-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 7 letters, beginning with the letter 'F'.",
+        "Spelled with 7 letters, starts with 'F' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "FEATHER",
+      "description": "A lightweight plumage plume that cloaks birds and enables flight.",
+      "hints": [
+        "A lightweight plumage plume that cloaks birds and enables flight.",
+        "Soft, aerodynamic, and intricately barbed along a central hollow quill.",
+        "Historically dipped in dark ink to pen elegant handwritten letters.",
+        "Light as air and prized for keeping birds warm and insulated.",
+        "A 7-letter plumage starting with 'F' and ending with 'R'."
+      ]
+    },
+    {
+      "word": "VOLCANO",
+      "description": "A geological rupture in the earth where glowing lava erupts.",
+      "hints": [
+        "A geological rupture in the earth where glowing lava erupts.",
+        "Vents billowing clouds of volcanic ash and fiery molten magma.",
+        "Can form conical mountain peaks surrounded by fertile volcanic soils.",
+        "Famous examples include Mount Vesuvius, Fuji, and Mauna Loa.",
+        "A 7-letter geological wonder starting with 'V' and ending with 'O'."
+      ]
+    },
+    {
+      "word": "HARVEST",
+      "description": "The bountiful season of gathering mature crops from farm fields.",
+      "hints": [
+        "The bountiful season of gathering mature crops from farm fields.",
+        "When golden wheat, crisp apples, and sweet corn are collected.",
+        "Celebrated with community festivals, feasts, and autumn thanksgiving.",
+        "Reaping the fruits of long months of patient planting and tending.",
+        "A 7-letter agricultural season starting with 'H' and ending with 'T'."
+      ]
+    },
+    {
+      "word": "PENGUIN",
+      "description": "A charming tuxedo-feathered flightless bird of southern polar seas.",
+      "hints": [
+        "A charming tuxedo-feathered flightless bird of southern polar seas.",
+        "Waddles upright across glacial ice sheets and toboggans on its belly.",
+        "A master swimmer diving into icy currents to catch silvery fish.",
+        "Huddles close together in massive colonies to endure Antarctic blizzards.",
+        "A 7-letter Antarctic bird starting with 'P' and ending with 'N'."
+      ]
+    },
+    {
+      "word": "PYRAMID",
+      "description": "A monumental ancient stone tomb with triangular sloping faces.",
+      "hints": [
+        "A monumental ancient stone tomb with triangular sloping faces.",
+        "Erected along the Nile River in Giza to house pharaohs in eternity.",
+        "Aligned with celestial stars and built with massive limestone blocks.",
+        "One of the seven wonders of the ancient world surviving millennia.",
+        "A 7-letter stone monument starting with 'P' and ending with 'D'."
+      ]
+    },
+    {
+      "word": "WHISPER",
+      "description": "To speak very softly with breathy voice so others cannot overhear.",
+      "hints": [
+        "To speak very softly with breathy voice so others cannot overhear.",
+        "Used to share bedtime secrets and confidential messages in quiet rooms.",
+        "Barely audible rustle like dried autumn leaves blowing in the wind.",
+        "Maintains hushed reverence inside quiet libraries and sleeping wards.",
+        "A 7-letter soft speech starting with 'W' and ending with 'R'."
+      ]
+    },
+    {
+      "word": "HAMSTER",
+      "description": "A lovable round rodent with capacious cheek pouches for storing food.",
+      "hints": [
+        "A lovable round rodent with capacious cheek pouches for storing food.",
+        "An everyday concept or woodland item: lovable.",
+        "This word is 7 letters long with vowels: A, E.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'H' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "CRITTER",
+      "description": "An affectionate term for a small wild animal or creature.",
+      "hints": [
+        "An affectionate term for a small wild animal or creature.",
+        "An everyday concept or woodland item: affectionate.",
+        "This word is 7 letters long with vowels: E, I.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'C' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "FOLIAGE",
+      "description": "The collective green leaves of trees and woodland bushes.",
+      "hints": [
+        "The collective green leaves of trees and woodland bushes.",
+        "An everyday concept or woodland item: collective.",
+        "This word is 7 letters long with vowels: A, E, I, O.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'F' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "HABITAT",
+      "description": "The natural home or environment of an animal or plant.",
+      "hints": [
+        "The natural home or environment of an animal or plant.",
+        "An everyday concept or woodland item: natural.",
+        "This word is 7 letters long with vowels: A, I.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'H' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "SUNBEAM",
+      "description": "A bright shaft of pure sunlight breaking through the canopy.",
+      "hints": [
+        "A bright shaft of pure sunlight breaking through the canopy.",
+        "An everyday concept or woodland item: bright.",
+        "This word is 7 letters long with vowels: A, E, U.",
+        "The word concludes with the letter 'M'.",
+        "Starts with 'S' and ends with 'M'."
+      ]
+    },
+    {
+      "word": "BOULDER",
+      "description": "A massive rounded rock resting serenely on the forest floor.",
+      "hints": [
+        "A massive rounded rock resting serenely on the forest floor.",
+        "An everyday concept or woodland item: massive.",
+        "This word is 7 letters long with vowels: E, O, U.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'B' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "TORRENT",
+      "description": "A swift rushing violent stream of mountain water.",
+      "hints": [
+        "A swift rushing violent stream of mountain water.",
+        "An everyday concept or woodland item: swift.",
+        "This word is 7 letters long with vowels: E, O.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'T' and ends with 'T'."
+      ]
+    }
+  ],
+  "8": [
+    {
+      "word": "CHAMPION",
+      "description": "The triumphant victor who stands supreme after rigorous trials.",
+      "hints": [
+        "The triumphant victor who stands supreme after rigorous trials.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'C'.",
+        "Spelled with 8 letters, starts with 'C' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "TREASURE",
+      "description": "A buried horde of riches awaiting discovery by intrepid adventurers.",
+      "hints": [
+        "A buried horde of riches awaiting discovery by intrepid adventurers.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'T'.",
+        "Spelled with 8 letters, starts with 'T' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "UNIVERSE",
+      "description": "The all-encompassing cosmos containing all matter, energy, and space.",
+      "hints": [
+        "The all-encompassing cosmos containing all matter, energy, and space.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'U'.",
+        "Spelled with 8 letters, starts with 'U' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "BLIZZARD",
+      "description": "A howling snowstorm that blinds the landscape under freezing gales.",
+      "hints": [
+        "A howling snowstorm that blinds the landscape under freezing gales.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'B'.",
+        "Spelled with 8 letters, starts with 'B' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "PLATINUM",
+      "description": "A dense silvery-white precious metal prized for endurance and luster.",
+      "hints": [
+        "A dense silvery-white precious metal prized for endurance and luster.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'P'.",
+        "Spelled with 8 letters, starts with 'P' and ends with 'M'."
+      ]
+    },
+    {
+      "word": "EXPLORER",
+      "description": "A daring wanderer venturing into uncharted regions of the map.",
+      "hints": [
+        "A daring wanderer venturing into uncharted regions of the map.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'E'.",
+        "Spelled with 8 letters, starts with 'E' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "FORTRESS",
+      "description": "An impregnable stronghold designed to repel the fiercest of sieges.",
+      "hints": [
+        "An impregnable stronghold designed to repel the fiercest of sieges.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'F'.",
+        "Spelled with 8 letters, starts with 'F' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "MOUNTAIN",
+      "description": "A colossal stone peak piercing the clouds with snowy summits.",
+      "hints": [
+        "A colossal stone peak piercing the clouds with snowy summits.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'M'.",
+        "Spelled with 8 letters, starts with 'M' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "STARFALL",
+      "description": "A shower of meteors streaking across the velvet night sky.",
+      "hints": [
+        "A shower of meteors streaking across the velvet night sky.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'S'.",
+        "Spelled with 8 letters, starts with 'S' and ends with 'L'."
+      ]
+    },
+    {
+      "word": "SYMPHONY",
+      "description": "An intricate orchestral composition harmonizing dozens of instruments.",
+      "hints": [
+        "An intricate orchestral composition harmonizing dozens of instruments.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'S'.",
+        "Spelled with 8 letters, starts with 'S' and ends with 'Y'."
+      ]
+    },
+    {
+      "word": "WILDFIRE",
+      "description": "A swift blaze sweeping untamed across arid woodland and brush.",
+      "hints": [
+        "A swift blaze sweeping untamed across arid woodland and brush.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'W'.",
+        "Spelled with 8 letters, starts with 'W' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "ILLUSION",
+      "description": "A deceptive appearance that tricks the senses into seeing what is not.",
+      "hints": [
+        "A deceptive appearance that tricks the senses into seeing what is not.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'I'.",
+        "Spelled with 8 letters, starts with 'I' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "SUNSHINE",
+      "description": "Golden rays of daylight warming the earth after chilly rains.",
+      "hints": [
+        "Golden rays of daylight warming the earth after chilly rains.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'S'.",
+        "Spelled with 8 letters, starts with 'S' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "GUARDIAN",
+      "description": "A watchful protector keeping harm away from the sanctuary gate.",
+      "hints": [
+        "A watchful protector keeping harm away from the sanctuary gate.",
+        "A recognized 8-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 8 letters, beginning with the letter 'G'.",
+        "Spelled with 8 letters, starts with 'G' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "FIREWORK",
+      "description": "An explosive pyrotechnic device that bursts with brilliant colors.",
+      "hints": [
+        "An explosive pyrotechnic device that bursts with brilliant colors.",
+        "Launched high into midnight skies to celebrate national holidays.",
+        "Explodes into dazzling glittering cascades of crimson, gold, and blue.",
+        "Accompanied by thunderous booms and appreciative gasps from crowds below.",
+        "An 8-letter pyrotechnic starting with 'F' and ending with 'K'."
+      ]
+    },
+    {
+      "word": "CAMPFIRE",
+      "description": "An outdoor blaze around which campers gather for warmth and tales.",
+      "hints": [
+        "An outdoor blaze around which campers gather for warmth and tales.",
+        "Built with dry tinder, kindling, and crackling pine logs in a stone ring.",
+        "The heart of woodland campsites for roasting sweet marshmallows and s'mores.",
+        "Casts a warm dancing amber glow into the surrounding forest shadows.",
+        "An 8-letter outdoor blaze starting with 'C' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "BACKPACK",
+      "description": "A sturdy bag with shoulder straps carried on a traveler's back.",
+      "hints": [
+        "A sturdy bag with shoulder straps carried on a traveler's back.",
+        "Packed with books, water bottles, snacks, and trail maps for school or hikes.",
+        "Fitted with zippered compartments and ergonomic padded straps.",
+        "The indispensable companion of students and intrepid backpackers worldwide.",
+        "An 8-letter traveler's bag starting with 'B' and ending with 'K'."
+      ]
+    },
+    {
+      "word": "MUSHROOM",
+      "description": "The fleshy fruiting body of a fungus springing up in moist soil.",
+      "hints": [
+        "The fleshy fruiting body of a fungus springing up in moist soil.",
+        "Sprouts in damp woodland moss after warm autumn rain showers.",
+        "Features a rounded umbrella-like cap, gills, and a slender stalk.",
+        "Classic favorite treat for foraged meals and cute forest woodland hamsters.",
+        "An 8-letter fungus starting with 'M' and ending with 'M'."
+      ]
+    },
+    {
+      "word": "STARFISH",
+      "description": "A marine invertebrate with a central disk and five radiating arms.",
+      "hints": [
+        "A marine invertebrate with a central disk and five radiating arms.",
+        "Clings to tidal pool rocks and ocean floors with tiny suction tube feet.",
+        "Possesses the extraordinary biological ability to regenerate lost limbs.",
+        "Resembles a five-pointed celestial star resting beneath ocean swells.",
+        "An 8-letter marine creature starting with 'S' and ending with 'H'."
+      ]
+    },
+    {
+      "word": "WOODLAND",
+      "description": "Land covered with trees and undergrowth forming a forest biome.",
+      "hints": [
+        "Land covered with trees and undergrowth forming a forest biome.",
+        "Teeming with singing birds, foraging squirrels, and playful woodland critters.",
+        "Crisp pine needles and fallen leaves carpet the soft earthen trails.",
+        "The natural verdant sanctuary where Whack-A-Word-Ham adventures unfold.",
+        "An 8-letter forest realm starting with 'W' and ending with 'D'."
+      ]
+    },
+    {
+      "word": "DINOSAUR",
+      "description": "An ancient prehistoric reptile that roamed the earth in the Mesozoic.",
+      "hints": [
+        "An ancient prehistoric reptile that roamed the earth in the Mesozoic.",
+        "Ranged from gentle towering sauropods to ferocious bipedal theropods.",
+        "Studied through fossilized bones, footprints, and petrified teeth in museums.",
+        "Ruled the ancient landscapes millions of years before early humankind.",
+        "An 8-letter prehistoric beast starting with 'D' and ending with 'R'."
+      ]
+    },
+    {
+      "word": "SANDWICH",
+      "description": "Two slices of bread enclosing savory or sweet food fillings.",
+      "hints": [
+        "Two slices of bread enclosing savory or sweet food fillings.",
+        "Named after the 4th Earl of Sandwich who wanted convenient dining at cards.",
+        "Filled with cheese, vegetables, spreads, or deli slices for lunch.",
+        "Often cut diagonally into triangles and packed into picnic lunchboxes.",
+        "An 8-letter meal starting with 'S' and ending with 'H'."
+      ]
+    },
+    {
+      "word": "CHIPMUNK",
+      "description": "A striped lively ground squirrel that stuffs its cheek pouches.",
+      "hints": [
+        "A striped lively ground squirrel that stuffs its cheek pouches.",
+        "An everyday concept or woodland item: striped.",
+        "This word is 8 letters long with vowels: I, U.",
+        "The word concludes with the letter 'K'.",
+        "Starts with 'C' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "CHESTNUT",
+      "description": "A shiny brown edible nut enclosed in a prickly burr.",
+      "hints": [
+        "A shiny brown edible nut enclosed in a prickly burr.",
+        "An everyday concept or woodland item: shiny.",
+        "This word is 8 letters long with vowels: E, U.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'C' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "WOODPECK",
+      "description": "A bird with a chisel-like bill that drums on tree trunks.",
+      "hints": [
+        "A bird with a chisel-like bill that drums on tree trunks.",
+        "An everyday concept or woodland item: bird.",
+        "This word is 8 letters long with vowels: E, O.",
+        "The word concludes with the letter 'K'.",
+        "Starts with 'W' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "PINEWOOD",
+      "description": "A fragrant forest composed predominantly of pine trees.",
+      "hints": [
+        "A fragrant forest composed predominantly of pine trees.",
+        "An everyday concept or woodland item: fragrant.",
+        "This word is 8 letters long with vowels: E, I, O.",
+        "The word concludes with the letter 'D'.",
+        "Starts with 'P' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "WILDLIFE",
+      "description": "Wild animals, birds, and insects living in natural habitats.",
+      "hints": [
+        "Wild animals, birds, and insects living in natural habitats.",
+        "An everyday concept or woodland item: animals,.",
+        "This word is 8 letters long with vowels: E, I.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'W' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "HEDGEHOG",
+      "description": "A small nocturnal spiny mammal that curls into a prickly ball.",
+      "hints": [
+        "A small nocturnal spiny mammal that curls into a prickly ball.",
+        "An everyday concept or woodland item: small.",
+        "This word is 8 letters long with vowels: E, O.",
+        "The word concludes with the letter 'G'.",
+        "Starts with 'H' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "WILDNESS",
+      "description": "The state of being untamed, free, and untouched by humans.",
+      "hints": [
+        "The state of being untamed, free, and untouched by humans.",
+        "An everyday concept or woodland item: state.",
+        "This word is 8 letters long with vowels: E, I.",
+        "The word concludes with the letter 'S'.",
+        "Starts with 'W' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "TWILIGHT",
+      "description": "The soft glowing light from the sky between sunset and night.",
+      "hints": [
+        "The soft glowing light from the sky between sunset and night.",
+        "An everyday concept or woodland item: soft.",
+        "This word is 8 letters long with vowels: I.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'T' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "RUSTLING",
+      "description": "The gentle crackling sound made by dry leaves brushing together.",
+      "hints": [
+        "The gentle crackling sound made by dry leaves brushing together.",
+        "An everyday concept or woodland item: gentle.",
+        "This word is 8 letters long with vowels: I, U.",
+        "The word concludes with the letter 'G'.",
+        "Starts with 'R' and ends with 'G'."
+      ]
+    }
+  ],
+  "9": [
+    {
+      "word": "ADVENTURE",
+      "description": "An exciting undertaking fraught with risk and memorable encounters.",
+      "hints": [
+        "An exciting undertaking fraught with risk and memorable encounters.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'A'.",
+        "Spelled with 9 letters, starts with 'A' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "LABYRINTH",
+      "description": "A bewildering network of twisting passageways designed to disorient.",
+      "hints": [
+        "A bewildering network of twisting passageways designed to disorient.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'L'.",
+        "Spelled with 9 letters, starts with 'L' and ends with 'H'."
+      ]
+    },
+    {
+      "word": "STARLIGHT",
+      "description": "The ancient silvery gleam cast by distant celestial spheres.",
+      "hints": [
+        "The ancient silvery gleam cast by distant celestial spheres.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'S'.",
+        "Spelled with 9 letters, starts with 'S' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "WONDERFUL",
+      "description": "Inspiring a feeling of delightful admiration and pure marvel.",
+      "hints": [
+        "Inspiring a feeling of delightful admiration and pure marvel.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'W'.",
+        "Spelled with 9 letters, starts with 'W' and ends with 'L'."
+      ]
+    },
+    {
+      "word": "MOONSHINE",
+      "description": "The gentle nocturnal illumination cast down by earth's natural satellite.",
+      "hints": [
+        "The gentle nocturnal illumination cast down by earth's natural satellite.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'M'.",
+        "Spelled with 9 letters, starts with 'M' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "FIREWORKS",
+      "description": "Spectacular pyrotechnic explosions painting the night with vivid sparks.",
+      "hints": [
+        "Spectacular pyrotechnic explosions painting the night with vivid sparks.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'F'.",
+        "Spelled with 9 letters, starts with 'F' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "CELESTIAL",
+      "description": "Belonging to the serene heights of the heavens and outer skies.",
+      "hints": [
+        "Belonging to the serene heights of the heavens and outer skies.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'C'.",
+        "Spelled with 9 letters, starts with 'C' and ends with 'L'."
+      ]
+    },
+    {
+      "word": "GLADIATOR",
+      "description": "An arena combatant fighting with blade and shield for public acclaim.",
+      "hints": [
+        "An arena combatant fighting with blade and shield for public acclaim.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'G'.",
+        "Spelled with 9 letters, starts with 'G' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "DISCOVERY",
+      "description": "The electrifying revelation of something previously unknown to the world.",
+      "hints": [
+        "The electrifying revelation of something previously unknown to the world.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'D'.",
+        "Spelled with 9 letters, starts with 'D' and ends with 'Y'."
+      ]
+    },
+    {
+      "word": "LIGHTNING",
+      "description": "A blinding jagged electrical bolt striking between cloud and ground.",
+      "hints": [
+        "A blinding jagged electrical bolt striking between cloud and ground.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'L'.",
+        "Spelled with 9 letters, starts with 'L' and ends with 'G'."
+      ]
+    },
+    {
+      "word": "CONQUEROR",
+      "description": "A triumphant leader establishing dominion over distant realms.",
+      "hints": [
+        "A triumphant leader establishing dominion over distant realms.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'C'.",
+        "Spelled with 9 letters, starts with 'C' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "BRILLIANT",
+      "description": "Possessing exceptional intellectual genius or sparkling with bright radiance.",
+      "hints": [
+        "Possessing exceptional intellectual genius or sparkling with bright radiance.",
+        "A recognized 9-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 9 letters, beginning with the letter 'B'.",
+        "Spelled with 9 letters, starts with 'B' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "SNOWFLAKE",
+      "description": "An individual crystal of fallen snow displaying hexagonal symmetry.",
+      "hints": [
+        "An individual crystal of fallen snow displaying hexagonal symmetry.",
+        "Drifts gently from winter storm clouds like delicate white lace.",
+        "No two intricate dendritic patterns are ever identical in nature.",
+        "Melts upon warm fingertips into clear droplets of pure water.",
+        "A 9-letter winter crystal starting with 'S' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "PINEAPPLE",
+      "description": "A tropical composite fruit with spiky leaves and sweet golden pulp.",
+      "hints": [
+        "A tropical composite fruit with spiky leaves and sweet golden pulp.",
+        "Crowned with a rosette of stiff pointed green leaves like a royal headpiece.",
+        "Features a textured diamond-patterned rind and juicy tangy golden interior.",
+        "A worldwide symbol of hospitality, warmth, and tropical refreshment.",
+        "A 9-letter tropical fruit starting with 'P' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "ASTRONAUT",
+      "description": "A trained spacefarer who travels and conducts science in orbit.",
+      "hints": [
+        "A trained spacefarer who travels and conducts science in orbit.",
+        "Wears pressurized suits with reflective gold visors for spacewalks.",
+        "Experiences weightlessness aboard the International Space Station.",
+        "Floats through zero gravity looking down upon our blue marble Earth.",
+        "A 9-letter spacefarer starting with 'A' and ending with 'T'."
+      ]
+    },
+    {
+      "word": "JELLYFISH",
+      "description": "A translucent marine invertebrate with gelatinous bell and tentacles.",
+      "hints": [
+        "A translucent marine invertebrate with gelatinous bell and tentacles.",
+        "Pulses rhythmically through ocean swells like an ethereal aquatic umbrella.",
+        "Composed almost entirely of water with no brain, bones, or heart.",
+        "Some species glow with mesmerizing bioluminescent colors in the dark deep.",
+        "A 9-letter sea creature starting with 'J' and ending with 'H'."
+      ]
+    },
+    {
+      "word": "DRAGONFLY",
+      "description": "An aerial predator insect with long slender body and four wings.",
+      "hints": [
+        "An aerial predator insect with long slender body and four wings.",
+        "Darts with lightning agility and hovers stationary above quiet ponds.",
+        "Features huge compound eyes offering an almost panoramic 360-degree field of view.",
+        "Gleams with iridescent metallic emerald and sapphire hues in the sun.",
+        "A 9-letter winged insect starting with 'D' and ending with 'Y'."
+      ]
+    },
+    {
+      "word": "CHOCOLATE",
+      "description": "A decadent sweet confection prepared from roasted cacao beans.",
+      "hints": [
+        "A decadent sweet confection prepared from roasted cacao beans.",
+        "Melted into creamy fondues, molded into rich bars, or poured into warm cups.",
+        "Available in rich dark, creamy milk, and sweet white varieties.",
+        "A universally cherished treat celebrating festivities and birthdays.",
+        "A 9-letter confection starting with 'C' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "TELESCOPE",
+      "description": "An optical instrument designed to observe distant celestial objects.",
+      "hints": [
+        "An optical instrument designed to observe distant celestial objects.",
+        "Fitted with curved lenses and mirrors to collect and focus starlight.",
+        "Reveals cratered lunar plains, the rings of Saturn, and spiral galaxies.",
+        "Stationed on high mountaintop observatories or launched into deep orbit.",
+        "A 9-letter stargazer tool starting with 'T' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "WOODCHUCK",
+      "description": "A stout burrowing rodent, also known as a groundhog.",
+      "hints": [
+        "A stout burrowing rodent, also known as a groundhog.",
+        "An everyday concept or woodland item: stout.",
+        "This word is 9 letters long with vowels: O, U.",
+        "The word concludes with the letter 'K'.",
+        "Starts with 'W' and ends with 'K'."
+      ]
+    },
+    {
+      "word": "BLACKBIRD",
+      "description": "A dark thrush with a melodious song heard in evening woods.",
+      "hints": [
+        "A dark thrush with a melodious song heard in evening woods.",
+        "An everyday concept or woodland item: dark.",
+        "This word is 9 letters long with vowels: A, I.",
+        "The word concludes with the letter 'D'.",
+        "Starts with 'B' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "SUNFLOWER",
+      "description": "A tall plant with a massive golden ray head producing edible seeds.",
+      "hints": [
+        "A tall plant with a massive golden ray head producing edible seeds.",
+        "An everyday concept or woodland item: tall.",
+        "This word is 9 letters long with vowels: E, O, U.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'S' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "WILDWOODS",
+      "description": "Untamed natural forests untouched by civilization.",
+      "hints": [
+        "Untamed natural forests untouched by civilization.",
+        "An everyday concept or woodland item: natural.",
+        "This word is 9 letters long with vowels: I, O.",
+        "The word concludes with the letter 'S'.",
+        "Starts with 'W' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "DECIDUOUS",
+      "description": "Trees that shed their leaves annually each autumn.",
+      "hints": [
+        "Trees that shed their leaves annually each autumn.",
+        "An everyday concept or woodland item: that.",
+        "This word is 9 letters long with vowels: E, I, O, U.",
+        "The word concludes with the letter 'S'.",
+        "Starts with 'D' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "ECOSYSTEM",
+      "description": "A biological community of interacting organisms and their environment.",
+      "hints": [
+        "A biological community of interacting organisms and their environment.",
+        "An everyday concept or woodland item: biological.",
+        "This word is 9 letters long with vowels: E, O, Y.",
+        "The word concludes with the letter 'M'.",
+        "Starts with 'E' and ends with 'M'."
+      ]
+    },
+    {
+      "word": "BOTANICAL",
+      "description": "Relating to the scientific study and appreciation of plants.",
+      "hints": [
+        "Relating to the scientific study and appreciation of plants.",
+        "An everyday concept or woodland item: to.",
+        "This word is 9 letters long with vowels: A, I, O.",
+        "The word concludes with the letter 'L'.",
+        "Starts with 'B' and ends with 'L'."
+      ]
+    },
+    {
+      "word": "LANDSCAPE",
+      "description": "All visible features of an area of land, often picturesque.",
+      "hints": [
+        "All visible features of an area of land, often picturesque.",
+        "An everyday concept or woodland item: visible.",
+        "This word is 9 letters long with vowels: A, E.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'L' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "EARTHWORM",
+      "description": "A burrowing segmented worm that enriches and aerates the forest soil.",
+      "hints": [
+        "A burrowing segmented worm that enriches and aerates the forest soil.",
+        "An everyday concept or woodland item: burrowing.",
+        "This word is 9 letters long with vowels: A, E, O.",
+        "The word concludes with the letter 'M'.",
+        "Starts with 'E' and ends with 'M'."
+      ]
+    },
+    {
+      "word": "MOSSGROWN",
+      "description": "Covered or overgrown with soft velvety green woodland moss.",
+      "hints": [
+        "Covered or overgrown with soft velvety green woodland moss.",
+        "An everyday concept or woodland item: or.",
+        "This word is 9 letters long with vowels: O.",
+        "The word concludes with the letter 'N'.",
+        "Starts with 'M' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "HONEYCOMB",
+      "description": "A hexagonal wax structure made by bees to store golden honey.",
+      "hints": [
+        "A hexagonal wax structure made by bees to store golden honey.",
+        "An everyday concept or woodland item: hexagonal.",
+        "This word is 9 letters long with vowels: E, O, Y.",
+        "The word concludes with the letter 'B'.",
+        "Starts with 'H' and ends with 'B'."
+      ]
+    },
+    {
+      "word": "BUTTERFLY",
+      "description": "An insect with four broad wings patterned with brilliant colors.",
+      "hints": [
+        "An insect with four broad wings patterned with brilliant colors.",
+        "An everyday concept or woodland item: insect.",
+        "This word is 9 letters long with vowels: E, U, Y.",
+        "The word concludes with the letter 'Y'.",
+        "Starts with 'B' and ends with 'Y'."
+      ]
+    }
+  ],
+  "10": [
+    {
+      "word": "COURAGEOUS",
+      "description": "Demonstrating steadfast bravery when facing formidable odds or terror.",
+      "hints": [
+        "Demonstrating steadfast bravery when facing formidable odds or terror.",
+        "A recognized 10-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 10 letters, beginning with the letter 'C'.",
+        "Spelled with 10 letters, starts with 'C' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "EXPERIENCE",
+      "description": "Knowledge and practical wisdom gathered through living and doing.",
+      "hints": [
+        "Knowledge and practical wisdom gathered through living and doing.",
+        "A recognized 10-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 10 letters, beginning with the letter 'E'.",
+        "Spelled with 10 letters, starts with 'E' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "TOURNAMENT",
+      "description": "A grand gathering where competitors vie through rounds for highest honor.",
+      "hints": [
+        "A grand gathering where competitors vie through rounds for highest honor.",
+        "A recognized 10-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 10 letters, beginning with the letter 'T'.",
+        "Spelled with 10 letters, starts with 'T' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "BLACKSMITH",
+      "description": "A skilled metal artisan hammering red-hot iron upon a sturdy anvil.",
+      "hints": [
+        "A skilled metal artisan hammering red-hot iron upon a sturdy anvil.",
+        "A recognized 10-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 10 letters, beginning with the letter 'B'.",
+        "Spelled with 10 letters, starts with 'B' and ends with 'H'."
+      ]
+    },
+    {
+      "word": "WONDERLAND",
+      "description": "A marvelous realm filled with whimsical enchantments and curiosities.",
+      "hints": [
+        "A marvelous realm filled with whimsical enchantments and curiosities.",
+        "A recognized 10-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 10 letters, beginning with the letter 'W'.",
+        "Spelled with 10 letters, starts with 'W' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "REVOLUTION",
+      "description": "A momentous upheaval overturning old regimes to forge a new order.",
+      "hints": [
+        "A momentous upheaval overturning old regimes to forge a new order.",
+        "A recognized 10-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 10 letters, beginning with the letter 'R'.",
+        "Spelled with 10 letters, starts with 'R' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "SPELLBOUND",
+      "description": "Held completely enthralled as though under the sway of magic.",
+      "hints": [
+        "Held completely enthralled as though under the sway of magic.",
+        "A recognized 10-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 10 letters, beginning with the letter 'S'.",
+        "Spelled with 10 letters, starts with 'S' and ends with 'D'."
+      ]
+    },
+    {
+      "word": "EXPEDITION",
+      "description": "A bold organized journey launched into uncharted lands for a noble quest.",
+      "hints": [
+        "A bold organized journey launched into uncharted lands for a noble quest.",
+        "A recognized 10-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 10 letters, beginning with the letter 'E'.",
+        "Spelled with 10 letters, starts with 'E' and ends with 'N'."
+      ]
+    },
+    {
+      "word": "MYSTERIOUS",
+      "description": "Awakening curiosity through secret qualities that defy easy explanation.",
+      "hints": [
+        "Awakening curiosity through secret qualities that defy easy explanation.",
+        "A recognized 10-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 10 letters, beginning with the letter 'M'.",
+        "Spelled with 10 letters, starts with 'M' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "INVINCIBLE",
+      "description": "Too powerful and resolute to be conquered or brought down in defeat.",
+      "hints": [
+        "Too powerful and resolute to be conquered or brought down in defeat.",
+        "A recognized 10-letter word closely connected to this concept.",
+        "Represents an essential idea, entity, or action in everyday language.",
+        "Contains 10 letters, beginning with the letter 'I'.",
+        "Spelled with 10 letters, starts with 'I' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "STRAWBERRY",
+      "description": "A bright red heart-shaped sweet berry studded with tiny seeds.",
+      "hints": [
+        "A bright red heart-shaped sweet berry studded with tiny seeds.",
+        "One of the few fruits that famously wears its seeds on its outer skin.",
+        "Harvested in sunny springtime gardens and enjoyed with cream.",
+        "Packed with sweet fragrance and refreshing tangy berry flavor.",
+        "A 10-letter sweet berry starting with 'S' and ending with 'Y'."
+      ]
+    },
+    {
+      "word": "PLAYGROUND",
+      "description": "An outdoor area equipped with swings, slides, and climbing frames.",
+      "hints": [
+        "An outdoor area equipped with swings, slides, and climbing frames.",
+        "Filled with happy laughter, running sneakers, and spirited games of tag.",
+        "Features seesaws, sandbox castles, and monkey bar jungle gyms.",
+        "Where neighborhood children gather to forge lifelong friendships.",
+        "A 10-letter play area starting with 'P' and ending with 'D'."
+      ]
+    },
+    {
+      "word": "FRIENDSHIP",
+      "description": "A cherished bond of mutual affection, trust, and shared support.",
+      "hints": [
+        "A cherished bond of mutual affection, trust, and shared support.",
+        "Built upon kindness, shared adventures, honest listening, and loyalty.",
+        "Makes joyful times twice as bright and heavy burdens half as sorrowful.",
+        "Celebrated with high-fives, cheerful letters, and warm companion smiles.",
+        "A 10-letter human bond starting with 'F' and ending with 'P'."
+      ]
+    },
+    {
+      "word": "PEPPERMINT",
+      "description": "A pungent aromatic mint herb prized for its cool, crisp flavor.",
+      "hints": [
+        "A pungent aromatic mint herb prized for its cool, crisp flavor.",
+        "Used to flavor festive candy canes, herbal teas, and refreshing treats.",
+        "Produces an invigorating sensation of frosty cool freshness on the tongue.",
+        "Distilled into aromatic essential oils with bright green serrated leaves.",
+        "A 10-letter minty herb starting with 'P' and ending with 'T'."
+      ]
+    },
+    {
+      "word": "BASKETBALL",
+      "description": "A dynamic team sport played by shooting a leather ball through a hoop.",
+      "hints": [
+        "A dynamic team sport played by shooting a leather ball through a hoop.",
+        "Played on polished hardwood courts with dribbles, passes, and dunks.",
+        "Invented by James Naismith using peach baskets suspended on a rail.",
+        "Exciting fast-paced sport with buzzer-beating three-point shots.",
+        "A 10-letter team sport starting with 'B' and ending with 'L'."
+      ]
+    },
+    {
+      "word": "WILDERNESS",
+      "description": "An uncultivated, uninhabited, and hospitable wild region.",
+      "hints": [
+        "An uncultivated, uninhabited, and hospitable wild region.",
+        "An everyday concept or woodland item: uncultivated,.",
+        "This word is 10 letters long with vowels: E, I.",
+        "The word concludes with the letter 'S'.",
+        "Starts with 'W' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "PINEFOREST",
+      "description": "A sweeping woodland dominated by fragrant pine conifers.",
+      "hints": [
+        "A sweeping woodland dominated by fragrant pine conifers.",
+        "An everyday concept or woodland item: sweeping.",
+        "This word is 10 letters long with vowels: E, I, O.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'P' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "WOODCUTTER",
+      "description": "A craftsperson who fells timber and prepares logs for fires.",
+      "hints": [
+        "A craftsperson who fells timber and prepares logs for fires.",
+        "An everyday concept or woodland item: craftsperson.",
+        "This word is 10 letters long with vowels: E, O, U.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'W' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "HIBERNATOR",
+      "description": "An animal that spends the winter in a dormant state.",
+      "hints": [
+        "An animal that spends the winter in a dormant state.",
+        "An everyday concept or woodland item: animal.",
+        "This word is 10 letters long with vowels: A, E, I, O.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'H' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "GREENHOUSE",
+      "description": "A glass building where delicate plants are nurtured year-round.",
+      "hints": [
+        "A glass building where delicate plants are nurtured year-round.",
+        "An everyday concept or woodland item: glass.",
+        "This word is 10 letters long with vowels: E, O, U.",
+        "The word concludes with the letter 'E'.",
+        "Starts with 'G' and ends with 'E'."
+      ]
+    },
+    {
+      "word": "CAMPGROUND",
+      "description": "A scenic outdoor site designated for pitching tents under stars.",
+      "hints": [
+        "A scenic outdoor site designated for pitching tents under stars.",
+        "An everyday concept or woodland item: scenic.",
+        "This word is 10 letters long with vowels: A, O, U.",
+        "The word concludes with the letter 'D'.",
+        "Starts with 'C' and ends with 'D'."
+      ]
+    }
+  ],
+  "10+": [
+    {
+      "word": "CELEBRATION",
+      "description": "A festive gathering marking an important achievement or jubilee.",
+      "hints": [
+        "A festive gathering marking an important achievement or jubilee.",
+        "Filled with colorful confetti, joyful songs, hearty feasts, and laughter.",
+        "Honors graduations, milestones, anniversaries, and word puzzle victories.",
+        "Brings families and communities together in cheerful unity.",
+        "An 11-letter jubilee starting with 'C' and ending with 'N'."
+      ]
+    },
+    {
+      "word": "MASTERPIECE",
+      "description": "A work of outstanding artistry, skill, or extraordinary craftsmanship.",
+      "hints": [
+        "A work of outstanding artistry, skill, or extraordinary craftsmanship.",
+        "The crowning artistic achievement of a painter, sculptor, or composer.",
+        "Preserved with reverent care in world-famous art museums.",
+        "Exhibits sublime technique, emotional depth, and timeless brilliance.",
+        "An 11-letter artistic triumph starting with 'M' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "NIGHTINGALE",
+      "description": "A small secretive passerine songbird renowned for its melodic song.",
+      "hints": [
+        "A small secretive passerine songbird renowned for its melodic song.",
+        "Sings rich, flute-like nocturnal serenades from dense woodland thickets.",
+        "A timeless muse for romantic poets, classical musicians, and dreamers.",
+        "Famous for its virtuoso trills, whistles, and expressive vocal range.",
+        "An 11-letter songbird starting with 'N' and ending with 'E'."
+      ]
+    },
+    {
+      "word": "ENCHANTMENT",
+      "description": "A magical spell or captivating state of wonder and delight.",
+      "hints": [
+        "A magical spell or captivating state of wonder and delight.",
+        "Casts a spell of ethereal beauty over storybook castles and groves.",
+        "Leaves curious observers completely spellbound and enchanted.",
+        "Found in fairy tales where wishes come true under celestial starlight.",
+        "An 11-letter magical wonder starting with 'E' and ending with 'T'."
+      ]
+    },
+    {
+      "word": "CONSTELLATION",
+      "description": "A recognized pattern of stars forming a mythological figure in the sky.",
+      "hints": [
+        "A recognized pattern of stars forming a mythological figure in the sky.",
+        "Traced across dark midnight skies by ancient seafaring navigators.",
+        "Examples include Orion, Ursa Major, Cassiopeia, and Pegasus.",
+        "Connects distant twinkling stars into imaginative cosmic celestial maps.",
+        "A 13-letter star pattern starting with 'C' and ending with 'N'."
+      ]
+    },
+    {
+      "word": "EXTRAORDINARY",
+      "description": "Far beyond what is ordinary, customary, or standard; exceptional.",
+      "hints": [
+        "Far beyond what is ordinary, customary, or standard; exceptional.",
+        "Describes rare natural phenomena, heroic feats, and genius minds.",
+        "Inspires boundless admiration and astonishment from onlookers.",
+        "Something that surpasses all typical expectations and boundaries.",
+        "A 13-letter word starting with 'E' and ending with 'Y'."
+      ]
+    },
+    {
+      "word": "INSPIRATION",
+      "description": "The process of being mentally stimulated to feel or do something creative.",
+      "hints": [
+        "The process of being mentally stimulated to feel or do something creative.",
+        "Strikes like a sudden flash of brilliant light in the creative mind.",
+        "Motivates artists, writers, inventors, and explorers to achieve greatness.",
+        "Derived from nature, heartfelt music, heroic stories, and perseverance.",
+        "An 11-letter creative spark starting with 'I' and ending with 'N'."
+      ]
+    },
+    {
+      "word": "BREATHTAKING",
+      "description": "Astonishing or awe-inspiring to the point of leaving one breathless.",
+      "hints": [
+        "Astonishing or awe-inspiring to the point of leaving one breathless.",
+        "Describes majestic mountain panoramas, golden sunsets, and grand vistas.",
+        "Stops wandering travelers in their tracks with overwhelming wonder.",
+        "A sublime sensory experience that leaves a lasting joyful impression.",
+        "A 12-letter awe word starting with 'B' and ending with 'G'."
+      ]
+    },
+    {
+      "word": "ENVIRONMENT",
+      "description": "The surrounding physical conditions in which plants and critters live.",
+      "hints": [
+        "The surrounding physical conditions in which plants and critters live.",
+        "An everyday concept or woodland item: surrounding.",
+        "This word is 11 letters long with vowels: E, I, O.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'E' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "CONIFEROUS",
+      "description": "Pertaining to cone-bearing evergreen trees like pines and firs.",
+      "hints": [
+        "Pertaining to cone-bearing evergreen trees like pines and firs.",
+        "An everyday concept or woodland item: to.",
+        "This word is 10 letters long with vowels: E, I, O, U.",
+        "The word concludes with the letter 'S'.",
+        "Starts with 'C' and ends with 'S'."
+      ]
+    },
+    {
+      "word": "CATERPILLAR",
+      "description": "The worm-like feeding larva of a butterfly or moth.",
+      "hints": [
+        "The worm-like feeding larva of a butterfly or moth.",
+        "An everyday concept or woodland item: worm-like.",
+        "This word is 11 letters long with vowels: A, E, I.",
+        "The word concludes with the letter 'R'.",
+        "Starts with 'C' and ends with 'R'."
+      ]
+    },
+    {
+      "word": "MEADOWSWEET",
+      "description": "A fragrant wetland plant bearing creamy white sweet blossoms.",
+      "hints": [
+        "A fragrant wetland plant bearing creamy white sweet blossoms.",
+        "An everyday concept or woodland item: fragrant.",
+        "This word is 11 letters long with vowels: A, E, O.",
+        "The word concludes with the letter 'T'.",
+        "Starts with 'M' and ends with 'T'."
+      ]
+    },
+    {
+      "word": "WOODLANDERS",
+      "description": "Inhabitants or creatures dwelling within the deep green woods.",
+      "hints": [
+        "Inhabitants or creatures dwelling within the deep green woods.",
+        "An everyday concept or woodland item: or.",
+        "This word is 11 letters long with vowels: A, E, O.",
+        "The word concludes with the letter 'S'.",
+        "Starts with 'W' and ends with 'S'."
+      ]
+    }
+  ]
+}

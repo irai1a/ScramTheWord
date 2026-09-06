@@ -1,0 +1,1480 @@
+#:kivy 2.3.0
+#:import dp kivy.metrics.dp
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+MDScreenManager:
+    id: screen_manager
+    transition: NoTransition()
+
+    MainMenuScreen:
+        name: "main_menu"
+
+    MapScreen:
+        name: "map_screen"
+
+    StageModeScreen:
+        name: "stage_mode"
+
+    AvatarShopScreen:
+        name: "avatar_shop"
+
+    MultiplayerScreen:
+        name: "multiplayer"
+
+
+<WoodPlankButton>:
+    size_hint_x: 1
+    size_hint_y: None
+    height: dp(60)
+    opacity: 0.55 if (root.is_disabled or root.disabled) else 1.0
+
+    # 1. High-Resolution Wood Plank Texture
+    Image:
+        source: root.pressed_bg if (root.state == "down" and not root.is_disabled and not root.disabled) else root.normal_bg
+        allow_stretch: True
+        keep_ratio: False
+        size_hint: (1, 1)
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+    # 2. Content Row: Icon + Embossed Wood Typography with Tactile Dip
+    MDBoxLayout:
+        adaptive_size: True
+        spacing: dp(10)
+        pos_hint: {"center_x": 0.46 if root.badge_visible else 0.5, "center_y": 0.53 if (root.state != "down" or root.is_disabled or root.disabled) else 0.47}
+
+        MDIcon:
+            icon: root.button_icon
+            theme_icon_color: "Custom"
+            icon_color: root.icon_color
+            font_size: "24sp"
+            pos_hint: {"center_y": 0.5}
+
+        MDLabel:
+            text: root.button_text
+            bold: True
+            font_style: "Title"
+            role: "medium"
+            theme_text_color: "Custom"
+            text_color: root.text_color
+            adaptive_size: True
+            pos_hint: {"center_y": 0.5}
+
+    # 3. Floating Brass/Red "Coming Soon" Badge
+    MDCard:
+        disabled: True
+        opacity: 1 if root.badge_visible else 0
+        style: "filled"
+        theme_bg_color: "Custom"
+        md_bg_color: [0.78, 0.22, 0.16, 0.95]
+        adaptive_size: True
+        padding: [dp(8), dp(3), dp(8), dp(3)]
+        radius: [dp(10), dp(10), dp(10), dp(10)]
+        pos_hint: {"right": 0.94, "center_y": 0.53 if (root.state != "down" or root.is_disabled) else 0.47}
+
+        MDLabel:
+            text: root.badge_text
+            bold: True
+            font_style: "Label"
+            role: "small"
+            theme_text_color: "Custom"
+            text_color: [1.0, 1.0, 1.0, 1.0]
+            adaptive_size: True
+
+
+<WoodHintButton>:
+    size_hint: None, None
+    size: [dp(114), dp(36)]
+
+    # Wood Base Tag Card - Always highlighted warm brown bark pill
+    MDCard:
+        id: hint_tag_card
+        style: "filled"
+        theme_bg_color: "Custom"
+        md_bg_color: [0.22, 0.14, 0.08, 0.98] if root.is_pressed else [0.33, 0.22, 0.13, 1.0]
+        line_color: [0.55, 0.38, 0.22, 0.95]
+        radius: [dp(12), dp(12), dp(12), dp(12)]
+        padding: [dp(8), dp(4), dp(8), dp(4)]
+        size_hint: (1, 1)
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        MDBoxLayout:
+            adaptive_size: True
+            spacing: dp(5)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            MDIcon:
+                icon: "lightbulb-on"
+                font_size: "18sp"
+                theme_icon_color: "Custom"
+                icon_color: [1.0, 0.86, 0.22, 1.0]
+                pos_hint: {"center_y": 0.5}
+
+            MDLabel:
+                text: root.button_text
+                bold: True
+                adaptive_size: True
+                font_style: "Label"
+                role: "large"
+                theme_text_color: "Custom"
+                text_color: [1.0, 1.0, 1.0, 1.0]
+                pos_hint: {"center_y": 0.5}
+
+    # Floating Red Notification Badge (Circle with "1") - Only visible when wrong word submitted
+    MDCard:
+        id: hint_notif_badge
+        disabled: True
+        style: "filled"
+        theme_bg_color: "Custom"
+        md_bg_color: [0.92, 0.18, 0.18, 1.0]
+        line_color: [1.0, 1.0, 1.0, 0.95]
+        radius: [dp(9), dp(9), dp(9), dp(9)]
+        size_hint: None, None
+        size: [dp(18), dp(18)]
+        pos_hint: {"right": 1.05, "top": 1.15}
+        opacity: 1.0 if root.has_badge else 0.0
+
+        MDLabel:
+            text: root.badge_text
+            bold: True
+            halign: "center"
+            valign: "center"
+            font_style: "Label"
+            role: "small"
+            font_size: "10sp"
+            theme_text_color: "Custom"
+            text_color: [1.0, 1.0, 1.0, 1.0]
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+
+<StageNodeButton>:
+    size_hint: None, None
+    size: [root.node_diameter, root.node_diameter]
+
+    # Outer Glow Ring for Active node
+    MDCard:
+        id: outer_glow
+        style: "filled"
+        theme_bg_color: "Custom"
+        md_bg_color: [1.0, 0.72, 0.18, 0.36] if root.node_state == "active" else [0, 0, 0, 0]
+        size_hint: None, None
+        size: [root.node_diameter + dp(14), root.node_diameter + dp(14)]
+        radius: [(root.node_diameter + dp(14)) / 2] * 4
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        opacity: 1.0 if root.node_state == "active" else 0.0
+
+    # Main Circular Node Card
+    MDCard:
+        id: node_card
+        style: "filled"
+        theme_bg_color: "Custom"
+        md_bg_color: root.node_bg_color
+        line_color: root.node_border_color
+        line_width: dp(3) if root.is_milestone else (dp(2.5) if root.node_state == "active" else dp(1.8))
+        size_hint: (1, 1)
+        radius: [root.node_diameter / 2] * 4
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        MDRelativeLayout:
+            size_hint: (1, 1)
+
+            # Milestone Crown / Crest Icon for Stage 10, 20, 30
+            MDIcon:
+                icon: "crown" if root.stage_number == 30 else ("star-circle" if root.is_milestone else "")
+                font_size: "18sp" if root.is_milestone else "0sp"
+                theme_icon_color: "Custom"
+                icon_color: [1.0, 0.88, 0.25, 1.0] if root.node_state in ["active", "completed"] else [0.60, 0.55, 0.50, 0.50]
+                pos_hint: {"center_x": 0.5, "center_y": 0.74}
+                opacity: 1.0 if root.is_milestone else 0.0
+
+            # Stage Number Label
+            MDLabel:
+                text: str(root.stage_number)
+                bold: True
+                halign: "center"
+                valign: "center"
+                font_style: "Title" if root.is_milestone else "Headline"
+                role: "medium" if root.is_milestone else "small"
+                theme_text_color: "Custom"
+                text_color: root.node_text_color
+                pos_hint: {"center_x": 0.5, "center_y": 0.44 if root.is_milestone else 0.50}
+
+            # Completed Checkmark Badge (for node < current_stage)
+            MDIcon:
+                icon: "check-bold"
+                font_size: "13sp"
+                theme_icon_color: "Custom"
+                icon_color: [1.0, 1.0, 1.0, 0.95]
+                pos_hint: {"center_x": 0.5, "center_y": 0.20 if root.is_milestone else 0.22}
+                opacity: 1.0 if (root.node_state == "completed" and not root.is_milestone) else 0.0
+
+            # Locked Padlock Icon (for node > current_stage)
+            MDIcon:
+                icon: "lock"
+                font_size: "13sp"
+                theme_icon_color: "Custom"
+                icon_color: [0.70, 0.65, 0.60, 0.70]
+                pos_hint: {"center_x": 0.5, "center_y": 0.20 if root.is_milestone else 0.22}
+                opacity: 1.0 if (root.node_state == "locked" and not root.is_milestone) else 0.0
+
+
+<MapScreen>:
+    md_bg_color: [0.08, 0.06, 0.04, 1.0]
+
+    MDRelativeLayout:
+        size_hint: (1, 1)
+
+        # Forest Background Artwork
+        FitImage:
+            source: "assets/main_menu_bg.png"
+            size_hint: (1, 1)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        # Forest Vignette Shadow Tint
+        Widget:
+            size_hint: (1, 1)
+            canvas:
+                Color:
+                    rgba: [0.08, 0.06, 0.04, 0.76]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        # Main Column: Header + Scrollable Map
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint: (1, 1)
+            spacing: 0
+
+            # Top Navigation Bar
+            MDBoxLayout:
+                adaptive_height: True
+                padding: [dp(16), dp(12), dp(16), dp(10)]
+                spacing: dp(10)
+                pos_hint: {"center_x": 0.5}
+
+                # Back Button to Main Menu
+                MDIconButton:
+                    icon: "arrow-left"
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.24, 0.16, 0.10, 0.90]
+                    theme_icon_color: "Custom"
+                    icon_color: [1.0, 0.92, 0.82, 1.0]
+                    on_release: root.on_back_to_menu()
+                    pos_hint: {"center_y": 0.5}
+
+                # Title Wood Plaque
+                MDCard:
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.32, 0.20, 0.12, 0.92]
+                    adaptive_size: True
+                    radius: [dp(16), dp(16), dp(16), dp(16)]
+                    padding: [dp(14), dp(6), dp(16), dp(6)]
+                    pos_hint: {"center_y": 0.5}
+
+                    MDBoxLayout:
+                        adaptive_size: True
+                        spacing: dp(6)
+                        MDIcon:
+                            icon: "map-marker-path"
+                            theme_icon_color: "Custom"
+                            icon_color: [1.0, 0.82, 0.25, 1.0]
+                            pos_hint: {"center_y": 0.5}
+                        MDLabel:
+                            text: "STAGE MAP (1 - " + str(root.total_stages) + ")"
+                            bold: True
+                            adaptive_size: True
+                            font_style: "Label"
+                            role: "large"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 0.96, 0.90, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+                Widget:
+
+                # Coins Counter
+                MDCard:
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.22, 0.15, 0.09, 0.90]
+                    adaptive_size: True
+                    radius: [dp(16), dp(16), dp(16), dp(16)]
+                    padding: [dp(10), dp(6), dp(12), dp(6)]
+                    pos_hint: {"center_y": 0.5}
+
+                    MDBoxLayout:
+                        adaptive_size: True
+                        spacing: dp(4)
+                        MDIcon:
+                            icon: "circle-multiple"
+                            theme_icon_color: "Custom"
+                            icon_color: [1.0, 0.80, 0.15, 1.0]
+                            pos_hint: {"center_y": 0.5}
+                        MDLabel:
+                            text: "{:,}".format(root.coins_display)
+                            bold: True
+                            adaptive_size: True
+                            font_style: "Label"
+                            role: "large"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 0.94, 0.85, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+                # Settings Button
+                MDIconButton:
+                    icon: "cog"
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.24, 0.16, 0.10, 0.90]
+                    theme_icon_color: "Custom"
+                    icon_color: [1.0, 0.92, 0.82, 1.0]
+                    on_release: root.open_settings()
+                    pos_hint: {"center_y": 0.5}
+
+            # Scrollable Progression Path View
+            MDScrollView:
+                id: map_scroll
+                size_hint: (1, 1)
+                do_scroll_x: False
+                do_scroll_y: True
+                scroll_y: 0.0
+                bar_width: dp(4)
+                bar_color: [1.0, 0.82, 0.25, 0.4]
+
+                # Winding Path Float Layout
+                MDFloatLayout:
+                    id: map_path_layout
+                    size_hint: (1, None)
+                    height: dp(3200)
+
+                    # Hamster Avatar Token (Positioned over the active node)
+                    MDRelativeLayout:
+                        id: hamster_map_token
+                        size_hint: None, None
+                        size: [dp(52), dp(52)]
+                        pos_hint: {"center_x": 0.5, "center_y": 0.04}
+
+                        # Floor shadow
+                        Widget:
+                            size_hint: None, None
+                            size: [dp(34), dp(8)]
+                            pos_hint: {"center_x": 0.5, "center_y": 0.10}
+                            canvas:
+                                Color:
+                                    rgba: [0.0, 0.0, 0.0, 0.40]
+                                Ellipse:
+                                    pos: self.pos
+                                    size: self.size
+
+                        # Hamster Avatar Base
+                        Image:
+                            source: "assets/avatar_frame1.png"
+                            size_hint: (1, 1)
+                            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                            fit_mode: "contain"
+
+                        # Equipped accessory overlay
+                        Image:
+                            source: root.equipped_overlay_source
+                            size_hint: (1, 1)
+                            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                            fit_mode: "contain"
+
+
+<MainMenuScreen>:
+    md_bg_color: self.theme_cls.backgroundColor
+
+
+    MDRelativeLayout:
+        size_hint: (1, 1)
+
+        # Illustrated Whack-A-Word_Ham background artwork
+        FitImage:
+            source: "assets/main_menu_bg.png"
+            size_hint: (1, 1)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        # Foreground Content Layer
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: [dp(16), dp(16), dp(16), dp(12)]
+            spacing: dp(8)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            # Top Bar with Quick Stats & Theme Toggle (Glassmorphism Pill)
+            MDBoxLayout:
+                adaptive_height: True
+                spacing: dp(10)
+                pos_hint: {"center_x": 0.5}
+
+                # Player Level Pill
+                MDCard:
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.10, 0.12, 0.18, 0.82]
+                    adaptive_size: True
+                    radius: [dp(20), dp(20), dp(20), dp(20)]
+                    padding: [dp(12), dp(6), dp(12), dp(6)]
+
+                    MDBoxLayout:
+                        adaptive_size: True
+                        spacing: dp(6)
+                        MDIcon:
+                            icon: "shield-star"
+                            theme_icon_color: "Custom"
+                            icon_color: [1.0, 0.78, 0.1, 1.0]
+                            pos_hint: {"center_y": 0.5}
+                        MDLabel:
+                            text: "STAGE " + str(root.current_stage_display)
+                            adaptive_size: True
+                            bold: True
+                            font_style: "Label"
+                            role: "medium"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 1.0, 1.0, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+                # Coins Badge
+                MDCard:
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.10, 0.12, 0.18, 0.82]
+                    adaptive_size: True
+                    radius: [dp(20), dp(20), dp(20), dp(20)]
+                    padding: [dp(12), dp(6), dp(12), dp(6)]
+
+                    MDBoxLayout:
+                        adaptive_size: True
+                        spacing: dp(6)
+                        MDIcon:
+                            icon: "circle-multiple"
+                            theme_icon_color: "Custom"
+                            icon_color: [1.0, 0.78, 0.1, 1.0]
+                            pos_hint: {"center_y": 0.5}
+                        MDLabel:
+                            text: "{:,}".format(root.coins_display)
+                            adaptive_size: True
+                            bold: True
+                            font_style: "Label"
+                            role: "medium"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 1.0, 1.0, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+                # Spacer
+                Widget:
+
+                # Audio Settings Button (Volume Controls)
+                MDIconButton:
+                    id: btn_settings
+                    icon: "cog"
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.24, 0.16, 0.10, 0.90]
+                    theme_icon_color: "Custom"
+                    icon_color: [1.0, 0.92, 0.82, 1.0]
+                    on_release: root.open_settings()
+                    pos_hint: {"center_y": 0.5}
+
+            # Center Spacer: Showcases the Whack-A-Word-Ham title & cute hamster holding blocks
+            Widget:
+                size_hint_y: 0.48
+
+            # Wood Themed Navigation Buttons Container
+            MDBoxLayout:
+                orientation: "vertical"
+                adaptive_height: True
+                spacing: dp(10)
+                padding: [dp(18), dp(0), dp(18), dp(4)]
+                pos_hint: {"center_x": 0.5}
+
+                # Button 1: Play Stage Mode (Warm Honey Oak Plank)
+                WoodPlankButton:
+                    id: btn_stage_mode
+                    normal_bg: "assets/wood_btn_play_wide.png"
+                    pressed_bg: "assets/wood_btn_play_wide_pressed.png"
+                    button_text: "PLAY STAGE MODE"
+                    button_icon: "play-circle"
+                    height: dp(64)
+                    on_release: app.root.current = "map_screen"
+
+                # Button 2: Hamster Wardrobe (Carved Timber Plank)
+                WoodPlankButton:
+                    id: btn_avatar_shop
+                    normal_bg: "assets/wood_btn_shop_wide.png"
+                    pressed_bg: "assets/wood_btn_shop_wide_pressed.png"
+                    button_text: "HAMSTER WARDROBE"
+                    button_icon: "tshirt-crew"
+                    height: dp(58)
+                    on_release: app.root.current = "avatar_shop"
+
+                # Button 3: Multiplayer (Ranked) - Weathered Driftwood Plank
+                WoodPlankButton:
+                    id: btn_multiplayer
+                    normal_bg: "assets/wood_btn_multiplayer_wide.png"
+                    pressed_bg: "assets/wood_btn_multiplayer_wide.png"
+                    button_text: "MULTIPLAYER"
+                    button_icon: "trophy-outline"
+                    icon_color: [0.65, 0.65, 0.68, 0.85]
+                    text_color: [0.72, 0.72, 0.75, 0.85]
+                    badge_visible: True
+                    badge_text: "COMING SOON"
+                    is_disabled: True
+                    height: dp(54)
+
+            # Subtle Footer
+            MDLabel:
+                text: "Whack-A-Word_Ham • Hamster Word Adventure"
+                adaptive_height: True
+                halign: "center"
+                font_style: "Label"
+                role: "small"
+                theme_text_color: "Custom"
+                text_color: [1.0, 1.0, 1.0, 0.85]
+                pos_hint: {"center_x": 0.5}
+
+
+
+<StageModeScreen>:
+    md_bg_color: [0.08, 0.06, 0.04, 1.0]
+
+    MDRelativeLayout:
+        size_hint: (1, 1)
+
+        # Illustrated Whack-A-Word_Ham background forest artwork
+        FitImage:
+            source: "assets/main_menu_bg.png"
+            size_hint: (1, 1)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        # Woodland Twilight Vignette (soft darkening for optimal contrast with wood elements)
+        Widget:
+            size_hint: (1, 1)
+            canvas:
+                Color:
+                    rgba: [0.08, 0.06, 0.04, 0.74]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        # Foreground Content Layer
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: [dp(16), dp(16), dp(16), dp(14)]
+            spacing: dp(10)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            # Top Navigation Bar & Stats
+            MDBoxLayout:
+                adaptive_height: True
+                spacing: dp(8)
+                pos_hint: {"center_x": 0.5}
+
+                MDIconButton:
+                    icon: "arrow-left"
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.24, 0.16, 0.10, 0.90]
+                    theme_icon_color: "Custom"
+                    icon_color: [1.0, 0.92, 0.82, 1.0]
+                    on_release: root.on_back_to_map()
+                    pos_hint: {"center_y": 0.5}
+
+                # Stage Wood Plaque Pill
+                MDCard:
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.32, 0.20, 0.12, 0.92]
+                    adaptive_size: True
+                    radius: [dp(16), dp(16), dp(16), dp(16)]
+                    padding: [dp(12), dp(6), dp(14), dp(6)]
+                    pos_hint: {"center_y": 0.5}
+
+                    MDBoxLayout:
+                        adaptive_size: True
+                        spacing: dp(6)
+                        MDIcon:
+                            icon: "flag-checkered"
+                            theme_icon_color: "Custom"
+                            icon_color: [1.0, 0.82, 0.25, 1.0]
+                            pos_hint: {"center_y": 0.5}
+                        MDLabel:
+                            text: "STAGE " + str(root.current_stage_display)
+                            bold: True
+                            adaptive_size: True
+                            font_style: "Label"
+                            role: "large"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 0.96, 0.90, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+                Widget:
+
+                # Attempt Counter Wood Badge
+                MDCard:
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.22, 0.15, 0.09, 0.90]
+                    adaptive_size: True
+                    radius: [dp(16), dp(16), dp(16), dp(16)]
+                    padding: [dp(10), dp(6), dp(12), dp(6)]
+                    pos_hint: {"center_y": 0.5}
+
+                    MDBoxLayout:
+                        adaptive_size: True
+                        spacing: dp(4)
+                        MDIcon:
+                            icon: "bullseye-arrow"
+                            theme_icon_color: "Custom"
+                            icon_color: [0.95, 0.65, 0.25, 1.0]
+                            pos_hint: {"center_y": 0.5}
+                        MDLabel:
+                            text: "Try #" + str(root.attempts_count)
+                            bold: True
+                            adaptive_size: True
+                            font_style: "Label"
+                            role: "large"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 0.94, 0.85, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+                # Coins Wood Counter
+                MDCard:
+                    id: coin_badge_card
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.22, 0.15, 0.09, 0.90]
+                    adaptive_size: True
+                    radius: [dp(16), dp(16), dp(16), dp(16)]
+                    padding: [dp(10), dp(6), dp(12), dp(6)]
+                    pos_hint: {"center_y": 0.5}
+
+                    MDBoxLayout:
+                        adaptive_size: True
+                        spacing: dp(4)
+                        MDIcon:
+                            icon: "circle-multiple"
+                            theme_icon_color: "Custom"
+                            icon_color: [1.0, 0.80, 0.15, 1.0]
+                            pos_hint: {"center_y": 0.5}
+                        MDLabel:
+                            text: "{:,}".format(root.coins_display)
+                            bold: True
+                            adaptive_size: True
+                            font_style: "Label"
+                            role: "large"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 0.94, 0.85, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+            # Hamster Cheerleader Companion & Speech Bubble Card
+            MDCard:
+                id: banner_card
+                style: "filled"
+                theme_bg_color: "Custom"
+                md_bg_color: root.banner_bg_color
+                adaptive_height: True
+                radius: [dp(16), dp(16), dp(16), dp(16)]
+                padding: [dp(8), dp(6), dp(12), dp(6)]
+                pos_hint: {"center_x": 0.5}
+
+                MDBoxLayout:
+                    adaptive_height: True
+                    spacing: dp(10)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                    # Hamster Avatar Miniature
+                    MDRelativeLayout:
+                        size_hint: None, None
+                        size: [dp(64), dp(64)]
+                        pos_hint: {"center_y": 0.5}
+
+                        # Grounding floor shadow (grounded, no floating)
+                        Widget:
+                            size_hint: None, None
+                            size: [dp(44), dp(8)]
+                            pos_hint: {"center_x": 0.5, "center_y": 0.09}
+                            canvas:
+                                Color:
+                                    rgba: [0.0, 0.0, 0.0, 0.32]
+                                Ellipse:
+                                    pos: self.pos
+                                    size: self.size
+
+                        # Hamster Animated Idle Container (discrete frame cut + hop)
+                        MDRelativeLayout:
+                            id: hamster_stage_idle_container
+                            size_hint: (1.0, 1.0)
+                            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                            # Base Frame 1 - Inhale
+                            Image:
+                                source: "assets/avatar_frame1.png"
+                                size_hint: (1, 1)
+                                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                                fit_mode: "contain"
+                                opacity: root.hamster_frame1_opacity
+
+                            # Base Frame 2 - Exhale
+                            Image:
+                                source: "assets/avatar_frame2.png"
+                                size_hint: (1, 1)
+                                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                                fit_mode: "contain"
+                                opacity: root.hamster_frame2_opacity
+
+                            # Equipped Accessory Overlay
+                            Image:
+                                source: root.equipped_overlay_source
+                                size_hint: (1, 1)
+                                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                                fit_mode: "contain"
+
+                    # Wooden Speech Bubble Card
+                    MDCard:
+                        style: "filled"
+                        theme_bg_color: "Custom"
+                        md_bg_color: [0.18, 0.12, 0.07, 0.88]
+                        radius: [dp(12), dp(12), dp(12), dp(12)]
+                        padding: [dp(12), dp(6), dp(12), dp(6)]
+                        size_hint_x: 1
+                        adaptive_height: True
+                        pos_hint: {"center_y": 0.5}
+
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            adaptive_height: True
+                            spacing: dp(2)
+
+                            MDBoxLayout:
+                                adaptive_height: True
+                                spacing: dp(4)
+
+                                MDIcon:
+                                    icon: "paw"
+                                    font_size: "14sp"
+                                    theme_icon_color: "Custom"
+                                    icon_color: [1.0, 0.82, 0.28, 1.0]
+                                    pos_hint: {"center_y": 0.5}
+
+                                MDLabel:
+                                    text: "Hammy's Cheer"
+                                    bold: True
+                                    adaptive_height: True
+                                    font_style: "Label"
+                                    role: "small"
+                                    theme_text_color: "Custom"
+                                    text_color: [1.0, 0.88, 0.38, 1.0]
+                                    pos_hint: {"center_y": 0.5}
+
+                            MDLabel:
+                                id: hamster_speech_label
+                                text: root.hamster_comment
+                                adaptive_height: True
+                                font_style: "Body"
+                                role: "small"
+                                theme_text_color: "Custom"
+                                text_color: root.banner_text_color
+
+            # Target Word Clue & Stage Signboard (Carved Cedar Plaque)
+            MDCard:
+                id: clue_card
+                style: "filled"
+                theme_bg_color: "Custom"
+                md_bg_color: [0.22, 0.15, 0.09, 0.92]
+                adaptive_height: True
+                radius: [dp(18), dp(18), dp(18), dp(18)]
+                padding: [dp(14), dp(10), dp(14), dp(10)]
+                pos_hint: {"center_x": 0.5}
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    adaptive_height: True
+                    spacing: dp(8)
+                    pos_hint: {"center_x": 0.5}
+
+                    # Top row: Word Length & Potential Reward Badge & Wood Hint Button
+                    MDBoxLayout:
+                        adaptive_height: True
+                        spacing: dp(8)
+                        pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            text: str(root.word_length_display) + "-Letter Word"
+                            bold: True
+                            adaptive_size: True
+                            font_style: "Title"
+                            role: "small"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 0.92, 0.78, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+                        Widget:
+
+                        # Potential Reward Pill
+                        MDCard:
+                            style: "filled"
+                            theme_bg_color: "Custom"
+                            md_bg_color: [0.36, 0.24, 0.11, 0.95]
+                            adaptive_size: True
+                            radius: [dp(12), dp(12), dp(12), dp(12)]
+                            padding: [dp(8), dp(4), dp(8), dp(4)]
+                            pos_hint: {"center_y": 0.5}
+
+                            MDBoxLayout:
+                                adaptive_size: True
+                                spacing: dp(4)
+                                MDIcon:
+                                    icon: "star-circle"
+                                    font_size: "15sp"
+                                    theme_icon_color: "Custom"
+                                    icon_color: [1.0, 0.82, 0.22, 1.0]
+                                    pos_hint: {"center_y": 0.5}
+                                MDLabel:
+                                    text: "+" + str(root.potential_reward) + " C"
+                                    bold: True
+                                    adaptive_size: True
+                                    font_style: "Label"
+                                    role: "medium"
+                                    theme_text_color: "Custom"
+                                    text_color: [1.0, 0.88, 0.32, 1.0]
+                                    pos_hint: {"center_y": 0.5}
+
+                        # Wood Hint Button with Red Notification Badge (highlighted, only clickable when red mark appears)
+                        WoodHintButton:
+                            id: btn_hint
+                            button_text: root.hint_button_label
+                            has_badge: root.has_unread_hint
+                            badge_text: "1"
+                            pos_hint: {"center_y": 0.5}
+                            on_release: root.on_hint_button_click()
+
+                    # Clue Timber Callout Box (Dynamic progressive hint display with Arrow Navigation)
+                    MDCard:
+                        id: clue_timber_box
+                        style: "filled"
+                        theme_bg_color: "Custom"
+                        md_bg_color: [0.14, 0.10, 0.06, 0.88]
+                        adaptive_height: True
+                        radius: [dp(12), dp(12), dp(12), dp(12)]
+                        padding: [dp(6), dp(8), dp(6), dp(8)]
+                        pos_hint: {"center_x": 0.5}
+
+                        MDBoxLayout:
+                            adaptive_height: True
+                            spacing: dp(4)
+                            pos_hint: {"center_x": 0.5}
+
+                            # Left Arrow: View previous unlocked hint
+                            MDIconButton:
+                                id: btn_prev_hint
+                                icon: "chevron-left"
+                                style: "filled"
+                                theme_bg_color: "Custom"
+                                md_bg_color: [0.28, 0.18, 0.10, 0.90] if (root.current_hint_index > 0) else [0.18, 0.13, 0.08, 0.35]
+                                theme_icon_color: "Custom"
+                                icon_color: [1.0, 0.88, 0.35, 1.0] if (root.current_hint_index > 0) else [0.55, 0.45, 0.35, 0.35]
+                                disabled: (root.current_hint_index <= 0)
+                                pos_hint: {"center_y": 0.5}
+                                on_release: root.show_previous_hint()
+
+                            # Hint Content Body
+                            MDBoxLayout:
+                                orientation: "vertical"
+                                adaptive_height: True
+                                spacing: dp(3)
+                                pos_hint: {"center_y": 0.5}
+
+                                # Header: Lightbulb icon + Hint indicator
+                                MDBoxLayout:
+                                    adaptive_height: True
+                                    spacing: dp(4)
+                                    pos_hint: {"center_x": 0.5}
+
+                                    MDIcon:
+                                        icon: "lightbulb-on"
+                                        font_size: "14sp"
+                                        theme_icon_color: "Custom"
+                                        icon_color: [1.0, 0.84, 0.25, 1.0]
+                                        pos_hint: {"center_y": 0.5}
+
+                                    MDLabel:
+                                        text: "HINT " + str(root.current_hint_index + 1) + " OF " + str(root.unlocked_hints_count)
+                                        bold: True
+                                        adaptive_size: True
+                                        font_style: "Label"
+                                        role: "small"
+                                        theme_text_color: "Custom"
+                                        text_color: [1.0, 0.84, 0.25, 1.0]
+                                        pos_hint: {"center_y": 0.5}
+
+                                MDLabel:
+                                    id: clue_text_label
+                                    text: ('"' + root.active_hint_display + '"') if root.active_hint_display else "Unscramble the letters to reveal the hidden word."
+                                    adaptive_height: True
+                                    halign: "center"
+                                    font_style: "Body"
+                                    role: "medium"
+                                    italic: True
+                                    theme_text_color: "Custom"
+                                    text_color: [0.96, 0.93, 0.86, 1.0]
+                                    pos_hint: {"center_y": 0.5}
+
+                            # Right Arrow: View next unlocked hint
+                            MDIconButton:
+                                id: btn_next_hint
+                                icon: "chevron-right"
+                                style: "filled"
+                                theme_bg_color: "Custom"
+                                md_bg_color: [0.28, 0.18, 0.10, 0.90] if (root.current_hint_index < root.unlocked_hints_count - 1) else [0.18, 0.13, 0.08, 0.35]
+                                theme_icon_color: "Custom"
+                                icon_color: [1.0, 0.88, 0.35, 1.0] if (root.current_hint_index < root.unlocked_hints_count - 1) else [0.55, 0.45, 0.35, 0.35]
+                                disabled: (root.current_hint_index >= root.unlocked_hints_count - 1)
+                                pos_hint: {"center_y": 0.5}
+                                on_release: root.show_next_hint()
+
+                    # Hint status & reward tiers rule sub-label
+                    MDLabel:
+                        text: ("Hints Unlocked: " + str(root.unlocked_hints_count) + "/5 (Use < > to view) • 1st: 10C, 2nd: 7C, 3+: 5C") if root.unlocked_hints_count > 1 else ("Hints Unlocked: 1/5 • 1st: 10C, 2nd: 7C, 3+: 5C")
+                        halign: "center"
+                        font_style: "Label"
+                        role: "small"
+                        adaptive_height: True
+                        theme_text_color: "Custom"
+                        text_color: [0.82, 0.72, 0.58, 0.88]
+
+            # Letter Assembly Wood Tray Area
+            MDCard:
+                id: assembly_container
+                style: "filled"
+                theme_bg_color: "Custom"
+                md_bg_color: [0.16, 0.11, 0.07, 0.90]
+                radius: [dp(18), dp(18), dp(18), dp(18)]
+                padding: [dp(14), dp(14), dp(14), dp(14)]
+                size_hint_y: None
+                height: dp(120)
+                pos_hint: {"center_x": 0.5}
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: dp(8)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                    # Placeholder dashes if empty
+                    MDLabel:
+                        id: assembly_placeholder
+                        text: ""
+                        halign: "center"
+                        font_style: "Headline"
+                        role: "medium"
+                        bold: True
+                        adaptive_height: True
+                        theme_text_color: "Custom"
+                        text_color: [0.70, 0.58, 0.44, 0.7]
+
+                    # Assembled Letter Tiles container
+                    MDBoxLayout:
+                        id: assembly_box
+                        adaptive_size: True
+                        spacing: dp(6)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                    # Subtitle hint
+                    MDLabel:
+                        text: "Tap an assembled letter to remove it" if root.assembled_word else "Tap scrambled letters below"
+                        halign: "center"
+                        font_style: "Label"
+                        role: "small"
+                        adaptive_height: True
+                        theme_text_color: "Custom"
+                        text_color: [0.80, 0.72, 0.60, 0.85]
+
+            # Scrambled Letters Wood Pool Section
+            MDCard:
+                style: "filled"
+                theme_bg_color: "Custom"
+                md_bg_color: [0.20, 0.14, 0.08, 0.90]
+                radius: [dp(18), dp(18), dp(18), dp(18)]
+                padding: [dp(14), dp(14), dp(14), dp(14)]
+                adaptive_height: True
+                pos_hint: {"center_x": 0.5}
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    adaptive_height: True
+                    spacing: dp(10)
+                    pos_hint: {"center_x": 0.5}
+
+                    # Section Title & Shuffle
+                    MDBoxLayout:
+                        adaptive_height: True
+                        spacing: dp(8)
+                        pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            text: "AVAILABLE LETTERS"
+                            bold: True
+                            font_style: "Label"
+                            role: "small"
+                            adaptive_height: True
+                            theme_text_color: "Custom"
+                            text_color: [0.88, 0.78, 0.62, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+                        Widget:
+
+                        MDIconButton:
+                            icon: "shuffle-variant"
+                            style: "filled"
+                            theme_bg_color: "Custom"
+                            md_bg_color: [0.32, 0.22, 0.12, 0.90]
+                            theme_icon_color: "Custom"
+                            icon_color: [1.0, 0.86, 0.35, 1.0]
+                            on_release: root.shuffle_scrambled_pool()
+                            pos_hint: {"center_y": 0.5}
+
+                    # Scrambled letter tiles dynamic container
+                    MDBoxLayout:
+                        id: scrambled_box
+                        orientation: "vertical"
+                        adaptive_size: True
+                        spacing: dp(8)
+                        pos_hint: {"center_x": 0.5}
+
+            Widget:
+
+            # Control Action Buttons (Wood Plank Buttons)
+            MDBoxLayout:
+                adaptive_height: True
+                spacing: dp(12)
+                pos_hint: {"center_x": 0.5}
+
+                # Clear Wood Button
+                WoodPlankButton:
+                    id: btn_clear
+                    size_hint_x: 0.38
+                    height: dp(54)
+                    pos_hint: {"center_y": 0.5}
+                    normal_bg: "assets/wood_btn_clear_wide.png"
+                    pressed_bg: "assets/wood_btn_clear_wide_pressed.png"
+                    button_text: "CLEAR"
+                    button_icon: "refresh"
+                    text_color: [0.98, 0.94, 0.88, 1.0]
+                    icon_color: [0.95, 0.88, 0.80, 1.0]
+                    on_release: root.clear_assembly()
+
+                # Submit Wood Button
+                WoodPlankButton:
+                    id: btn_submit
+                    size_hint_x: 0.62
+                    height: dp(54)
+                    pos_hint: {"center_y": 0.5}
+                    normal_bg: "assets/wood_btn_play_wide.png"
+                    pressed_bg: "assets/wood_btn_play_wide_pressed.png"
+                    button_text: "SUBMIT"
+                    button_icon: "check-bold"
+                    text_color: [1.0, 0.96, 0.82, 1.0]
+                    icon_color: [1.0, 0.88, 0.30, 1.0]
+                    on_release: root.submit_word()
+
+        # Floating Celebration Reward Badge
+        MDCard:
+            id: reward_float_badge
+            disabled: True
+            style: "filled"
+            theme_bg_color: "Custom"
+            md_bg_color: [0.16, 0.62, 0.28, 0.96]
+            adaptive_size: True
+            padding: [dp(22), dp(12), dp(22), dp(12)]
+            radius: [dp(24), dp(24), dp(24), dp(24)]
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            opacity: 0.0
+
+            MDBoxLayout:
+                adaptive_size: True
+                spacing: dp(8)
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                MDIcon:
+                    icon: "star-circle"
+                    theme_icon_color: "Custom"
+                    icon_color: [1.0, 0.9, 0.2, 1.0]
+                    font_size: "24sp"
+                    pos_hint: {"center_y": 0.5}
+
+                MDLabel:
+                    id: reward_float_text
+                    text: "+10 COINS!"
+                    bold: True
+                    adaptive_size: True
+                    font_style: "Title"
+                    role: "large"
+                    theme_text_color: "Custom"
+                    text_color: [1.0, 1.0, 1.0, 1.0]
+                    pos_hint: {"center_y": 0.5}
+
+
+<AvatarShopScreen>:
+    md_bg_color: [0.08, 0.06, 0.04, 1.0]
+
+    MDRelativeLayout:
+        size_hint: (1, 1)
+
+        # Forest Background Artwork
+        FitImage:
+            source: "assets/main_menu_bg.png"
+            size_hint: (1, 1)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        # Woodland Twilight Vignette
+        Widget:
+            size_hint: (1, 1)
+            canvas:
+                Color:
+                    rgba: [0.08, 0.06, 0.04, 0.74]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        # Foreground Content Layer
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: [dp(16), dp(16), dp(16), dp(12)]
+            spacing: dp(10)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            # Header Bar: Back Button, Title & Reactive Coin Counter
+            MDBoxLayout:
+                adaptive_height: True
+                spacing: dp(10)
+                pos_hint: {"center_x": 0.5}
+
+                MDIconButton:
+                    icon: "arrow-left"
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.24, 0.16, 0.10, 0.90]
+                    theme_icon_color: "Custom"
+                    icon_color: [1.0, 0.92, 0.82, 1.0]
+                    on_release: root.on_back_to_menu()
+                    pos_hint: {"center_y": 0.5}
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    adaptive_height: True
+                    pos_hint: {"center_y": 0.5}
+
+                    MDLabel:
+                        text: "Hamster Wardrobe"
+                        bold: True
+                        font_style: "Title"
+                        role: "large"
+                        adaptive_height: True
+                        theme_text_color: "Custom"
+                        text_color: [1.0, 0.96, 0.88, 1.0]
+
+                    MDLabel:
+                        text: "Customize your hamster champion"
+                        font_style: "Label"
+                        role: "medium"
+                        adaptive_height: True
+                        theme_text_color: "Custom"
+                        text_color: [0.85, 0.76, 0.62, 0.9]
+
+                Widget:
+
+                # Coin Balance Display (Wood Pill)
+                MDCard:
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.22, 0.15, 0.09, 0.92]
+                    adaptive_size: True
+                    radius: [dp(20), dp(20), dp(20), dp(20)]
+                    padding: [dp(12), dp(6), dp(16), dp(6)]
+                    pos_hint: {"center_y": 0.5}
+
+                    MDBoxLayout:
+                        adaptive_size: True
+                        spacing: dp(6)
+                        pos_hint: {"center_y": 0.5}
+
+                        MDIcon:
+                            icon: "circle-multiple"
+                            theme_icon_color: "Custom"
+                            icon_color: [1.0, 0.80, 0.15, 1.0]
+                            pos_hint: {"center_y": 0.5}
+                            font_size: "20sp"
+
+                        MDLabel:
+                            id: shop_coin_label
+                            text: "{:,} Coins".format(app.player_data.coins) if app.player_data else "0 Coins"
+                            bold: True
+                            adaptive_size: True
+                            font_style: "Label"
+                            role: "large"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 0.94, 0.85, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+            # Status / Feedback Banner
+            MDCard:
+                id: shop_banner_card
+                style: "filled"
+                theme_bg_color: "Custom"
+                md_bg_color: root.shop_banner_bg
+                adaptive_height: True
+                radius: [dp(12), dp(12), dp(12), dp(12)]
+                padding: [dp(16), dp(8), dp(16), dp(8)]
+                pos_hint: {"center_x": 0.5}
+
+                MDLabel:
+                    id: shop_banner_label
+                    text: root.shop_banner_text
+                    halign: "center"
+                    font_style: "Body"
+                    role: "medium"
+                    theme_text_color: "Custom"
+                    text_color: root.shop_banner_text_color
+                    adaptive_height: True
+
+            # Avatar Preview Area (Top Wood Treehouse Showcase Card)
+            MDCard:
+                style: "filled"
+                theme_bg_color: "Custom"
+                md_bg_color: [0.22, 0.15, 0.09, 0.92]
+                adaptive_height: True
+                radius: [dp(20), dp(20), dp(20), dp(20)]
+                padding: [dp(16), dp(10), dp(16), dp(10)]
+                pos_hint: {"center_x": 0.5}
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    adaptive_height: True
+                    spacing: dp(6)
+                    pos_hint: {"center_x": 0.5}
+
+                    # Fixed boundary box for avatar preview
+                    MDRelativeLayout:
+                        size_hint: None, None
+                        size: [dp(135), dp(135)]
+                        pos_hint: {"center_x": 0.5}
+
+                        # Grounding floor shadow (hamster sits firmly on this surface)
+                        Widget:
+                            size_hint: None, None
+                            size: [dp(80), dp(12)]
+                            pos_hint: {"center_x": 0.5, "center_y": 0.11}
+                            canvas:
+                                Color:
+                                    rgba: [0.0, 0.0, 0.0, 0.28]
+                                Ellipse:
+                                    pos: self.pos
+                                    size: self.size
+
+                        # Animated container that breathes and hops with equipped accessory
+                        MDRelativeLayout:
+                            id: hamster_idle_container
+                            size_hint: (1.0, 1.0)
+                            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                            # Base Avatar Character Image - Inhale / Alert Frame
+                            Image:
+                                id: base_avatar_img1
+                                source: "assets/avatar_frame1.png"
+                                size_hint: (1, 1)
+                                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                                fit_mode: "contain"
+                                opacity: root.frame1_opacity
+
+                            # Base Avatar Character Image - Exhale / Happy Breath Frame
+                            Image:
+                                id: base_avatar_img2
+                                source: "assets/avatar_frame2.png"
+                                size_hint: (1, 1)
+                                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                                fit_mode: "contain"
+                                opacity: root.frame2_opacity
+
+                            # Accessory Overlay Image (updates dynamically)
+                            Image:
+                                id: accessory_overlay_img
+                                source: root.equipped_overlay_source
+                                size_hint: (1, 1)
+                                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                                fit_mode: "contain"
+
+                    # Equipped Accessory Status Pill
+                    MDBoxLayout:
+                        adaptive_size: True
+                        spacing: dp(4)
+                        pos_hint: {"center_x": 0.5}
+
+                        MDIcon:
+                            icon: "sparkles"
+                            theme_icon_color: "Custom"
+                            icon_color: [1.0, 0.82, 0.25, 1.0]
+                            pos_hint: {"center_y": 0.5}
+                            font_size: "16sp"
+
+                        MDLabel:
+                            text: "Equipped: " + str(root.equipped_item_name)
+                            bold: True
+                            adaptive_size: True
+                            font_style: "Label"
+                            role: "medium"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 0.88, 0.35, 1.0]
+                            pos_hint: {"center_y": 0.5}
+
+            # Catalog Label
+            MDLabel:
+                text: "ACCESSORY WARDROBE"
+                bold: True
+                font_style: "Label"
+                role: "small"
+                adaptive_height: True
+                theme_text_color: "Custom"
+                text_color: [0.88, 0.78, 0.62, 1.0]
+                padding: [dp(4), 0, 0, 0]
+
+            # Shop Scrollable Grid Layout
+            MDScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+                bar_width: dp(4)
+
+                MDGridLayout:
+                    id: shop_grid
+                    cols: 2
+                    spacing: dp(12)
+                    padding: [dp(2), dp(4), dp(2), dp(16)]
+                    size_hint_y: None
+                    height: self.minimum_height
+
+
+<MultiplayerScreen>:
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: [dp(16), dp(16), dp(16), dp(16)]
+        spacing: dp(16)
+
+        # Header Bar with Back Navigation
+        MDBoxLayout:
+            adaptive_height: True
+            spacing: dp(12)
+            pos_hint: {"center_x": 0.5}
+
+            MDIconButton:
+                icon: "arrow-left"
+                style: "tonal"
+                on_release: app.root.current = "main_menu"
+                pos_hint: {"center_y": 0.5}
+
+            MDBoxLayout:
+                orientation: "vertical"
+                adaptive_height: True
+                pos_hint: {"center_y": 0.5}
+
+                MDLabel:
+                    text: "Multiplayer (Ranked)"
+                    bold: True
+                    font_style: "Title"
+                    role: "large"
+                    adaptive_height: True
+
+                MDLabel:
+                    text: "Competitive Word Duels"
+                    font_style: "Label"
+                    role: "medium"
+                    adaptive_height: True
+                    theme_text_color: "Custom"
+                    text_color: app.theme_cls.outlineColor
+
+        Widget:
+            size_hint_y: 0.1
+
+        # Coming Soon Featured Card
+        MDCard:
+            style: "elevated"
+            theme_bg_color: "Custom"
+            md_bg_color: app.theme_cls.surfaceContainerHighColor
+            radius: [dp(24), dp(24), dp(24), dp(24)]
+            padding: [dp(24), dp(32), dp(24), dp(32)]
+            adaptive_height: True
+            pos_hint: {"center_x": 0.5}
+
+            MDBoxLayout:
+                orientation: "vertical"
+                adaptive_height: True
+                spacing: dp(16)
+                pos_hint: {"center_x": 0.5}
+
+                MDCard:
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.95, 0.35, 0.2, 0.2]
+                    size_hint: None, None
+                    size: [dp(72), dp(72)]
+                    radius: [dp(24), dp(24), dp(24), dp(24)]
+                    pos_hint: {"center_x": 0.5}
+
+                    MDIcon:
+                        icon: "trophy-award"
+                        font_size: "40sp"
+                        theme_icon_color: "Custom"
+                        icon_color: [0.95, 0.45, 0.25, 1.0]
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                MDCard:
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: [0.95, 0.35, 0.2, 1.0]
+                    adaptive_size: True
+                    padding: [dp(12), dp(4), dp(12), dp(4)]
+                    radius: [dp(12), dp(12), dp(12), dp(12)]
+                    pos_hint: {"center_x": 0.5}
+
+                    MDLabel:
+                        text: "COMING IN SEASON 2"
+                        bold: True
+                        font_style: "Label"
+                        role: "small"
+                        adaptive_size: True
+                        theme_text_color: "Custom"
+                        text_color: [1.0, 1.0, 1.0, 1.0]
+
+                MDLabel:
+                    text: "Ranked Arena Under Construction"
+                    halign: "center"
+                    bold: True
+                    font_style: "Title"
+                    role: "medium"
+                    adaptive_height: True
+
+                MDLabel:
+                    text: "Prepare your vocabulary! Real-time 1v1 speed unscrambling, seasonal leaderboards, and exclusive rank tiers are arriving soon."
+                    halign: "center"
+                    font_style: "Body"
+                    role: "medium"
+                    adaptive_height: True
+                    theme_text_color: "Custom"
+                    text_color: app.theme_cls.outlineColor
+
+        Widget:
+            size_hint_y: 0.1
+
+        # Bottom Return Button
+        MDButton:
+            style: "outlined"
+            size_hint_x: 1
+            height: dp(50)
+            on_release: root.on_back_to_menu()
+            pos_hint: {"center_x": 0.5}
+
+            MDButtonIcon:
+                icon: "arrow-left"
+            MDButtonText:
+                text: "Back to Main Menu"
