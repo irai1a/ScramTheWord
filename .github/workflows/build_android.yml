@@ -69,11 +69,11 @@ jobs:
 
       - name: Build Debug APK
         run: |
-          yes | buildozer -v android debug
+          buildozer -v android debug
 
       - name: Build Release AAB (Android App Bundle)
         run: |
-          yes | buildozer -v android release
+          buildozer -v android release
 
       - name: List Generated Binaries
         if: always()
