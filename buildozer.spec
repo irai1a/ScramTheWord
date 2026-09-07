@@ -30,8 +30,8 @@ version = 1.0.0
 android.numeric_version = 1
 
 # (list) Application requirements
-# Python 3, Kivy UI engine, KivyMD Material components, Pillow for sprite handling, and OpenSSL for networking
-requirements = python3, kivy==2.3.0, kivymd==1.2.0, pillow, openssl
+# Python 3, Kivy UI engine, KivyMD 2.0 Material components, Pillow, and networking
+requirements = python3, kivy==2.3.0, https://github.com/kivymd/KivyMD/archive/master.zip, materialyoucolor, exceptiongroup, asyncgui, asynckivy, pillow, openssl
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 # Portrait is required because the progression map and word-whacking tiles are designed vertically
