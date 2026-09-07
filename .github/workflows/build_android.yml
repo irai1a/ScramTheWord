@@ -67,6 +67,16 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install "cython<3.0" buildozer virtualenv
 
+      - name: Pre-cache OpenSSL packages from GitHub Releases
+        run: |
+          mkdir -p ~/.buildozer/android/packages/openssl
+          curl -fsSL -o ~/.buildozer/android/packages/openssl/openssl-3.3.1.tar.gz https://github.com/openssl/openssl/releases/download/openssl-3.3.1/openssl-3.3.1.tar.gz
+          touch ~/.buildozer/android/packages/openssl/.mark-openssl-3.3.1.tar.gz
+          curl -fsSL -o ~/.buildozer/android/packages/openssl/openssl-3.0.12.tar.gz https://github.com/openssl/openssl/releases/download/openssl-3.0.12/openssl-3.0.12.tar.gz
+          touch ~/.buildozer/android/packages/openssl/.mark-openssl-3.0.12.tar.gz
+          curl -fsSL -o ~/.buildozer/android/packages/openssl/openssl-1.1.1w.tar.gz https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-1.1.1w.tar.gz
+          touch ~/.buildozer/android/packages/openssl/.mark-openssl-1.1.1w.tar.gz
+
       - name: Build Debug APK
         run: |
           buildozer -v android debug

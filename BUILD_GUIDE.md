@@ -25,6 +25,8 @@ A pre-configured GitHub Actions workflow has been added at [`.github/workflows/b
 
 ## Option 2: Build Locally using Windows Subsystem for Linux (WSL)
 
+> **Important WSL Note:** WSL requires hardware virtualization (Intel VT-x or AMD-V) enabled in your computer's BIOS/UEFI settings. If Ubuntu fails to open with an error about virtualization, enter your BIOS setup when turning on your PC (press F2 or Del) and enable "Intel Virtualization Technology" (or "SVM Mode" on AMD CPUs).
+
 If you prefer building locally on your Windows PC:
 
 ### Step 1: Install Ubuntu on WSL
@@ -44,42 +46,28 @@ cd /mnt/c/Users/user/ScramTheWord
 ```bash
 sudo apt update
 sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev libsqlite3-dev
-pip3 install --user --upgrade buildozer cython virtualenv
+pip3 install --user --upgrade buildozer "cython<3.0" virtualenv
 ```
 
 ### Step 4: Run the Build Commands
 To build the debug APK:
 ```bash
-~/.local/bin/buildozer android debug
+~/.local/bin/buildozer -v android debug
 ```
 To build the release AAB:
 ```bash
-~/.local/bin/buildozer android release
+~/.local/bin/buildozer -v android release
 ```
 The output files will be placed automatically into the [`bin/`](bin/) directory.
 
 ---
 
-## Option 3: Free Cloud Build using Google Colab
+## Option 3: Free Cloud Build using Google Colab (One-Click Notebook)
 
-If you do not want to install WSL on your computer, you can build on Google Colab's free Linux environment:
+We have provided a ready-to-use notebook: [`Build_WhackAWordHam_Colab.ipynb`](Build_WhackAWordHam_Colab.ipynb).
 
 1. Open [Google Colab](https://colab.research.google.com/).
-2. Create a new notebook.
-3. Run the following cell to install dependencies:
-   ```python
-   !sudo apt update
-   !sudo apt install -y openjdk-17-jdk git zip unzip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
-   !pip install --upgrade buildozer cython virtualenv
-   ```
-4. Zip your `ScramTheWord` project folder and upload it to Colab, then unzip it:
-   ```python
-   !unzip ScramTheWord.zip -d /content/ScramTheWord
-   %cd /content/ScramTheWord
-   ```
-5. Run the build commands:
-   ```python
-   !buildozer android debug
-   !buildozer android release
-   ```
-6. Download the generated `.apk` and `.aab` from `/content/ScramTheWord/bin/` into your local [`bin/`](bin/) directory.
+2. Click **File** -> **Upload notebook** and upload [`Build_WhackAWordHam_Colab.ipynb`](Build_WhackAWordHam_Colab.ipynb) from this repository.
+3. Run Step 1 through Step 4 sequentially.
+4. Step 4 will automatically trigger a browser download for the compiled `.apk` file into your local computer.
+5. Place the downloaded `.apk` and `.aab` files into your [`bin/`](bin/) folder.
