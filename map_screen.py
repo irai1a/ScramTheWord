@@ -12,6 +12,7 @@ from kivy.animation import Animation
 from kivy.clock import Clock
 from kivy.core.window import Window
 from kivy.metrics import dp
+# pyrefly: ignore [missing-import]
 from kivy.properties import (
     BooleanProperty,
     ColorProperty,
