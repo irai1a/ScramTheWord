@@ -12,6 +12,10 @@ from kivy.metrics import dp
 from kivy.properties import NumericProperty
 from kivy.uix.slider import Slider
 from kivymd.app import MDApp
+from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.uix.button import MDButton, MDButtonIcon, MDButtonText, MDIconButton
+from kivymd.uix.card import MDCard
+from kivymd.uix.label import MDIcon, MDLabel
 from kivymd.uix.relativelayout import MDRelativeLayout
 
 from audio_manager import AudioManager, play_click
@@ -230,7 +234,7 @@ SETTINGS_DIALOG_KV = """
                         value_track_color: [0.22, 0.76, 0.38, 1.0]
                         cursor_size: (dp(20), dp(20))
                         on_value: root.on_sfx_slider_change(self.value)
-                        on_touch_up: root.on_sfx_slider_touch_up(self, args[1])
+                        on_touch_up: root.on_sfx_slider_touch_up(self, *args)
 
             Widget:
 
@@ -351,10 +355,14 @@ class SettingsDialog(MDRelativeLayout):
         if hasattr(app, "player_data") and app.player_data is not None:
             app.player_data.set_sfx_volume(vol_float)
 
-    def on_sfx_slider_touch_up(self, slider: Slider, touch):
+    def on_sfx_slider_touch_up(self, slider: Slider, *args):
         """Play a preview click when the user finishes adjusting the SFX slider."""
-        if slider.collide_point(*touch.pos):
-            play_click()
+        try:
+            touch = args[0] if args else None
+            if touch and hasattr(touch, "pos") and slider.collide_point(*touch.pos):
+                play_click()
+        except Exception:
+            pass
 
     def on_touch_down(self, touch):
         """Consume touches within dialog; tapping backdrop outside card closes dialog."""

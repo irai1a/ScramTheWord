@@ -1,5 +1,6 @@
 import os
 import sys
+from kivy.clock import Clock
 from kivy.core.window import Window
 from kivy.lang import Builder
 from kivymd.app import MDApp
@@ -15,6 +16,7 @@ from player_data import PlayerDataManager
 from stage_mode import StageModeScreen
 from avatar_shop import AvatarShopScreen
 from map_screen import MapScreen
+from loading_screen import LoadingScreen
 from audio_manager import play_bgm, play_click
 
 
@@ -122,7 +124,10 @@ class MultiplayerScreen(MDScreen):
         try:
             play_click()
             app = MDApp.get_running_app()
-            app.root.current = "main_menu"
+            if hasattr(app, "switch_screen"):
+                app.switch_screen("main_menu")
+            else:
+                app.root.current = "main_menu"
         except Exception as e:
             print(f"[MultiplayerScreen] Warning: back_to_menu error: {e}")
 
@@ -168,6 +173,23 @@ class WhackAWordHamApp(MDApp):
 
         # Load the KV layout file
         return Builder.load_file("game.kv")
+
+    def switch_screen(self, screen_name: str, *args):
+        """Safely transition to target screen on the next frame to prevent touch event collisions."""
+        if getattr(self, "_is_switching_screen", False):
+            return
+        self._is_switching_screen = True
+
+        def _do_switch(dt):
+            try:
+                if self.root and hasattr(self.root, "current"):
+                    self.root.current = screen_name
+            except Exception as e:
+                print(f"[WhackAWordHamApp] Warning: error switching to {screen_name}: {e}")
+            finally:
+                self._is_switching_screen = False
+
+        Clock.schedule_once(_do_switch, 0.05)
 
     def open_settings_dialog(self):
         """Open the global Audio Settings dialog modal."""

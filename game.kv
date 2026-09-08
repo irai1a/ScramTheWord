@@ -6,6 +6,9 @@ MDScreenManager:
     id: screen_manager
     transition: NoTransition()
 
+    LoadingScreen:
+        name: "loading_screen"
+
     MainMenuScreen:
         name: "main_menu"
 
@@ -20,6 +23,145 @@ MDScreenManager:
 
     MultiplayerScreen:
         name: "multiplayer"
+
+
+<LoadingScreen>:
+    md_bg_color: [0.08, 0.06, 0.04, 1.0]
+
+    MDRelativeLayout:
+        size_hint: (1, 1)
+
+        # Forest Background Artwork
+        FitImage:
+            source: "assets/main_menu_bg.png"
+            size_hint: (1, 1)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        # Ambient Woodland Twilight Tint
+        Widget:
+            size_hint: (1, 1)
+            canvas:
+                Color:
+                    rgba: [0.08, 0.06, 0.04, 0.78]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        # Centered Loading Container
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint: (0.86, None)
+            adaptive_height: True
+            spacing: dp(14)
+            pos_hint: {"center_x": 0.5, "center_y": 0.52}
+
+            # Hamster Avatar Showcase with Bobbing Animation
+            MDRelativeLayout:
+                size_hint: None, None
+                size: [dp(110), dp(110)]
+                pos_hint: {"center_x": 0.5}
+
+                # Floor Shadow
+                Widget:
+                    size_hint: None, None
+                    size: [dp(76), dp(12)]
+                    pos_hint: {"center_x": 0.5, "center_y": 0.08}
+                    canvas:
+                        Color:
+                            rgba: [0.0, 0.0, 0.0, 0.40]
+                        Ellipse:
+                            pos: self.pos
+                            size: self.size
+
+                # Bobbing Hamster Container
+                MDRelativeLayout:
+                    id: hamster_loading_token
+                    size_hint: (1, 1)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                    Image:
+                        source: "assets/avatar_frame1.png"
+                        size_hint: (1, 1)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                        fit_mode: "contain"
+
+            # Title
+            MDLabel:
+                text: "Whack-A-Word_Ham"
+                bold: True
+                halign: "center"
+                font_style: "Headline"
+                role: "medium"
+                adaptive_height: True
+                theme_text_color: "Custom"
+                text_color: [1.0, 0.88, 0.35, 1.0]
+                pos_hint: {"center_x": 0.5}
+
+            MDLabel:
+                text: "Hamster Word Adventure"
+                bold: True
+                halign: "center"
+                font_style: "Title"
+                role: "small"
+                adaptive_height: True
+                theme_text_color: "Custom"
+                text_color: [0.92, 0.85, 0.72, 0.90]
+                pos_hint: {"center_x": 0.5}
+
+            Widget:
+                size_hint_y: None
+                height: dp(16)
+
+            # Wood Carved Progress Bar Container
+            MDCard:
+                style: "filled"
+                theme_bg_color: "Custom"
+                md_bg_color: [0.18, 0.12, 0.07, 0.95]
+                line_color: [0.52, 0.36, 0.18, 0.92]
+                line_width: dp(2)
+                radius: [dp(12), dp(12), dp(12), dp(12)]
+                size_hint: (1, None)
+                height: dp(22)
+                padding: [dp(3), dp(3), dp(3), dp(3)]
+                pos_hint: {"center_x": 0.5}
+
+                Widget:
+                    id: progress_bar_fill
+                    size_hint: (max(0.04, min(1.0, root.progress_value)), 1)
+                    canvas:
+                        Color:
+                            rgba: [0.96, 0.74, 0.18, 1.0]
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [dp(9), dp(9), dp(9), dp(9)]
+
+            # Progress Text Row (Status message + Percent)
+            MDBoxLayout:
+                adaptive_height: True
+                spacing: dp(8)
+                pos_hint: {"center_x": 0.5}
+
+                MDLabel:
+                    text: root.status_message
+                    font_style: "Label"
+                    role: "medium"
+                    adaptive_size: True
+                    theme_text_color: "Custom"
+                    text_color: [0.88, 0.82, 0.70, 0.90]
+                    pos_hint: {"center_y": 0.5}
+
+                Widget:
+
+                MDLabel:
+                    text: root.progress_percent_text
+                    bold: True
+                    font_style: "Label"
+                    role: "medium"
+                    adaptive_size: True
+                    theme_text_color: "Custom"
+                    text_color: [1.0, 0.88, 0.35, 1.0]
+                    pos_hint: {"center_y": 0.5}
 
 
 <WoodPlankButton>:
@@ -497,7 +639,7 @@ MDScreenManager:
                     button_text: "PLAY STAGE MODE"
                     button_icon: "play-circle"
                     height: dp(64)
-                    on_release: app.root.current = "map_screen"
+                    on_release: app.switch_screen("map_screen")
 
                 # Button 2: Hamster Wardrobe (Carved Timber Plank)
                 WoodPlankButton:
@@ -507,7 +649,7 @@ MDScreenManager:
                     button_text: "HAMSTER WARDROBE"
                     button_icon: "tshirt-crew"
                     height: dp(58)
-                    on_release: app.root.current = "avatar_shop"
+                    on_release: app.switch_screen("avatar_shop")
 
                 # Button 3: Multiplayer (Ranked) - Weathered Driftwood Plank
                 WoodPlankButton:
@@ -1311,7 +1453,7 @@ MDScreenManager:
                         pos_hint: {"center_x": 0.5}
 
                         MDIcon:
-                            icon: "sparkles"
+                            icon: "star-four-points"
                             theme_icon_color: "Custom"
                             icon_color: [1.0, 0.82, 0.25, 1.0]
                             pos_hint: {"center_y": 0.5}
@@ -1370,7 +1512,7 @@ MDScreenManager:
             MDIconButton:
                 icon: "arrow-left"
                 style: "tonal"
-                on_release: app.root.current = "main_menu"
+                on_release: app.switch_screen("main_menu")
                 pos_hint: {"center_y": 0.5}
 
             MDBoxLayout:

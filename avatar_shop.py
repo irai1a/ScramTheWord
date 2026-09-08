@@ -477,6 +477,9 @@ class AvatarShopScreen(MDScreen):
         try:
             play_click()
             app = MDApp.get_running_app()
-            app.root.current = "main_menu"
+            if hasattr(app, "switch_screen"):
+                app.switch_screen("main_menu")
+            else:
+                app.root.current = "main_menu"
         except Exception as e:
             print(f"[AvatarShopScreen] Warning: on_back_to_menu error: {e}")

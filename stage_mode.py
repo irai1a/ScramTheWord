@@ -883,9 +883,15 @@ class StageModeScreen(MDScreen):
 
     def on_back_to_map(self):
         """Play click sound and return player to MapScreen."""
-        play_click()
-        app = MDApp.get_running_app()
-        app.root.current = "map_screen"
+        try:
+            play_click()
+            app = MDApp.get_running_app()
+            if hasattr(app, "switch_screen"):
+                app.switch_screen("map_screen")
+            else:
+                app.root.current = "map_screen"
+        except Exception as e:
+            print(f"[StageMode] Error returning to map: {e}")
 
     def set_banner_neutral(self):
         """Reset banner to default gameplay guidance."""

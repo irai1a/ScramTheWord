@@ -351,7 +351,10 @@ class MapScreen(MDScreen):
             stage_screen = app.root.get_screen("stage_mode")
             if stage_screen:
                 stage_screen.target_stage_to_load = stage_num
-            app.root.current = "stage_mode"
+            if hasattr(app, "switch_screen"):
+                app.switch_screen("stage_mode")
+            else:
+                app.root.current = "stage_mode"
         except Exception as e:
             print(f"[MapScreen] Error launching stage_mode: {e}")
 
@@ -360,7 +363,10 @@ class MapScreen(MDScreen):
         try:
             play_click()
             app = MDApp.get_running_app()
-            app.root.current = "main_menu"
+            if hasattr(app, "switch_screen"):
+                app.switch_screen("main_menu")
+            else:
+                app.root.current = "main_menu"
         except Exception as e:
             print(f"[MapScreen] Error returning to menu: {e}")
 
