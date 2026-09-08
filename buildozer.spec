@@ -100,8 +100,8 @@ android.manifest.launch_mode = singleTask
 # Python-for-Android (P4A) Build Options
 # -----------------------------------------------------------------------------
 
-# (str) python-for-android branch to use
-p4a.branch = master
+# (str) python-for-android branch to use (pinned to v2024.01.21 for stable Python 3.11.5 + Kivy 2.3.0 compatibility)
+p4a.branch = v2024.01.21
 
 # (str) python-for-android packaging format (apk for local testing, aab for Google Play Store upload)
 # Change to 'aab' when building the release bundle: buildozer android release
