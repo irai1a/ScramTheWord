@@ -73,16 +73,23 @@ class MainMenuScreen(MDScreen):
     def on_enter(self, *args):
         """Refresh player stats from local store whenever player returns to Main Menu."""
         super().on_enter(*args)
-        play_bgm("main")
+        try:
+            play_bgm("main")
+        except Exception:
+            pass
+
         app = MDApp.get_running_app()
         if hasattr(app, "player_data") and app.player_data is not None:
-            app.player_data.load()
-            self.current_stage_display = app.player_data.get_current_stage()
-            self.coins_display = app.player_data.get_coins()
-            app.player_data.bind(
-                current_stage=self._on_stage_update,
-                coins=self._on_coins_update,
-            )
+            try:
+                app.player_data.load()
+                self.current_stage_display = app.player_data.get_current_stage()
+                self.coins_display = app.player_data.get_coins()
+                app.player_data.bind(
+                    current_stage=self._on_stage_update,
+                    coins=self._on_coins_update,
+                )
+            except Exception as e:
+                print(f"[MainMenuScreen] Warning: player_data sync error: {e}")
 
     def _on_stage_update(self, instance, value):
         self.current_stage_display = int(value)
@@ -92,10 +99,13 @@ class MainMenuScreen(MDScreen):
 
     def open_settings(self):
         """Open the Audio Settings dialog modal."""
-        from settings_dialog import SettingsDialog
-        if not hasattr(self, "_settings_dialog") or not self._settings_dialog:
-            self._settings_dialog = SettingsDialog()
-        self._settings_dialog.open(self)
+        try:
+            from settings_dialog import SettingsDialog
+            if not hasattr(self, "_settings_dialog") or not self._settings_dialog:
+                self._settings_dialog = SettingsDialog()
+            self._settings_dialog.open(self)
+        except Exception as e:
+            print(f"[MainMenuScreen] Warning: open_settings error: {e}")
 
 
 class MultiplayerScreen(MDScreen):
@@ -103,12 +113,18 @@ class MultiplayerScreen(MDScreen):
 
     def on_enter(self, *args):
         super().on_enter(*args)
-        play_bgm("main")
+        try:
+            play_bgm("main")
+        except Exception:
+            pass
 
     def on_back_to_menu(self):
-        play_click()
-        app = MDApp.get_running_app()
-        app.root.current = "main_menu"
+        try:
+            play_click()
+            app = MDApp.get_running_app()
+            app.root.current = "main_menu"
+        except Exception as e:
+            print(f"[MultiplayerScreen] Warning: back_to_menu error: {e}")
 
 
 class WhackAWordHamApp(MDApp):
@@ -120,8 +136,19 @@ class WhackAWordHamApp(MDApp):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        # Initialize the local persistent player data store
-        self.player_data = PlayerDataManager()
+        # Initialize the local persistent player data store in the writable user_data_dir
+        try:
+            data_dir = self.user_data_dir
+            os.makedirs(data_dir, exist_ok=True)
+            data_file = os.path.join(data_dir, "player_data.json")
+            bundled_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "player_data.json")
+            if not os.path.exists(data_file) and os.path.exists(bundled_file):
+                import shutil
+                shutil.copy2(bundled_file, data_file)
+            self.player_data = PlayerDataManager(filename=data_file)
+        except Exception as e:
+            print(f"[WhackAWordHamApp] Warning: Could not initialize user_data_dir store ({e}), falling back.")
+            self.player_data = PlayerDataManager()
 
     def on_start(self):
         """Start background music as soon as the player launches the game."""
@@ -133,9 +160,11 @@ class WhackAWordHamApp(MDApp):
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Indigo"
 
-        # Set window dimensions suited for modern mobile/desktop preview
-        Window.size = (440, 780)
-        Window.minimum_width, Window.minimum_height = (360, 600)
+        # Only restrict window dimensions when running on Desktop preview (never on mobile devices)
+        from kivy.utils import platform
+        if platform not in ("android", "ios"):
+            Window.size = (440, 780)
+            Window.minimum_width, Window.minimum_height = (360, 600)
 
         # Load the KV layout file
         return Builder.load_file("game.kv")

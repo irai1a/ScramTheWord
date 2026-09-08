@@ -252,10 +252,18 @@ class AvatarShopScreen(MDScreen):
 
     def on_enter(self, *args):
         """Called automatically when navigating into AvatarShopScreen."""
-        play_bgm("wardrobe")
-        self.update_avatar_preview()
-        self.render_shop_items()
-        self.start_idle_animation()
+        super().on_enter(*args)
+        try:
+            play_bgm("wardrobe")
+        except Exception:
+            pass
+
+        try:
+            self.update_avatar_preview()
+            self.render_shop_items()
+            self.start_idle_animation()
+        except Exception as e:
+            print(f"[AvatarShopScreen] Warning: on_enter error: {e}")
 
     def on_leave(self, *args):
         """Called automatically when navigating away from AvatarShopScreen."""
@@ -466,6 +474,9 @@ class AvatarShopScreen(MDScreen):
 
     def on_back_to_menu(self):
         """Play click sound and return player to MainMenuScreen."""
-        play_click()
-        app = MDApp.get_running_app()
-        app.root.current = "main_menu"
+        try:
+            play_click()
+            app = MDApp.get_running_app()
+            app.root.current = "main_menu"
+        except Exception as e:
+            print(f"[AvatarShopScreen] Warning: on_back_to_menu error: {e}")

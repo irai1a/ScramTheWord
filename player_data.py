@@ -4,6 +4,7 @@ Uses Kivy's JsonStore to persist player progression, economy, and cosmetic items
 locally on the device.
 """
 
+import os
 from typing import Any, Dict, List, Optional
 from kivy.event import EventDispatcher
 # pyrefly: ignore [missing-import]
@@ -30,12 +31,30 @@ class PlayerDataManager(EventDispatcher):
 
     STORE_KEY = "player_progress"
 
-    def __init__(self, filename: str = "player_data.json", auto_save: bool = True, **kwargs):
+    def __init__(self, filename: Optional[str] = None, auto_save: bool = True, **kwargs):
         super().__init__(**kwargs)
+        if not filename:
+            try:
+                from kivy.app import App
+                app = App.get_running_app()
+                if app and hasattr(app, "user_data_dir"):
+                    os.makedirs(app.user_data_dir, exist_ok=True)
+                    filename = os.path.join(app.user_data_dir, "player_data.json")
+                else:
+                    filename = "player_data.json"
+            except Exception:
+                filename = "player_data.json"
         self.filename = filename
         self.auto_save = auto_save
-        self.store = JsonStore(filename)
-        self.load()
+        try:
+            self.store = JsonStore(filename)
+            self.load()
+        except Exception as e:
+            print(f"[PlayerDataManager] Warning: Could not initialize JsonStore with {filename}: {e}")
+            import tempfile
+            fallback = os.path.join(tempfile.gettempdir(), "fallback_player_data.json")
+            self.store = JsonStore(fallback)
+            self.load()
 
     # -------------------------------------------------------------------------
     # Read Functions
@@ -195,15 +214,18 @@ class PlayerDataManager(EventDispatcher):
 
     def persist(self) -> None:
         """Persist current in-memory values to Kivy's JsonStore."""
-        self.store.put(
-            self.STORE_KEY,
-            coins=int(self.coins),
-            current_stage=int(self.current_stage),
-            owned_accessories=list(self.owned_accessories),
-            equipped_accessory=self.equipped_accessory,
-            bgm_volume=float(self.bgm_volume),
-            sfx_volume=float(self.sfx_volume),
-        )
+        try:
+            self.store.put(
+                self.STORE_KEY,
+                coins=int(self.coins),
+                current_stage=int(self.current_stage),
+                owned_accessories=list(self.owned_accessories),
+                equipped_accessory=self.equipped_accessory,
+                bgm_volume=float(self.bgm_volume),
+                sfx_volume=float(self.sfx_volume),
+            )
+        except Exception as e:
+            print(f"[PlayerDataManager] Warning: Could not persist player data ({e})")
 
     def save(self) -> None:
         """Alias for persist()."""
@@ -214,17 +236,20 @@ class PlayerDataManager(EventDispatcher):
 
         If no existing store entry is found, initializes store with default values.
         """
-        if self.store.exists(self.STORE_KEY):
-            data = self.store.get(self.STORE_KEY)
-            self.coins = int(data.get("coins", 0))
-            self.current_stage = int(data.get("current_stage", 1))
-            self.owned_accessories = list(data.get("owned_accessories", []))
-            self.equipped_accessory = data.get("equipped_accessory", None)
-            self.bgm_volume = float(data.get("bgm_volume", 0.60))
-            self.sfx_volume = float(data.get("sfx_volume", 0.80))
-        else:
-            # First launch: persist initial default state
-            self.persist()
+        try:
+            if self.store.exists(self.STORE_KEY):
+                data = self.store.get(self.STORE_KEY)
+                self.coins = int(data.get("coins", 0))
+                self.current_stage = int(data.get("current_stage", 1))
+                self.owned_accessories = list(data.get("owned_accessories", []))
+                self.equipped_accessory = data.get("equipped_accessory", None)
+                self.bgm_volume = float(data.get("bgm_volume", 0.60))
+                self.sfx_volume = float(data.get("sfx_volume", 0.80))
+            else:
+                # First launch: persist initial default state
+                self.persist()
+        except Exception as e:
+            print(f"[PlayerDataManager] Warning: Could not load player data ({e})")
 
         # Synchronize loaded volumes with AudioManager
         try:

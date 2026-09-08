@@ -278,22 +278,40 @@ class StageModeScreen(MDScreen):
     def on_enter(self, *args):
         """Called automatically whenever the user navigates into StageModeScreen."""
         super().on_enter(*args)
-        play_bgm("stage")
+        try:
+            play_bgm("stage")
+        except Exception:
+            pass
+
         app = MDApp.get_running_app()
         stage = 1
         if hasattr(app, "player_data") and app.player_data is not None:
-            app.player_data.load()
-            stage = app.player_data.get_current_stage()
-            self.coins_display = app.player_data.get_coins()
-            app.player_data.bind(coins=self._on_coins_changed)
+            try:
+                app.player_data.load()
+                stage = app.player_data.get_current_stage()
+                self.coins_display = app.player_data.get_coins()
+                app.player_data.bind(coins=self._on_coins_changed)
+            except Exception as e:
+                print(f"[StageMode] Warning: player_data sync error: {e}")
 
         if self.target_stage_to_load > 0:
             stage = int(self.target_stage_to_load)
             self.target_stage_to_load = 0
 
-        self.update_hamster_accessory()
-        self.load_stage(stage)
-        self.start_hamster_idle()
+        try:
+            self.update_hamster_accessory()
+        except Exception as e:
+            print(f"[StageMode] Warning: accessory update error: {e}")
+
+        try:
+            self.load_stage(stage)
+        except Exception as e:
+            print(f"[StageMode] Warning: load_stage error: {e}")
+
+        try:
+            self.start_hamster_idle()
+        except Exception as e:
+            print(f"[StageMode] Warning: start_hamster_idle error: {e}")
 
     def on_leave(self, *args):
         """Called automatically whenever the user navigates away from StageModeScreen."""

@@ -124,22 +124,40 @@ class MapScreen(MDScreen):
     def on_enter(self, *args):
         """Called automatically when player enters MapScreen."""
         super().on_enter(*args)
-        play_bgm("main")
+        try:
+            play_bgm("main")
+        except Exception:
+            pass
+
         app = MDApp.get_running_app()
         if hasattr(app, "player_data") and app.player_data is not None:
-            app.player_data.load()
-            self.current_stage = max(1, min(self.total_stages, app.player_data.get_current_stage()))
-            self.coins_display = app.player_data.get_coins()
-            app.player_data.bind(
-                current_stage=self._on_stage_changed,
-                coins=self._on_coins_changed,
-            )
+            try:
+                app.player_data.load()
+                self.current_stage = max(1, min(self.total_stages, app.player_data.get_current_stage()))
+                self.coins_display = app.player_data.get_coins()
+                app.player_data.bind(
+                    current_stage=self._on_stage_changed,
+                    coins=self._on_coins_changed,
+                )
+            except Exception as e:
+                print(f"[MapScreen] Warning: Error syncing player_data: {e}")
 
-        self.update_hamster_accessory()
-        self.build_or_update_map()
+        try:
+            self.update_hamster_accessory()
+        except Exception as e:
+            print(f"[MapScreen] Warning: Error updating accessory: {e}")
+
+        try:
+            self.build_or_update_map()
+        except Exception as e:
+            print(f"[MapScreen] Warning: Error building map: {e}")
+
         # Immediate scroll on entry, then re-verify after layout
-        self.scroll_to_active_stage(animate=False)
-        Clock.schedule_once(lambda dt: self.scroll_to_active_stage(animate=False), 0.08)
+        try:
+            self.scroll_to_active_stage(animate=False)
+            Clock.schedule_once(lambda dt: self.scroll_to_active_stage(animate=False), 0.08)
+        except Exception as e:
+            print(f"[MapScreen] Warning: Error scrolling map: {e}")
 
     def on_leave(self, *args):
         """Clean up animations on leaving."""
@@ -257,35 +275,38 @@ class MapScreen(MDScreen):
         if not layout or not self.node_widgets:
             return
 
-        layout.canvas.before.clear()
-        active_stage = int(self.current_stage)
+        try:
+            layout.canvas.before.clear()
+            active_stage = int(self.current_stage)
 
-        with layout.canvas.before:
-            for s in range(1, self.total_stages):
-                x1_rel, y1_rel = self.get_node_rel_pos(s)
-                x2_rel, y2_rel = self.get_node_rel_pos(s + 1)
+            with layout.canvas.before:
+                for s in range(1, self.total_stages):
+                    x1_rel, y1_rel = self.get_node_rel_pos(s)
+                    x2_rel, y2_rel = self.get_node_rel_pos(s + 1)
 
-                p1_x = layout.x + x1_rel * layout.width
-                p1_y = layout.y + y1_rel * layout.height
-                p2_x = layout.x + x2_rel * layout.width
-                p2_y = layout.y + y2_rel * layout.height
+                    p1_x = layout.x + x1_rel * layout.width
+                    p1_y = layout.y + y1_rel * layout.height
+                    p2_x = layout.x + x2_rel * layout.width
+                    p2_y = layout.y + y2_rel * layout.height
 
-                # Draw 4 small stepping stones along the line between nodes
-                steps = 4
-                for step in range(1, steps):
-                    frac = step / float(steps)
-                    sx = p1_x + (p2_x - p1_x) * frac
-                    sy = p1_y + (p2_y - p1_y) * frac
+                    # Draw 4 small stepping stones along the line between nodes
+                    steps = 4
+                    for step in range(1, steps):
+                        frac = step / float(steps)
+                        sx = p1_x + (p2_x - p1_x) * frac
+                        sy = p1_y + (p2_y - p1_y) * frac
 
-                    # Completed or active trail: golden amber stepping stone
-                    if s < active_stage:
-                        Color(0.88, 0.72, 0.32, 0.85)
-                        stone_r = dp(5.0)
-                    else:
-                        Color(0.35, 0.32, 0.30, 0.50)
-                        stone_r = dp(4.0)
+                        # Completed or active trail: golden amber stepping stone
+                        if s < active_stage:
+                            Color(0.88, 0.72, 0.32, 0.85)
+                            stone_r = dp(5.0)
+                        else:
+                            Color(0.35, 0.32, 0.30, 0.50)
+                            stone_r = dp(4.0)
 
-                    Ellipse(pos=(sx - stone_r, sy - stone_r), size=(stone_r * 2, stone_r * 2))
+                        Ellipse(pos=(sx - stone_r, sy - stone_r), size=(stone_r * 2, stone_r * 2))
+        except Exception as e:
+            print(f"[MapScreen] Warning: Error drawing connecting path: {e}")
 
     def scroll_to_active_stage(self, animate: bool = False):
         """Center the MDScrollView on the active stage node."""
@@ -316,26 +337,32 @@ class MapScreen(MDScreen):
 
     def on_node_clicked(self, node_widget: StageNodeButton):
         """Handle tap on a stage node: only active stage launches gameplay."""
-        if node_widget.node_state != "active":
-            return
+        try:
+            if node_widget.node_state != "active":
+                return
 
-        stage_num = int(node_widget.stage_number)
-        app = MDApp.get_running_app()
-        if hasattr(app, "player_data") and app.player_data is not None:
-            actual_stage = app.player_data.get_current_stage()
-            if actual_stage >= self.total_stages and node_widget.stage_number >= self.total_stages:
-                stage_num = actual_stage
+            stage_num = int(node_widget.stage_number)
+            app = MDApp.get_running_app()
+            if hasattr(app, "player_data") and app.player_data is not None:
+                actual_stage = app.player_data.get_current_stage()
+                if actual_stage >= self.total_stages and node_widget.stage_number >= self.total_stages:
+                    stage_num = actual_stage
 
-        stage_screen = app.root.get_screen("stage_mode")
-        if stage_screen:
-            stage_screen.target_stage_to_load = stage_num
-        app.root.current = "stage_mode"
+            stage_screen = app.root.get_screen("stage_mode")
+            if stage_screen:
+                stage_screen.target_stage_to_load = stage_num
+            app.root.current = "stage_mode"
+        except Exception as e:
+            print(f"[MapScreen] Error launching stage_mode: {e}")
 
     def on_back_to_menu(self):
         """Return to main menu screen."""
-        play_click()
-        app = MDApp.get_running_app()
-        app.root.current = "main_menu"
+        try:
+            play_click()
+            app = MDApp.get_running_app()
+            app.root.current = "main_menu"
+        except Exception as e:
+            print(f"[MapScreen] Error returning to menu: {e}")
 
     def open_settings(self):
         """Open the Audio Settings dialog modal."""

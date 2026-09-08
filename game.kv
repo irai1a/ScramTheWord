@@ -177,10 +177,10 @@ MDScreenManager:
         MDRelativeLayout:
             size_hint: (1, 1)
 
-            # Milestone Crown / Crest Icon for Stage 10, 20, 30
+            # Milestone Crown / Crest Icon for Stage 10, 20, 30 (Always valid glyph & font_size, hidden with opacity)
             MDIcon:
-                icon: "crown" if root.stage_number == 30 else ("star-circle" if root.is_milestone else "")
-                font_size: "18sp" if root.is_milestone else "0sp"
+                icon: "crown" if root.stage_number == 30 else "star-circle"
+                font_size: "18sp"
                 theme_icon_color: "Custom"
                 icon_color: [1.0, 0.88, 0.25, 1.0] if root.node_state in ["active", "completed"] else [0.60, 0.55, 0.50, 0.50]
                 pos_hint: {"center_x": 0.5, "center_y": 0.74}
