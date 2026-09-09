@@ -298,19 +298,30 @@ class SettingsDialog(MDRelativeLayout):
         target_parent = parent_widget
         if not target_parent:
             app = MDApp.get_running_app()
-            target_parent = app.root
+            target_parent = app.root if app else None
+
+        # Safely detach from old parent if changing screens
+        if self.parent and self.parent is not target_parent:
+            try:
+                self.parent.remove_widget(self)
+            except Exception:
+                pass
 
         if target_parent and self not in target_parent.children:
-            target_parent.add_widget(self)
+            try:
+                target_parent.add_widget(self)
+            except Exception as e:
+                print(f"[SettingsDialog] Error adding to parent: {e}")
+                return
 
         self._is_open = True
         self.opacity = 0.0
-        card = self.ids.get("card_container")
-        if card:
-            card.scale_value = 0.92
 
-        anim = Animation(opacity=1.0, duration=0.20, t="out_quad")
-        anim.start(self)
+        try:
+            anim = Animation(opacity=1.0, duration=0.20, t="out_quad")
+            anim.start(self)
+        except Exception:
+            self.opacity = 1.0
 
     def close(self):
         """Dismiss the modal settings dialog."""
@@ -320,14 +331,20 @@ class SettingsDialog(MDRelativeLayout):
         play_click()
         self._is_open = False
 
-        anim = Animation(opacity=0.0, duration=0.18, t="in_quad")
-
         def on_finish(*args):
             if self.parent:
-                self.parent.remove_widget(self)
+                try:
+                    self.parent.remove_widget(self)
+                except Exception:
+                    pass
 
-        anim.bind(on_complete=on_finish)
-        anim.start(self)
+        try:
+            anim = Animation(opacity=0.0, duration=0.18, t="in_quad")
+            anim.bind(on_complete=on_finish)
+            anim.start(self)
+        except Exception:
+            self.opacity = 0.0
+            on_finish()
 
     def on_bgm_slider_change(self, value):
         """Handle real-time BGM volume slider adjustments."""

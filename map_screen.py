@@ -77,31 +77,50 @@ class StageNodeButton(ButtonBehavior, MDRelativeLayout):
             self.node_text_color = [0.72, 0.68, 0.62, 0.80]
 
     def on_touch_down(self, touch):
-        if not self.collide_point(*touch.pos):
-            return False
-        # Only the active node is enabled and clickable!
-        # Completed (< current_stage) and locked (> current_stage) nodes are DISABLED
-        if self.node_state != "active":
+        try:
+            if not self.collide_point(*touch.pos):
+                if self.parent and hasattr(self.parent, "to_widget"):
+                    p_pos = self.parent.to_widget(*touch.pos)
+                    if not self.collide_point(*p_pos):
+                        return False
+                else:
+                    return False
+            # Only the active node is enabled and clickable!
+            # Completed (< current_stage) and locked (> current_stage) nodes are DISABLED
+            if self.node_state != "active":
+                return True
+            if getattr(touch, "is_mouse_scrolling", False) or self in touch.ud:
+                return False
+            touch.grab(self)
+            touch.ud[self] = True
+            self.last_touch = touch
+            self.state = "down"
+            play_click()
+            self.dispatch("on_press")
             return True
-        if touch.is_mouse_scrolling or self in touch.ud:
+        except Exception as e:
+            print(f"[StageNodeButton] touch_down error: {e}")
             return False
-        touch.grab(self)
-        touch.ud[self] = True
-        self.last_touch = touch
-        self.state = "down"
-        play_click()
-        self.dispatch("on_press")
-        return True
 
     def on_touch_up(self, touch):
-        if touch.grab_current is not self:
+        try:
+            if touch.grab_current is not self:
+                return False
+            touch.ungrab(self)
+            self.last_touch = touch
+            self.state = "normal"
+
+            is_hit = self.collide_point(*touch.pos)
+            if not is_hit and self.parent and hasattr(self.parent, "to_widget"):
+                p_pos = self.parent.to_widget(*touch.pos)
+                is_hit = self.collide_point(*p_pos)
+
+            if is_hit:
+                self.dispatch("on_release")
+            return True
+        except Exception as e:
+            print(f"[StageNodeButton] touch_up error: {e}")
             return False
-        touch.ungrab(self)
-        self.last_touch = touch
-        self.state = "normal"
-        if self.collide_point(*touch.pos):
-            self.dispatch("on_release")
-        return True
 
 
 Factory.register("StageNodeButton", cls=StageNodeButton)
@@ -372,7 +391,10 @@ class MapScreen(MDScreen):
 
     def open_settings(self):
         """Open the Audio Settings dialog modal."""
-        from settings_dialog import SettingsDialog
-        if not hasattr(self, "_settings_dialog") or not self._settings_dialog:
-            self._settings_dialog = SettingsDialog()
-        self._settings_dialog.open(self)
+        try:
+            from settings_dialog import SettingsDialog
+            if not hasattr(self, "_settings_dialog") or not self._settings_dialog:
+                self._settings_dialog = SettingsDialog()
+            self._settings_dialog.open(self)
+        except Exception as e:
+            print(f"[MapScreen] Error opening settings: {e}")

@@ -126,29 +126,48 @@ class LetterTile(ButtonBehavior, MDRelativeLayout):
         self.add_widget(self.label)
 
     def on_touch_down(self, touch):
-        if not self.collide_point(*touch.pos):
-            return False
-        if self.disabled:
+        try:
+            if not self.collide_point(*touch.pos):
+                if self.parent and hasattr(self.parent, "to_widget"):
+                    p_pos = self.parent.to_widget(*touch.pos)
+                    if not self.collide_point(*p_pos):
+                        return False
+                else:
+                    return False
+            if self.disabled:
+                return True
+            if getattr(touch, "is_mouse_scrolling", False) or self in touch.ud:
+                return False
+            touch.grab(self)
+            touch.ud[self] = True
+            self.last_touch = touch
+            self.state = "down"
+            play_sfx("tile")
+            self.dispatch("on_press")
             return True
-        if touch.is_mouse_scrolling or self in touch.ud:
+        except Exception as e:
+            print(f"[LetterTile] touch_down error: {e}")
             return False
-        touch.grab(self)
-        touch.ud[self] = True
-        self.last_touch = touch
-        self.state = "down"
-        play_sfx("tile")
-        self.dispatch("on_press")
-        return True
 
     def on_touch_up(self, touch):
-        if touch.grab_current is not self:
+        try:
+            if touch.grab_current is not self:
+                return False
+            touch.ungrab(self)
+            self.last_touch = touch
+            self.state = "normal"
+
+            is_hit = self.collide_point(*touch.pos)
+            if not is_hit and self.parent and hasattr(self.parent, "to_widget"):
+                p_pos = self.parent.to_widget(*touch.pos)
+                is_hit = self.collide_point(*p_pos)
+
+            if is_hit:
+                self.dispatch("on_release")
+            return True
+        except Exception as e:
+            print(f"[LetterTile] touch_up error: {e}")
             return False
-        touch.ungrab(self)
-        self.last_touch = touch
-        self.state = "normal"
-        if self.collide_point(*touch.pos):
-            self.dispatch("on_release")
-        return True
 
     def on_state(self, instance, value):
         """Visual tactile feedback on touch down/up."""
@@ -168,32 +187,51 @@ class WoodHintButton(ButtonBehavior, MDRelativeLayout):
     is_pressed = BooleanProperty(False)
 
     def on_touch_down(self, touch):
-        if not self.collide_point(*touch.pos):
-            return False
-        # The hint button can ONLY be clicked when it has the red notification mark!
-        if not self.has_badge or self.disabled or getattr(self, "is_disabled", False):
+        try:
+            if not self.collide_point(*touch.pos):
+                if self.parent and hasattr(self.parent, "to_widget"):
+                    p_pos = self.parent.to_widget(*touch.pos)
+                    if not self.collide_point(*p_pos):
+                        return False
+                else:
+                    return False
+            # The hint button can ONLY be clicked when it has the red notification mark!
+            if not self.has_badge or self.disabled or getattr(self, "is_disabled", False):
+                return True
+            if getattr(touch, "is_mouse_scrolling", False) or self in touch.ud:
+                return False
+            touch.grab(self)
+            touch.ud[self] = True
+            self.last_touch = touch
+            self.state = "down"
+            self.is_pressed = True
+            play_click()
+            self.dispatch("on_press")
             return True
-        if touch.is_mouse_scrolling or self in touch.ud:
+        except Exception as e:
+            print(f"[WoodHintButton] touch_down error: {e}")
             return False
-        touch.grab(self)
-        touch.ud[self] = True
-        self.last_touch = touch
-        self.state = "down"
-        self.is_pressed = True
-        play_click()
-        self.dispatch("on_press")
-        return True
 
     def on_touch_up(self, touch):
-        if touch.grab_current is not self:
+        try:
+            if touch.grab_current is not self:
+                return False
+            touch.ungrab(self)
+            self.last_touch = touch
+            self.state = "normal"
+            self.is_pressed = False
+
+            is_hit = self.collide_point(*touch.pos)
+            if not is_hit and self.parent and hasattr(self.parent, "to_widget"):
+                p_pos = self.parent.to_widget(*touch.pos)
+                is_hit = self.collide_point(*p_pos)
+
+            if is_hit:
+                self.dispatch("on_release")
+            return True
+        except Exception as e:
+            print(f"[WoodHintButton] touch_up error: {e}")
             return False
-        touch.ungrab(self)
-        self.last_touch = touch
-        self.state = "normal"
-        self.is_pressed = False
-        if self.collide_point(*touch.pos):
-            self.dispatch("on_release")
-        return True
 
     def on_state(self, instance, value):
         self.is_pressed = (value == "down")
@@ -543,11 +581,11 @@ class StageModeScreen(MDScreen):
         self.render_assembly_tiles()
 
         # Re-enable submit/clear buttons and ensure float badge is disabled
-        if hasattr(self.ids, "btn_submit"):
+        if "btn_submit" in self.ids:
             self.ids.btn_submit.disabled = False
-        if hasattr(self.ids, "btn_clear"):
+        if "btn_clear" in self.ids:
             self.ids.btn_clear.disabled = False
-        if hasattr(self.ids, "reward_float_badge"):
+        if "reward_float_badge" in self.ids:
             self.ids.reward_float_badge.disabled = True
             self.ids.reward_float_badge.opacity = 0.0
 
@@ -555,7 +593,7 @@ class StageModeScreen(MDScreen):
 
     def render_scrambled_tiles(self):
         """Populate the scrambled letters pool with interactive LetterTile cards."""
-        if not hasattr(self.ids, "scrambled_box"):
+        if "scrambled_box" not in self.ids:
             return
 
         box = self.ids.scrambled_box
@@ -605,7 +643,7 @@ class StageModeScreen(MDScreen):
 
     def render_assembly_tiles(self):
         """Render the chosen letters in the assembly area."""
-        if not hasattr(self.ids, "assembly_box"):
+        if "assembly_box" not in self.ids:
             return
 
         box = self.ids.assembly_box
@@ -617,7 +655,7 @@ class StageModeScreen(MDScreen):
         tile_h = dp(46) if length >= 8 else (dp(50) if length >= 6 else dp(56))
 
         # Update placeholder indicators
-        if hasattr(self.ids, "assembly_placeholder"):
+        if "assembly_placeholder" in self.ids:
             if not self.assembled_tiles:
                 self.ids.assembly_placeholder.text = "  ".join(["_"] * length)
                 self.ids.assembly_placeholder.opacity = 0.5
@@ -776,9 +814,9 @@ class StageModeScreen(MDScreen):
             self.play_hamster_hop()
 
             # Prevent further input during transition
-            if hasattr(self.ids, "btn_submit"):
+            if "btn_submit" in self.ids:
                 self.ids.btn_submit.disabled = True
-            if hasattr(self.ids, "btn_clear"):
+            if "btn_clear" in self.ids:
                 self.ids.btn_clear.disabled = True
 
             # Load the next stage after celebration delay
@@ -817,7 +855,7 @@ class StageModeScreen(MDScreen):
             Clock.schedule_once(lambda dt, a=anim, w=tile: a.start(w), idx * 0.07)
 
         # 2. Coin Counter Golden Glow Flash Pulse
-        if hasattr(self.ids, "coin_badge_card"):
+        if "coin_badge_card" in self.ids:
             badge = self.ids.coin_badge_card
             orig_bg = [0.22, 0.15, 0.09, 0.90]
             anim_coin = (
@@ -827,7 +865,7 @@ class StageModeScreen(MDScreen):
             anim_coin.start(badge)
 
         # 3. Banner Elastic Pop
-        if hasattr(self.ids, "banner_card"):
+        if "banner_card" in self.ids:
             banner = self.ids.banner_card
             anim_banner = (
                 Animation(opacity=0.3, duration=0.06)
@@ -836,10 +874,10 @@ class StageModeScreen(MDScreen):
             anim_banner.start(banner)
 
         # 4. Floating Victory Reward Popup (+10 Coins / +7 Coins)
-        if hasattr(self.ids, "reward_float_badge"):
+        if "reward_float_badge" in self.ids:
             float_badge = self.ids.reward_float_badge
             float_badge.disabled = False
-            if hasattr(self.ids, "reward_float_text"):
+            if "reward_float_text" in self.ids:
                 self.ids.reward_float_text.text = f"+{coins_awarded} COINS!"
             float_badge.opacity = 0.0
             anim_float = (
@@ -853,7 +891,7 @@ class StageModeScreen(MDScreen):
     def advance_to_next_stage(self):
         """Callback to load the next stage after success delay."""
         app = MDApp.get_running_app()
-        if hasattr(self.ids, "reward_float_badge"):
+        if "reward_float_badge" in self.ids:
             self.ids.reward_float_badge.disabled = True
             self.ids.reward_float_badge.opacity = 0.0
         next_stage = self.current_stage_display + 1

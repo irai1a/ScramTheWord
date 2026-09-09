@@ -1,5 +1,8 @@
 import os
 import sys
+import time
+import traceback
+from kivy.base import ExceptionHandler, ExceptionManager
 from kivy.clock import Clock
 from kivy.core.window import Window
 from kivy.lang import Builder
@@ -34,35 +37,124 @@ class WoodPlankButton(ButtonBehavior, MDRelativeLayout):
     is_disabled = BooleanProperty(False)
 
     def on_touch_down(self, touch):
-        if not self.collide_point(*touch.pos):
-            return False
-        if self.disabled or self.is_disabled:
+        try:
+            if not self.collide_point(*touch.pos):
+                if self.parent and hasattr(self.parent, "to_widget"):
+                    p_pos = self.parent.to_widget(*touch.pos)
+                    if not self.collide_point(*p_pos):
+                        return False
+                else:
+                    return False
+            if self.disabled or self.is_disabled:
+                return True
+            if getattr(touch, "is_mouse_scrolling", False):
+                return False
+            if self in touch.ud:
+                return False
+            touch.grab(self)
+            touch.ud[self] = True
+            self.last_touch = touch
+            self.state = "down"
+            play_click()
+            self.dispatch("on_press")
             return True
-        if touch.is_mouse_scrolling:
+        except Exception as e:
+            print(f"[WoodPlankButton] touch_down error: {e}")
             return False
-        if self in touch.ud:
-            return False
-        touch.grab(self)
-        touch.ud[self] = True
-        self.last_touch = touch
-        self.state = "down"
-        play_click()
-        self.dispatch("on_press")
-        return True
 
     def on_touch_up(self, touch):
-        if touch.grab_current is not self:
+        try:
+            if touch.grab_current is not self:
+                return False
+            touch.ungrab(self)
+            self.last_touch = touch
+            self.state = "normal"
+
+            # Check collision in both local and window coordinate frames
+            is_hit = self.collide_point(*touch.pos)
+            if not is_hit and self.parent and hasattr(self.parent, "to_widget"):
+                p_pos = self.parent.to_widget(*touch.pos)
+                is_hit = self.collide_point(*p_pos)
+
+            if is_hit:
+                self.dispatch("on_release")
+            return True
+        except Exception as e:
+            print(f"[WoodPlankButton] touch_up error: {e}")
             return False
-        touch.ungrab(self)
-        self.last_touch = touch
-        self.state = "normal"
-        if self.collide_point(*touch.pos):
-            self.dispatch("on_release")
-        return True
 
 
 from kivy.factory import Factory
 Factory.register("WoodPlankButton", cls=WoodPlankButton)
+
+
+class CrashScreen(MDScreen):
+    """On-screen diagnostic crash recovery screen."""
+
+    error_summary = StringProperty("An unexpected issue was caught.")
+    error_details = StringProperty("Details will appear here.")
+    log_path_display = StringProperty("")
+
+    def show_error(self, summary: str, details: str):
+        self.error_summary = str(summary)
+        self.error_details = str(details)
+        try:
+            app = MDApp.get_running_app()
+            if app and hasattr(app, "user_data_dir"):
+                self.log_path_display = os.path.join(app.user_data_dir, "crash_log.txt")
+            else:
+                self.log_path_display = "crash_log.txt"
+        except Exception:
+            self.log_path_display = "crash_log.txt"
+
+    def return_to_main_menu(self):
+        try:
+            app = MDApp.get_running_app()
+            if hasattr(app, "switch_screen"):
+                app.switch_screen("main_menu")
+            elif app.root:
+                app.root.current = "main_menu"
+        except Exception as e:
+            print(f"[CrashScreen] Return error: {e}")
+
+
+Factory.register("CrashScreen", cls=CrashScreen)
+
+
+class GlobalCrashHandler(ExceptionHandler):
+    """Catches all unhandled exceptions so the app NEVER crashes out to the Android home screen."""
+
+    def handle_exception(self, inst):
+        formatted = traceback.format_exc()
+        print(f"[WhackAWordHamApp CRASH INTERCEPTED]:\n{formatted}")
+
+        # 1. Write crash details to disk
+        try:
+            app = MDApp.get_running_app()
+            log_dir = app.user_data_dir if (app and hasattr(app, "user_data_dir")) else "."
+            os.makedirs(log_dir, exist_ok=True)
+            log_file = os.path.join(log_dir, "crash_log.txt")
+            with open(log_file, "a", encoding="utf-8") as f:
+                f.write(f"\n--- ERROR AT {time.ctime()} ---\n{formatted}\n")
+        except Exception as e:
+            print(f"[GlobalCrashHandler] File write error: {e}")
+
+        # 2. Transition safely to on-screen diagnostic recovery
+        try:
+            app = MDApp.get_running_app()
+            if app and app.root:
+                if hasattr(app.root, "has_screen") and app.root.has_screen("crash_screen"):
+                    crash_screen = app.root.get_screen("crash_screen")
+                    if crash_screen:
+                        crash_screen.show_error(str(inst), formatted)
+                    app.root.current = "crash_screen"
+        except Exception as e:
+            print(f"[GlobalCrashHandler] Screen switch error: {e}")
+
+        return ExceptionManager.PASS
+
+
+ExceptionManager.add_handler(GlobalCrashHandler())
 
 
 
@@ -178,18 +270,23 @@ class WhackAWordHamApp(MDApp):
         """Safely transition to target screen on the next frame to prevent touch event collisions."""
         if getattr(self, "_is_switching_screen", False):
             return
+        if self.root and getattr(self.root, "current", None) == screen_name:
+            return
         self._is_switching_screen = True
 
         def _do_switch(dt):
             try:
-                if self.root and hasattr(self.root, "current"):
-                    self.root.current = screen_name
+                if self.root:
+                    if hasattr(self.root, "has_screen") and self.root.has_screen(screen_name):
+                        self.root.current = screen_name
+                    elif hasattr(self.root, "current"):
+                        self.root.current = screen_name
             except Exception as e:
                 print(f"[WhackAWordHamApp] Warning: error switching to {screen_name}: {e}")
             finally:
                 self._is_switching_screen = False
 
-        Clock.schedule_once(_do_switch, 0.05)
+        Clock.schedule_once(_do_switch, 0.04)
 
     def open_settings_dialog(self):
         """Open the global Audio Settings dialog modal."""

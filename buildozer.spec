@@ -25,9 +25,9 @@ source.exclude_patterns = Makefile, *.pyc, *.pyo, *.spec.bak, test_*
 
 # (str) Application versioning
 # Increment version and numeric code for every new release uploaded to Google Play
-version = 1.0.2
+version = 1.0.3
 # (int) Android application version code (must be strictly incremented for Play Store updates)
-android.numeric_version = 3
+android.numeric_version = 4
 
 # (list) Application requirements
 requirements = python3, kivy==2.3.0, kivymd==2.0.0, materialyoucolor, materialshapes, asynckivy

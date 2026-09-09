@@ -24,6 +24,126 @@ MDScreenManager:
     MultiplayerScreen:
         name: "multiplayer"
 
+    CrashScreen:
+        name: "crash_screen"
+
+
+<CrashScreen>:
+    md_bg_color: [0.08, 0.06, 0.04, 1.0]
+
+    MDRelativeLayout:
+        size_hint: (1, 1)
+
+        FitImage:
+            source: "assets/main_menu_bg.png"
+            size_hint: (1, 1)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        Widget:
+            size_hint: (1, 1)
+            canvas:
+                Color:
+                    rgba: [0.06, 0.04, 0.03, 0.88]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        MDCard:
+            style: "elevated"
+            theme_bg_color: "Custom"
+            md_bg_color: [0.18, 0.12, 0.08, 0.98]
+            line_color: [0.78, 0.32, 0.18, 0.95]
+            line_width: dp(2.0)
+            radius: [dp(20), dp(20), dp(20), dp(20)]
+            size_hint: (0.90, 0.84)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            padding: [dp(18), dp(18), dp(18), dp(18)]
+
+            MDBoxLayout:
+                orientation: "vertical"
+                spacing: dp(10)
+                size_hint: (1, 1)
+
+                MDBoxLayout:
+                    adaptive_height: True
+                    spacing: dp(10)
+                    pos_hint: {"center_y": 0.5}
+
+                    MDIcon:
+                        icon: "alert-circle"
+                        theme_icon_color: "Custom"
+                        icon_color: [1.0, 0.42, 0.25, 1.0]
+                        font_size: "28sp"
+                        pos_hint: {"center_y": 0.5}
+
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        adaptive_size: True
+                        pos_hint: {"center_y": 0.5}
+
+                        MDLabel:
+                            text: "Woodland Adventure Note"
+                            bold: True
+                            font_style: "Title"
+                            role: "medium"
+                            theme_text_color: "Custom"
+                            text_color: [1.0, 0.92, 0.82, 1.0]
+                            adaptive_size: True
+
+                        MDLabel:
+                            text: "An issue was caught safely without crashing"
+                            font_style: "Label"
+                            role: "small"
+                            theme_text_color: "Custom"
+                            text_color: [0.85, 0.78, 0.68, 0.90]
+                            adaptive_size: True
+
+                Widget:
+                    size_hint_y: None
+                    height: dp(1.5)
+                    canvas:
+                        Color:
+                            rgba: [0.45, 0.30, 0.16, 0.50]
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                MDLabel:
+                    text: root.error_summary
+                    bold: True
+                    font_style: "Label"
+                    role: "large"
+                    adaptive_height: True
+                    theme_text_color: "Custom"
+                    text_color: [1.0, 0.52, 0.35, 1.0]
+
+                MDScrollView:
+                    size_hint: (1, 1)
+                    bar_width: dp(4)
+                    bar_color: [1.0, 0.82, 0.25, 0.4]
+
+                    MDLabel:
+                        text: root.error_details
+                        font_style: "Body"
+                        role: "small"
+                        adaptive_height: True
+                        theme_text_color: "Custom"
+                        text_color: [0.92, 0.88, 0.80, 0.95]
+
+                MDLabel:
+                    text: "Log saved: " + root.log_path_display
+                    font_style: "Label"
+                    role: "small"
+                    adaptive_height: True
+                    theme_text_color: "Custom"
+                    text_color: [0.72, 0.68, 0.60, 0.75]
+
+                WoodPlankButton:
+                    button_text: "RETURN TO MAIN MENU"
+                    button_icon: "home"
+                    height: dp(52)
+                    on_release: root.return_to_main_menu()
+
 
 <LoadingScreen>:
     md_bg_color: [0.08, 0.06, 0.04, 1.0]
