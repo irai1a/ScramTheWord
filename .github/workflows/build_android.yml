@@ -43,7 +43,8 @@ jobs:
 
       - name: Install System Dependencies
         run: |
-          sudo apt-get update
+          sudo rm -f /etc/apt/sources.list.d/google-chrome*.list || true
+          sudo apt-get update -o Acquire::Retries=3 || true
           sudo apt-get install -y --no-install-recommends \
             build-essential \
             git \
