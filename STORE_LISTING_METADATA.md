@@ -80,20 +80,23 @@ Download Whack-A-Word-Ham today and begin your cozy woodland word puzzle journey
 ## 4. Release Notes (What's new in this release)
 Copy and paste this into the **Release notes** field on Google Play Console:
 
+### Version 1.0.6 (Latest - Dynamic Map & Themed Worlds):
 ```text
-Welcome to the initial release of Whack-A-Word-Ham!
-• 30 progressive woodland stage levels with increasing vocabulary challenges.
-• Unscramble rustic letter tiles to earn shiny golden coins.
-• Woodland Wardrobe: Customize your hamster hero with crowns, ninja masks, wizard hats, headphones, and cool glasses!
-• Dynamic hint clues to help you when you are stuck.
-• Preloading screen for smooth and instantaneous level navigation.
-• 100% offline gameplay with zero ads or tracking.
+<en-US>
+What's New in Version 1.0.6:
+• Infinite Stage Progression: The stage map now dynamically expands 30 levels ahead as you conquer each chapter!
+• 5 Beautiful Cycling World Themes: Journey through Woodland Forest, Sunny Sunflower Meadow, Cozy Kitchen Pantry, Glowing Underground Burrow, and Golden Autumn Acorn Forest!
+• Chapter Banners & Milestone Crowns: Celebrate your grand achievements every 30 levels with decorative chapter banners and milestone crests.
+• Enhanced Map Navigation: Streamlined header plaque featuring live theme icons, themed stepping stones, and smooth auto-scrolling to your current stage.
+• Performance optimizations and smooth gameplay improvements.
+</en-US>
 ```
-*(Alternative language-tagged format for Play Console:)*
+
+### Initial Release (v1.0.0):
 ```text
 <en-US>
 Welcome to the initial release of Whack-A-Word-Ham!
-• 30 progressive woodland stage levels with increasing vocabulary challenges.
+• Progressive stage levels with increasing vocabulary challenges.
 • Unscramble rustic letter tiles to earn shiny golden coins.
 • Woodland Wardrobe: Customize your hamster hero with crowns, ninja masks, wizard hats, headphones, and cool glasses!
 • Dynamic hint clues to help you when you are stuck.
