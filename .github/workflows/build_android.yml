@@ -85,6 +85,20 @@ jobs:
         run: |
           buildozer -v android release
 
+      - name: Sign Release AAB (Android App Bundle)
+        run: |
+          for aab in bin/*-release.aab; do
+            if [ -f "$aab" ]; then
+              echo "Signing $aab with release keystore..."
+              jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 \
+                -keystore keystore/whackawordham-release.keystore \
+                -storepass "WhackWordHam2026!Key" \
+                -keypass "WhackWordHam2026!Key" \
+                "$aab" whackawordham
+              jarsigner -verify "$aab"
+            fi
+          done
+
       - name: List Generated Binaries
         if: always()
         run: |
