@@ -25,9 +25,9 @@ source.exclude_patterns = Makefile, *.pyc, *.pyo, *.spec.bak, test_*
 
 # (str) Application versioning
 # Increment version and numeric code for every new release uploaded to Google Play
-version = 1.0.6
+version = 1.0.7
 # (int) Android application version code (must be strictly incremented for Play Store updates)
-android.numeric_version = 7
+android.numeric_version = 8
 
 # (list) Application requirements
 requirements = python3, kivy==2.3.0, kivymd==2.0.0, pillow, materialyoucolor, materialshapes, asynckivy, asyncgui, exceptiongroup, typing_extensions
@@ -101,6 +101,7 @@ android.manifest.launch_mode = singleTask
 
 # (str) python-for-android branch to use (pinned to v2024.01.21 for stable Python 3.11.5 + Kivy 2.3.0 compatibility)
 p4a.branch = v2024.01.21
+p4a.extra_args = --android_api=36
 
 # (str) python-for-android packaging format (apk for local testing, aab for Google Play Store upload)
 # Change to 'aab' when building the release bundle: buildozer android release

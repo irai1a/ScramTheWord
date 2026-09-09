@@ -80,15 +80,16 @@ Download Whack-A-Word-Ham today and begin your cozy woodland word puzzle journey
 ## 4. Release Notes (What's new in this release)
 Copy and paste this into the **Release notes** field on Google Play Console:
 
-### Version 1.0.6 (Latest - Dynamic Map & Themed Worlds):
+### Version 1.0.7 (Latest - Target API 36 Google Play Compliance & Themed Worlds):
 ```text
 <en-US>
-What's New in Version 1.0.6:
-• Infinite Stage Progression: The stage map now dynamically expands 30 levels ahead as you conquer each chapter!
+What's New in Version 1.0.7:
+• Updated Target SDK to Android 16 (API level 36) in full compliance with Google Play Store standards.
+• Infinite Stage Progression: The stage map dynamically expands 30 levels ahead as you conquer each chapter!
 • 5 Beautiful Cycling World Themes: Journey through Woodland Forest, Sunny Sunflower Meadow, Cozy Kitchen Pantry, Glowing Underground Burrow, and Golden Autumn Acorn Forest!
 • Chapter Banners & Milestone Crowns: Celebrate your grand achievements every 30 levels with decorative chapter banners and milestone crests.
-• Enhanced Map Navigation: Streamlined header plaque featuring live theme icons, themed stepping stones, and smooth auto-scrolling to your current stage.
-• Performance optimizations and smooth gameplay improvements.
+• Enhanced Map Navigation: Streamlined header plaque featuring live theme icons, themed stepping stones, and smooth auto-scrolling.
+• Security, performance, and gameplay optimizations.
 </en-US>
 ```
 
