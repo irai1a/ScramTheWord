@@ -408,6 +408,55 @@ MDScreenManager:
             pos_hint: {"center_x": 0.5, "center_y": 0.5}
 
 
+<ChapterBannerCard>:
+    size_hint: None, None
+    size: [dp(290), dp(44)]
+
+    MDCard:
+        style: "elevated"
+        theme_bg_color: "Custom"
+        md_bg_color: root.theme_bg
+        line_color: root.theme_border
+        line_width: dp(1.8)
+        radius: [dp(14), dp(14), dp(14), dp(14)]
+        size_hint: (1, 1)
+        padding: [dp(10), dp(4), dp(10), dp(4)]
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        MDBoxLayout:
+            spacing: dp(8)
+            pos_hint: {"center_y": 0.5}
+
+            MDIcon:
+                icon: root.chapter_icon
+                theme_icon_color: "Custom"
+                icon_color: [1.0, 0.85, 0.25, 1.0]
+                font_size: "20sp"
+                pos_hint: {"center_y": 0.5}
+
+            MDBoxLayout:
+                orientation: "vertical"
+                adaptive_size: True
+                pos_hint: {"center_y": 0.5}
+
+                MDLabel:
+                    text: root.chapter_name.upper()
+                    bold: True
+                    font_style: "Label"
+                    role: "medium"
+                    theme_text_color: "Custom"
+                    text_color: [1.0, 0.95, 0.88, 1.0]
+                    adaptive_size: True
+
+                MDLabel:
+                    text: root.chapter_range
+                    font_style: "Label"
+                    role: "small"
+                    theme_text_color: "Custom"
+                    text_color: [0.90, 0.82, 0.70, 0.85]
+                    adaptive_size: True
+
+
 <StageNodeButton>:
     size_hint: None, None
     size: [root.node_diameter, root.node_diameter]
@@ -431,7 +480,7 @@ MDScreenManager:
         theme_bg_color: "Custom"
         md_bg_color: root.node_bg_color
         line_color: root.node_border_color
-        line_width: dp(3) if root.is_milestone else (dp(2.5) if root.node_state == "active" else dp(1.8))
+        line_width: dp(3) if (root.is_milestone or root.is_grand_milestone) else (dp(2.5) if root.node_state == "active" else dp(1.8))
         size_hint: (1, 1)
         radius: [root.node_diameter / 2] * 4
         pos_hint: {"center_x": 0.5, "center_y": 0.5}
@@ -439,14 +488,14 @@ MDScreenManager:
         MDRelativeLayout:
             size_hint: (1, 1)
 
-            # Milestone Crown / Crest Icon for Stage 10, 20, 30 (Always valid glyph & font_size, hidden with opacity)
+            # Milestone Crown / Crest Icon for Stage 10, 20, 30, etc.
             MDIcon:
-                icon: "crown" if root.stage_number == 30 else "star-circle"
-                font_size: "18sp"
+                icon: "crown" if (root.stage_number % 30 == 0) else "star-circle"
+                font_size: "20sp" if root.is_grand_milestone else "16sp"
                 theme_icon_color: "Custom"
                 icon_color: [1.0, 0.88, 0.25, 1.0] if root.node_state in ["active", "completed"] else [0.60, 0.55, 0.50, 0.50]
                 pos_hint: {"center_x": 0.5, "center_y": 0.74}
-                opacity: 1.0 if root.is_milestone else 0.0
+                opacity: 1.0 if (root.is_milestone or root.is_grand_milestone) else 0.0
 
             # Stage Number Label
             MDLabel:
@@ -454,11 +503,11 @@ MDScreenManager:
                 bold: True
                 halign: "center"
                 valign: "center"
-                font_style: "Title" if root.is_milestone else "Headline"
-                role: "medium" if root.is_milestone else "small"
+                font_style: "Title" if (root.is_milestone or root.is_grand_milestone) else "Headline"
+                role: "medium" if (root.is_milestone or root.is_grand_milestone) else "small"
                 theme_text_color: "Custom"
                 text_color: root.node_text_color
-                pos_hint: {"center_x": 0.5, "center_y": 0.44 if root.is_milestone else 0.50}
+                pos_hint: {"center_x": 0.5, "center_y": 0.44 if (root.is_milestone or root.is_grand_milestone) else 0.50}
 
             # Completed Checkmark Badge (for node < current_stage)
             MDIcon:
@@ -532,26 +581,42 @@ MDScreenManager:
                     md_bg_color: [0.32, 0.20, 0.12, 0.92]
                     adaptive_size: True
                     radius: [dp(16), dp(16), dp(16), dp(16)]
-                    padding: [dp(14), dp(6), dp(16), dp(6)]
+                    padding: [dp(12), dp(4), dp(14), dp(4)]
                     pos_hint: {"center_y": 0.5}
 
                     MDBoxLayout:
                         adaptive_size: True
                         spacing: dp(6)
+                        pos_hint: {"center_y": 0.5}
+
                         MDIcon:
-                            icon: "map-marker-path"
+                            icon: root.current_theme_icon
                             theme_icon_color: "Custom"
                             icon_color: [1.0, 0.82, 0.25, 1.0]
+                            font_size: "20sp"
                             pos_hint: {"center_y": 0.5}
-                        MDLabel:
-                            text: "STAGE MAP (1 - " + str(root.total_stages) + ")"
-                            bold: True
+
+                        MDBoxLayout:
+                            orientation: "vertical"
                             adaptive_size: True
-                            font_style: "Label"
-                            role: "large"
-                            theme_text_color: "Custom"
-                            text_color: [1.0, 0.96, 0.90, 1.0]
                             pos_hint: {"center_y": 0.5}
+
+                            MDLabel:
+                                text: "STAGE MAP"
+                                bold: True
+                                adaptive_size: True
+                                font_style: "Label"
+                                role: "large"
+                                theme_text_color: "Custom"
+                                text_color: [1.0, 0.96, 0.90, 1.0]
+
+                            MDLabel:
+                                text: root.current_theme_name
+                                font_style: "Label"
+                                role: "small"
+                                adaptive_size: True
+                                theme_text_color: "Custom"
+                                text_color: [1.0, 0.82, 0.35, 0.95]
 
                 Widget:
 
@@ -608,7 +673,7 @@ MDScreenManager:
                 MDFloatLayout:
                     id: map_path_layout
                     size_hint: (1, None)
-                    height: dp(3200)
+                    height: dp(105 * root.total_stages)
 
                     # Hamster Avatar Token (Positioned over the active node)
                     MDRelativeLayout:
