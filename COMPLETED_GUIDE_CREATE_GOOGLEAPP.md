@@ -15,6 +15,7 @@ Keep this file and drop it into any future project workspace to avoid common pit
 5. [Part 5: Icons & Graphics: Code vs. Play Console](#part-5-icons--graphics-code-vs-play-console)
 6. [Part 6: Store Listing & Privacy Policy Requirements](#part-6-store-listing--privacy-policy-requirements)
 7. [Part 7: Drop-in GitHub Actions CI/CD Workflow Template](#part-7-drop-in-github-actions-cicd-workflow-template)
+8. [Part 8: Target API Level Requirements (API 36 / Android 16 Google Play Policy)](#part-8-target-api-level-requirements-api-36--android-16-google-play-policy)
 
 ---
 
@@ -376,3 +377,79 @@ jobs:
           path: bin/*
           retention-days: 14
 ```
+
+---
+
+# Part 8: Target API Level Requirements (API 36 / Android 16 Google Play Policy)
+
+### 1. Google Play's Target API Policy
+Starting **August 31, 2026**, Google Play requires all new apps and app updates submitted to the Google Play Store to target **Android 16 (API Level 36)** or higher.
+
+If your `.aab` targets API level 34 or lower, Google Play Console will reject the bundle with the error:
+> *"Your app currently targets API level 34 and must target at least API level 36 to ensure it is built on the latest APIs optimized for security and performance."*
+
+---
+
+### 2. The Buildozer / Python-for-Android Gotcha
+Even when you configure `android.api = 36` in `buildozer.spec`, Python-for-Android (`p4a`) may continue packaging your `.aab` with an older target API (e.g. 34) because:
+1. **Cached Distribution (`project.properties`)**: Buildozer creates `project.properties` once when the distribution (`dist`) is initialized. If Buildozer restores a previously cached `.buildozer` directory from GitHub Actions or local builds, `project.properties` retains `target=android-34` and Buildozer's code skips updating it!
+2. **Missing CLI Arguments**: Buildozer historically passed `--minsdk` and `--ndk-api` to `p4a`, but omitted `--android_api`. Without `--android_api`, `p4a` fell back to parsing `project.properties` or its internal default.
+
+---
+
+### 3. The 3-Step Permanent Solution
+
+#### Step 1: Update `buildozer.spec`
+Add both `android.api` and `p4a.extra_args` to `buildozer.spec`:
+```ini
+# (int) Target Android API (API 36 required by Google Play Store)
+android.api = 36
+
+# (str) Pass explicit target API to python-for-android toolchain
+p4a.extra_args = --android_api=36
+```
+
+#### Step 2: Enforce in CI/CD Workflow (`build_android.yml`)
+Add an automated enforcement step right before `buildozer -v android debug` and `buildozer -v android release`:
+```bash
+# Update any existing project.properties in caches
+find . -name "project.properties" -exec sed -i 's/target=android-[0-9]\+/target=android-36/g' {} + || true
+find ~/.buildozer -name "project.properties" -exec sed -i 's/target=android-[0-9]\+/target=android-36/g' {} + || true
+
+# Update any existing build.gradle in caches
+find . -name "build.gradle" -exec sed -i 's/compileSdkVersion [0-9]\+/compileSdkVersion 36/g' {} + || true
+find . -name "build.gradle" -exec sed -i 's/targetSdkVersion [0-9]\+/targetSdkVersion 36/g' {} + || true
+find ~/.buildozer -name "build.gradle" -exec sed -i 's/compileSdkVersion [0-9]\+/compileSdkVersion 36/g' {} + || true
+find ~/.buildozer -name "build.gradle" -exec sed -i 's/targetSdkVersion [0-9]\+/targetSdkVersion 36/g' {} + || true
+
+# Patch build.tmpl.gradle templates across the system
+find . -name "build.tmpl.gradle" -exec sed -i 's/compileSdkVersion {{ android_api }}/compileSdkVersion 36/g' {} + || true
+find . -name "build.tmpl.gradle" -exec sed -i 's/targetSdkVersion {{ android_api }}/targetSdkVersion 36/g' {} + || true
+find ~/.buildozer -name "build.tmpl.gradle" -exec sed -i 's/compileSdkVersion {{ android_api }}/compileSdkVersion 36/g' {} + || true
+find ~/.buildozer -name "build.tmpl.gradle" -exec sed -i 's/targetSdkVersion {{ android_api }}/targetSdkVersion 36/g' {} + || true
+```
+
+#### Step 3: Automated AAB Target SDK Verification
+Add a Python verification step after signing the AAB in your CI/CD pipeline to inspect `base/manifest/AndroidManifest.xml` inside the `.aab` file:
+```python
+import zipfile, re, sys, glob
+
+aab_files = glob.glob("bin/*-release.aab")
+if not aab_files:
+    sys.exit(1)
+
+with zipfile.ZipFile(aab_files[0]) as z:
+    manifest = z.read("base/manifest/AndroidManifest.xml")
+    m = re.search(rb"targetSdkVersion\x1a\x02(\d+)", manifest) or re.search(rb"targetSdkVersion[^\d]*(\d{2})", manifest)
+    if not m:
+        print("ERROR: targetSdkVersion not found in AAB manifest!")
+        sys.exit(1)
+    target_sdk = int(m.group(1).decode())
+    print(f"Verified targetSdkVersion: {target_sdk}")
+    if target_sdk < 36:
+        print(f"ERROR: targetSdkVersion is {target_sdk}, which is below Google Play's required API 36!")
+        sys.exit(1)
+    print("SUCCESS: Target API level is verified to be 36 or higher!")
+```
+This guarantees that any built `.aab` submitted to Google Play is 100% compliant with the latest Android 16 (API 36) policy!
+
