@@ -25,9 +25,9 @@ source.exclude_patterns = Makefile, *.pyc, *.pyo, *.spec.bak, test_*
 
 # (str) Application versioning
 # Increment version and numeric code for every new release uploaded to Google Play
-version = 1.0.4
+version = 1.0.5
 # (int) Android application version code (must be strictly incremented for Play Store updates)
-android.numeric_version = 5
+android.numeric_version = 6
 
 # (list) Application requirements
 requirements = python3, kivy==2.3.0, kivymd==2.0.0, pillow, materialyoucolor, materialshapes, asynckivy, asyncgui, exceptiongroup, typing_extensions
@@ -66,9 +66,8 @@ android.permissions = INTERNET
 # (list) Features required by the application
 # android.features = android.hardware.touchscreen
 
-# (int) Target Android API (API 34 = Android 14, meets current Google Play Store compliance)
-# To target Android 15 in late 2025/2026, set to 35
-android.api = 34
+# (int) Target Android API (API 36 required by Google Play Store)
+android.api = 36
 
 # (int) Minimum API supported (API 21 = Android 5.0 Lollipop, compatible with ~99% of Android devices)
 android.minapi = 21

@@ -248,8 +248,12 @@ jarsigner -verify bin/myapp-release.aab
    - Android Package ID = `org.gamestudio.whackawordham`
 3. **Must match exactly**: The package name created in Google Play Console **must match** the package name compiled inside the `.aab`.
 4. **Versioning rules**:
-   - `version = 1.0.4` (string shown to players).
-   - `android.numeric_version = 5` (integer that must strictly increase with each new release: `1, 2, 3, 4, 5...`).
+   - `version = 1.0.5` (string shown to players).
+   - `android.numeric_version = 6` (integer that must strictly increase with each new release: `1, 2, 3, 4, 5, 6...`).
+5. **Target API Level requirement**:
+   - Google Play periodically updates its minimum target API requirement.
+   - You must configure `android.api = 36` in `buildozer.spec`.
+   - If Google Play rejects your bundle with *"Your app currently targets API level X and must target at least API level Y"*, simply update `android.api = Y` in `buildozer.spec` and bump `android.numeric_version`.
 
 ---
 
