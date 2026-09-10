@@ -77,6 +77,16 @@ Download Whack-A-Word-Ham today and begin your cozy woodland word puzzle journey
 
 ---
 
+### Version 1.0.9 (Pacing Enhancement - Ads Every 10 Stages):
+```text
+<en-US>
+What's New in Version 1.0.9:
+• Significantly reduced ad frequency: Interstitial ads now only appear every 10 stages (at milestone levels 10, 20, 30...) for a relaxed and uninterrupted puzzle flow!
+• Enhanced anti-spam ad pacing safeguards.
+• Target SDK Android 16 (API level 36) compliance and stability improvements.
+</en-US>
+```
+
 ### Version 1.0.8 (Google AdMob Interstitial Ads Integration):
 ```text
 <en-US>
