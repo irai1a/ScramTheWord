@@ -9,6 +9,10 @@ jobs:
   build:
     name: Build APK and AAB packages
     runs-on: ubuntu-22.04
+    env:
+      GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m -Dfile.encoding=UTF-8"
+      _JAVA_OPTIONS: "-Xmx4096m"
+      JAVA_OPTS: "-Xmx4096m"
 
     steps:
       - name: Checkout Repository
@@ -81,6 +85,14 @@ jobs:
       - name: Enforce Android Target API 36 and Min SDK 23
         run: |
           echo "=== Enforcing Android API 36 and Min SDK 23 across all build configurations ==="
+          # Configure global Gradle properties for 4GB RAM allocation & compileSdk 36 suppression
+          mkdir -p ~/.gradle
+          cat << 'EOF' > ~/.gradle/gradle.properties
+          org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m -Dfile.encoding=UTF-8
+          org.gradle.parallel=true
+          android.suppressUnsupportedCompileSdk=36
+          EOF
+
           # Update any existing project.properties in caches
           find . -name "project.properties" -exec sed -i 's/target=android-[0-9]\+/target=android-36/g' {} + || true
           find ~/.buildozer -name "project.properties" -exec sed -i 's/target=android-[0-9]\+/target=android-36/g' {} + || true
@@ -92,6 +104,10 @@ jobs:
           find ~/.buildozer -name "build.gradle" -exec sed -i 's/compileSdkVersion [0-9]\+/compileSdkVersion 36/g' {} + || true
           find ~/.buildozer -name "build.gradle" -exec sed -i 's/targetSdkVersion [0-9]\+/targetSdkVersion 36/g' {} + || true
           find ~/.buildozer -name "build.gradle" -exec sed -i 's/minSdkVersion [0-9]\+/minSdkVersion 23/g' {} + || true
+
+          # Update any existing gradle.properties in caches
+          find . -name "gradle.properties" -exec sed -i 's/org.gradle.jvmargs=.*/org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m/g' {} + || true
+          find ~/.buildozer -name "gradle.properties" -exec sed -i 's/org.gradle.jvmargs=.*/org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m/g' {} + || true
 
           # Patch build.tmpl.gradle across system and packages
           find . -name "build.tmpl.gradle" -exec sed -i 's/compileSdkVersion {{ android_api }}/compileSdkVersion 36/g' {} + || true
@@ -113,6 +129,8 @@ jobs:
           find . -name "build.gradle" -exec sed -i 's/compileSdkVersion [0-9]\+/compileSdkVersion 36/g' {} + || true
           find . -name "build.gradle" -exec sed -i 's/targetSdkVersion [0-9]\+/targetSdkVersion 36/g' {} + || true
           find . -name "build.gradle" -exec sed -i 's/minSdkVersion [0-9]\+/minSdkVersion 23/g' {} + || true
+          find . -name "gradle.properties" -exec sed -i 's/org.gradle.jvmargs=.*/org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m/g' {} + || true
+          find ~/.buildozer -name "gradle.properties" -exec sed -i 's/org.gradle.jvmargs=.*/org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m/g' {} + || true
 
       - name: Build Release AAB (Android App Bundle)
         run: |
