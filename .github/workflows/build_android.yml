@@ -78,9 +78,9 @@ jobs:
           curl -fsSL -o ~/.buildozer/android/packages/openssl/openssl-1.1.1w.tar.gz https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-1.1.1w.tar.gz
           touch ~/.buildozer/android/packages/openssl/.mark-openssl-1.1.1w.tar.gz
 
-      - name: Enforce Android Target API 36
+      - name: Enforce Android Target API 36 and Min SDK 23
         run: |
-          echo "=== Enforcing Android API 36 across all build configurations ==="
+          echo "=== Enforcing Android API 36 and Min SDK 23 across all build configurations ==="
           # Update any existing project.properties in caches
           find . -name "project.properties" -exec sed -i 's/target=android-[0-9]\+/target=android-36/g' {} + || true
           find ~/.buildozer -name "project.properties" -exec sed -i 's/target=android-[0-9]\+/target=android-36/g' {} + || true
@@ -88,8 +88,10 @@ jobs:
           # Update any existing build.gradle in caches
           find . -name "build.gradle" -exec sed -i 's/compileSdkVersion [0-9]\+/compileSdkVersion 36/g' {} + || true
           find . -name "build.gradle" -exec sed -i 's/targetSdkVersion [0-9]\+/targetSdkVersion 36/g' {} + || true
+          find . -name "build.gradle" -exec sed -i 's/minSdkVersion [0-9]\+/minSdkVersion 23/g' {} + || true
           find ~/.buildozer -name "build.gradle" -exec sed -i 's/compileSdkVersion [0-9]\+/compileSdkVersion 36/g' {} + || true
           find ~/.buildozer -name "build.gradle" -exec sed -i 's/targetSdkVersion [0-9]\+/targetSdkVersion 36/g' {} + || true
+          find ~/.buildozer -name "build.gradle" -exec sed -i 's/minSdkVersion [0-9]\+/minSdkVersion 23/g' {} + || true
 
           # Patch build.tmpl.gradle across system and packages
           find . -name "build.tmpl.gradle" -exec sed -i 's/compileSdkVersion {{ android_api }}/compileSdkVersion 36/g' {} + || true
@@ -105,11 +107,12 @@ jobs:
         run: |
           buildozer -v android debug
 
-      - name: Re-enforce Android Target API 36 Before Release Packaging
+      - name: Re-enforce Android Target API 36 and Min SDK 23 Before Release Packaging
         run: |
           find . -name "project.properties" -exec sed -i 's/target=android-[0-9]\+/target=android-36/g' {} + || true
           find . -name "build.gradle" -exec sed -i 's/compileSdkVersion [0-9]\+/compileSdkVersion 36/g' {} + || true
           find . -name "build.gradle" -exec sed -i 's/targetSdkVersion [0-9]\+/targetSdkVersion 36/g' {} + || true
+          find . -name "build.gradle" -exec sed -i 's/minSdkVersion [0-9]\+/minSdkVersion 23/g' {} + || true
 
       - name: Build Release AAB (Android App Bundle)
         run: |
@@ -129,7 +132,7 @@ jobs:
             fi
           done
 
-      - name: Verify Target API in Generated AAB
+      - name: Verify Target API and Min SDK in Generated AAB
         run: |
           python -c "
           import zipfile, re, sys, glob
@@ -141,18 +144,30 @@ jobs:
           print(f'Inspecting generated bundle: {aab_path}...')
           with zipfile.ZipFile(aab_path) as z:
               manifest = z.read('base/manifest/AndroidManifest.xml')
-              m = re.search(rb'targetSdkVersion\x1a\x02(\d+)', manifest)
-              if not m:
-                  m = re.search(rb'targetSdkVersion[^\d]*(\d{2})', manifest)
-              if not m:
+              
+              # Verify Target SDK
+              m_target = re.search(rb'targetSdkVersion[^\d]*(\d+)', manifest)
+              if not m_target:
                   print('ERROR: targetSdkVersion not found in AAB manifest!')
                   sys.exit(1)
-              target_sdk = m.group(1).decode()
+              target_sdk = int(m_target.group(1).decode())
               print(f'Verified AAB targetSdkVersion: {target_sdk}')
-              if int(target_sdk) < 36:
+              if target_sdk < 36:
                   print(f'ERROR: targetSdkVersion is {target_sdk}, which is below required API 36!')
                   sys.exit(1)
-              print('SUCCESS: Target API level is verified to be 36 or higher!')
+              
+              # Verify Min SDK
+              m_min = re.search(rb'minSdkVersion[^\d]*(\d+)', manifest)
+              if not m_min:
+                  print('ERROR: minSdkVersion not found in AAB manifest!')
+                  sys.exit(1)
+              min_sdk = int(m_min.group(1).decode())
+              print(f'Verified AAB minSdkVersion: {min_sdk}')
+              if min_sdk < 23:
+                  print(f'ERROR: minSdkVersion is {min_sdk}, which is below AdMob required API 23!')
+                  sys.exit(1)
+                  
+              print('SUCCESS: Both Target SDK (>= 36) and Min SDK (>= 23) successfully verified!')
           "
 
       - name: List Generated Binaries

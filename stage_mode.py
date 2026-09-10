@@ -894,9 +894,18 @@ class StageModeScreen(MDScreen):
         if "reward_float_badge" in self.ids:
             self.ids.reward_float_badge.disabled = True
             self.ids.reward_float_badge.opacity = 0.0
-        next_stage = self.current_stage_display + 1
+        completed_stage = self.current_stage_display
+        next_stage = completed_stage + 1
         if hasattr(app, "player_data") and app.player_data is not None:
             next_stage = app.player_data.get_current_stage()
+
+        # Display AdMob Interstitial Ad between level completion
+        try:
+            from ad_manager import show_interstitial_ad
+            show_interstitial_ad(stage_number=completed_stage)
+        except Exception as e:
+            print(f"[StageMode] AdMob display warning: {e}")
+
         self.load_stage(next_stage)
 
     def show_banner(self, message: str, banner_type: str = "neutral"):

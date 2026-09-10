@@ -248,9 +248,14 @@ class WhackAWordHamApp(MDApp):
             self.player_data = PlayerDataManager()
 
     def on_start(self):
-        """Start background music as soon as the player launches the game."""
+        """Start background music and initialize AdMob on app launch."""
         super().on_start()
         play_bgm("main")
+        try:
+            from ad_manager import init_ads
+            init_ads()
+        except Exception as e:
+            print(f"[WhackAWordHamApp] AdMob initialization error: {e}")
 
     def build(self):
         # Configure a modern, vibrant theme

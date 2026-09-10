@@ -25,9 +25,9 @@ source.exclude_patterns = Makefile, *.pyc, *.pyo, *.spec.bak, test_*
 
 # (str) Application versioning
 # Increment version and numeric code for every new release uploaded to Google Play
-version = 1.0.7
+version = 1.0.8
 # (int) Android application version code (must be strictly incremented for Play Store updates)
-android.numeric_version = 8
+android.numeric_version = 9
 
 # (list) Application requirements
 requirements = python3, kivy==2.3.0, kivymd==2.0.0, pillow, materialyoucolor, materialshapes, asynckivy, asyncgui, exceptiongroup, typing_extensions
@@ -59,9 +59,8 @@ presplash.color = #261708
 # (bool) Fullscreen mode (1 = immersive fullscreen hiding Android navigation/status bars, 0 = windowed)
 fullscreen = 1
 
-# (list) Permissions required by the application
-# INTERNET is included for local network testing and future multiplayer/update connectivity
-android.permissions = INTERNET
+# (list) Permissions required by the application (AdMob requires INTERNET and ACCESS_NETWORK_STATE)
+android.permissions = INTERNET, ACCESS_NETWORK_STATE
 
 # (list) Features required by the application
 # android.features = android.hardware.touchscreen
@@ -69,14 +68,14 @@ android.permissions = INTERNET
 # (int) Target Android API (API 36 required by Google Play Store)
 android.api = 36
 
-# (int) Minimum API supported (API 21 = Android 5.0 Lollipop, compatible with ~99% of Android devices)
-android.minapi = 21
+# (int) Minimum API supported (API 23 = Android 6.0 Marshmallow, required by Google Mobile Ads SDK)
+android.minapi = 23
 
 # (str) Android NDK version to use (25b is stable with Python-for-Android and Kivy 2.3)
 android.ndk = 25b
 
 # (int) Android NDK API level (matches minapi for cross-compilation stability)
-android.ndk_api = 21
+android.ndk_api = 23
 
 # (list) Target Architectures for Android binaries
 # arm64-v8a (64-bit mandatory for Google Play) and armeabi-v7a (32-bit legacy support)
@@ -87,6 +86,15 @@ android.accept_sdk_license = True
 
 # (bool) Allow backup of user data (set to True to allow game save data backup via Google Drive)
 android.allow_backup = True
+
+# (list) Custom Java source directories to include (AdMob native thread-safe bridge)
+android.add_src = src
+
+# (list) Gradle dependencies (Google Mobile Ads SDK)
+android.gradle_dependencies = com.google.android.gms:play-services-ads:25.4.0
+
+# (list) Android manifest meta-data for Google AdMob App ID
+android.meta_data = com.google.android.gms.ads.APPLICATION_ID=ca-app-pub-8319421439790948~2491725486
 
 # (str) Android entry point activity
 android.entrypoint = org.kivy.android.PythonActivity

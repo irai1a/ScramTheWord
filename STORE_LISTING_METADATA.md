@@ -77,10 +77,18 @@ Download Whack-A-Word-Ham today and begin your cozy woodland word puzzle journey
 
 ---
 
-## 4. Release Notes (What's new in this release)
-Copy and paste this into the **Release notes** field on Google Play Console:
+### Version 1.0.8 (Google AdMob Interstitial Ads Integration):
+```text
+<en-US>
+What's New in Version 1.0.8:
+• Integrated Google AdMob interstitial ads between stage completions.
+• Minimum SDK updated to Android 6.0 (API level 23) for seamless advertising SDK compatibility while maintaining Target API 36 (Android 16).
+• Thread-safe ad preloading for smooth, stutter-free stage transitions.
+• Performance enhancements and overall stability improvements.
+</en-US>
+```
 
-### Version 1.0.7 (Latest - Target API 36 Google Play Compliance & Themed Worlds):
+### Version 1.0.7:
 ```text
 <en-US>
 What's New in Version 1.0.7:
@@ -102,7 +110,24 @@ Welcome to the initial release of Whack-A-Word-Ham!
 • Woodland Wardrobe: Customize your hamster hero with crowns, ninja masks, wizard hats, headphones, and cool glasses!
 • Dynamic hint clues to help you when you are stuck.
 • Preloading screen for smooth and instantaneous level navigation.
-• 100% offline gameplay with zero ads or tracking.
 </en-US>
 ```
+
+---
+
+## 5. Google Play Console Declarations (App Content)
+
+### Ads Declaration:
+- Go to **Policy and programmes > App content > Ads**.
+- Select: **"Yes, my app contains ads"**.
+- (Google AdMob is integrated for interstitial ads between stages).
+
+### Data Safety Form (AdMob Requirements):
+When filling out the Google Play Data Safety questionnaire:
+1. **Does your app collect or share any of the required user data types?** -> **Yes** (via third-party SDK: Google Mobile Ads / AdMob).
+2. **Data types collected by Google Mobile Ads SDK:**
+   - **Device or other IDs:** Device or other IDs (Advertising ID / AAID) -> Used for Advertising or marketing, Fraud prevention & security, Analytics. Collected, transmitted over HTTPS (encrypted in transit), not tied to user identity.
+   - **App info and performance:** Crash logs, Diagnostics, Other app performance data -> Used for Analytics, Fraud prevention & security.
+3. **Data encryption:** All data collected by Google Play services and AdMob is encrypted in transit using HTTPS.
+4. **Data deletion:** Users can reset or delete their advertising identifier directly in Android OS settings (**Settings > Google > Ads**).
 

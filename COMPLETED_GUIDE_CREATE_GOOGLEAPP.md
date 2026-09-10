@@ -16,6 +16,7 @@ Keep this file and drop it into any future project workspace to avoid common pit
 6. [Part 6: Store Listing & Privacy Policy Requirements](#part-6-store-listing--privacy-policy-requirements)
 7. [Part 7: Drop-in GitHub Actions CI/CD Workflow Template](#part-7-drop-in-github-actions-cicd-workflow-template)
 8. [Part 8: Target API Level Requirements (API 36 / Android 16 Google Play Policy)](#part-8-target-api-level-requirements-api-36--android-16-google-play-policy)
+9. [Part 9: Integrating Google AdMob in Python/Kivy (Native Java Bridge Architecture)](#part-9-integrating-google-admob-in-pythonkivy-native-java-bridge-architecture)
 
 ---
 
@@ -452,4 +453,221 @@ with zipfile.ZipFile(aab_files[0]) as z:
     print("SUCCESS: Target API level is verified to be 36 or higher!")
 ```
 This guarantees that any built `.aab` submitted to Google Play is 100% compliant with the latest Android 16 (API 36) policy!
+
+---
+
+# Part 9: Integrating Google AdMob in Python/Kivy (Native Java Bridge Architecture)
+
+Integrating mobile ads into a Python/Kivy application requires bridging Python to Android's native Java SDK. A naive attempt using Pyjnius directly from Python almost always fails due to three fatal pitfalls:
+
+### 1. The Three Fatal AdMob Pitfalls in Python/Kivy
+
+| # | Pitfall | Symptom / Error | Root Cause & Solution |
+|---|---|---|---|
+| **1** | **UI Thread Violation** | `android.view.ViewRootImpl$CalledFromWrongThreadException: Only the original thread that created a view hierarchy can touch its views.` | Google Mobile Ads SDK requires `MobileAds.initialize`, `load()`, and `show()` to execute strictly on Android's UI Main Thread. Python runs on a separate subthread. **Solution:** Dispatch all ad operations inside `activity.runOnUiThread(...)`. |
+| **2** | **Pyjnius Abstract Class Limitation** | `TypeError: PythonJavaClass can only implement Java Interfaces` | AdMob callbacks (`InterstitialAdLoadCallback`, `FullScreenContentCallback`) are Java **abstract classes**, not interfaces. Pyjnius cannot subclass Java abstract classes. **Solution:** Write a native Java helper bridge (`AdMobBridge.java`) in `src/` to implement the callbacks natively. |
+| **3** | **Missing Application ID in Manifest** | Immediate crash on app launch: `The Google Mobile Ads SDK was initialized incorrectly. AdMob publishers should follow the instructions here: ...` | AdMob requires `<meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="..." />` inside `<application>`. **Solution:** Add `android.meta_data = com.google.android.gms.ads.APPLICATION_ID=<APP_ID>` in `buildozer.spec`. |
+
+---
+
+### 2. Required `buildozer.spec` Settings for AdMob
+
+```ini
+# 1. Minimum SDK: Google Mobile Ads SDK requires minSdk 23 or higher
+android.minapi = 23
+android.ndk_api = 23
+
+# 2. Target API: Keep target at 36 (Android 16 Google Play compliance)
+android.api = 36
+
+# 3. Permissions: INTERNET and ACCESS_NETWORK_STATE
+android.permissions = INTERNET, ACCESS_NETWORK_STATE
+
+# 4. Include custom Java bridge source folder
+android.add_src = src
+
+# 5. Gradle dependency for Google Mobile Ads SDK
+android.gradle_dependencies = com.google.android.gms:play-services-ads:25.4.0
+
+# 6. AdMob App ID in AndroidManifest meta-data (CRITICAL to prevent launch crash)
+android.meta_data = com.google.android.gms.ads.APPLICATION_ID=ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX
+```
+
+---
+
+### 3. The Native Thread-Safe Java Bridge (`src/org/gamestudio/<appname>/AdMobBridge.java`)
+
+Place this file under `src/org/gamestudio/<appname>/AdMobBridge.java` and register `android.add_src = src` in `buildozer.spec`:
+
+```java
+package org.gamestudio.whackawordham;
+
+import android.app.Activity;
+import android.util.Log;
+import androidx.annotation.NonNull;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+
+public class AdMobBridge {
+    private static final String TAG = "AdMobBridge";
+    private static InterstitialAd mInterstitialAd = null;
+    private static boolean isInitialized = false;
+    private static boolean isLoading = false;
+    private static String mAdUnitId = "ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX";
+
+    public static void init(final Activity activity, final String adUnitId) {
+        if (activity == null) return;
+        if (adUnitId != null && !adUnitId.trim().isEmpty()) {
+            mAdUnitId = adUnitId.trim();
+        }
+        activity.runOnUiThread(() -> {
+            try {
+                MobileAds.initialize(activity, initializationStatus -> {
+                    Log.i(TAG, "AdMob SDK initialization complete.");
+                    isInitialized = true;
+                    loadInterstitial(activity);
+                });
+            } catch (Exception e) {
+                Log.e(TAG, "Error initializing MobileAds: " + e.getMessage(), e);
+            }
+        });
+    }
+
+    public static void loadInterstitial(final Activity activity) {
+        if (activity == null || isLoading || mInterstitialAd != null) return;
+        activity.runOnUiThread(() -> {
+            try {
+                isLoading = true;
+                AdRequest adRequest = new AdRequest.Builder().build();
+                InterstitialAd.load(activity, mAdUnitId, adRequest, new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        mInterstitialAd = interstitialAd;
+                        isLoading = false;
+                        mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                            @Override
+                            public void onAdDismissedFullScreenContent() {
+                                mInterstitialAd = null;
+                                loadInterstitial(activity); // Auto-preload next ad!
+                            }
+                            @Override
+                            public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
+                                mInterstitialAd = null;
+                                isLoading = false;
+                                loadInterstitial(activity);
+                            }
+                            @Override
+                            public void onAdShowedFullScreenContent() {
+                                mInterstitialAd = null;
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        mInterstitialAd = null;
+                        isLoading = false;
+                    }
+                });
+            } catch (Exception e) {
+                isLoading = false;
+            }
+        });
+    }
+
+    public static boolean isAdLoaded() {
+        return mInterstitialAd != null;
+    }
+
+    public static void showInterstitial(final Activity activity) {
+        if (activity == null) return;
+        activity.runOnUiThread(() -> {
+            if (mInterstitialAd != null) {
+                mInterstitialAd.show(activity);
+            } else {
+                loadInterstitial(activity);
+            }
+        });
+    }
+}
+```
+
+---
+
+### 4. Python Wrapper Module (`ad_manager.py`)
+
+A clean Python wrapper using Pyjnius with an automatic desktop mock fallback:
+
+```python
+import sys
+from kivy.utils import platform
+
+ADMOB_APP_ID = "ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX"
+INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX"
+
+_is_initialized = False
+
+def init_ads():
+    global _is_initialized
+    if _is_initialized:
+        return
+    if platform == "android":
+        try:
+            from jnius import autoclass
+            PythonActivity = autoclass("org.kivy.android.PythonActivity")
+            activity = PythonActivity.mActivity
+            if activity:
+                AdMobBridge = autoclass("org.gamestudio.whackawordham.AdMobBridge")
+                AdMobBridge.init(activity, INTERSTITIAL_AD_UNIT_ID)
+                _is_initialized = True
+        except Exception as e:
+            print(f"[AdManager] Init error: {e}")
+    else:
+        _is_initialized = True
+        print(f"[AdManager Mock] AdMob initialized with App ID: {ADMOB_APP_ID}")
+
+def is_interstitial_ready() -> bool:
+    if platform == "android":
+        try:
+            from jnius import autoclass
+            AdMobBridge = autoclass("org.gamestudio.whackawordham.AdMobBridge")
+            return bool(AdMobBridge.isAdLoaded())
+        except Exception:
+            return False
+    return True
+
+def show_interstitial_ad(stage_number: int = 0) -> bool:
+    if platform == "android":
+        try:
+            from jnius import autoclass
+            PythonActivity = autoclass("org.kivy.android.PythonActivity")
+            activity = PythonActivity.mActivity
+            if activity:
+                AdMobBridge = autoclass("org.gamestudio.whackawordham.AdMobBridge")
+                AdMobBridge.showInterstitial(activity)
+                return True
+        except Exception as e:
+            print(f"[AdManager] Error showing ad: {e}")
+            return False
+    else:
+        print(f"[AdManager Desktop Mock] Interstitial ad shown after level {stage_number}!")
+        return True
+```
+
+Call `init_ads()` in `on_start()` and `show_interstitial_ad(stage_number=completed_stage)` upon stage completion.
+
+
+---
+
+### 5. Google Play Console Compliance for Ads
+1. **Ads Declaration**: Under **Policy > App content > Ads**, select **"Yes, my app contains ads"**.
+2. **Data Safety Form**: Declare collection of **Device or other IDs** (Advertising ID) for advertising and fraud prevention, encrypted in transit over HTTPS.
+3. **AdMob Propagation**: Note that newly created AdMob ad units can take up to 1 hour to start serving live ads.
 

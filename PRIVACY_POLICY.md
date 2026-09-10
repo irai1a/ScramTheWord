@@ -15,8 +15,20 @@ Whack-A-Word-Ham does **not** require user registration, accounts, or personal d
 
 ---
 
-### 2. Third-Party Services & Analytics
-Whack-A-Word-Ham does **not** integrate third-party advertising SDKs, behavioral tracking libraries, or data analytics trackers. No third party has access to your gameplay data through our game.
+### 2. Advertising & Third-Party Services
+Whack-A-Word-Ham integrates **Google AdMob** (a mobile advertising service provided by Google LLC) to serve interstitial advertisements between stage completions. 
+
+To deliver and personalize ads, measure ad performance, and combat fraudulent traffic, Google AdMob and Google Play Services may automatically collect and process certain device information, including:
+- **Advertising Identifiers:** Google Advertising ID (AAID) / pseudonymous identifier.
+- **Device & Technical Data:** Device model, operating system version, carrier, language settings, and coarse network/IP connection data.
+- **Ad Interaction & Diagnostic Data:** Ad impressions, clicks, crash logs, and performance metrics.
+
+For more details on how Google collects and uses your data, please review:
+- **Google Privacy Policy:** [https://policies.google.com/privacy](https://policies.google.com/privacy)
+- **How Google Uses Information from Sites or Apps that Use Our Services:** [https://policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites)
+- **Google AdMob Information:** [https://support.google.com/admob/answer/6128543](https://support.google.com/admob/answer/6128543)
+
+You can manage or reset your advertising identifier and opt out of personalized ads at any time in your device settings under **Settings > Google > Ads**. We do not use any other third-party analytics or tracking SDKs.
 
 ---
 
