@@ -319,8 +319,13 @@ def generate_stage(stage_number: int, words_file: Optional[str] = None) -> Dict[
     if not candidate_list:
         candidate_list = FALLBACK_WORDS.get(key, FALLBACK_WORDS["3"])
 
-    # Pick word deterministically using the seeded random generator
-    chosen_item = random.choice(candidate_list)
+    # Pick word deterministically using permutation offset so stages in a tier never repeat
+    shuffled_candidates = candidate_list[:]
+    import random as rand_mod
+    rand_mod.Random(10007 + word_length * 313).shuffle(shuffled_candidates)
+    start_stage = 1 if word_length <= 3 else (word_length - 3) * 10
+    offset = max(0, stage - start_stage)
+    chosen_item = shuffled_candidates[offset % len(shuffled_candidates)]
 
     # Parse word entry (supports both dict object and plain string format)
     if isinstance(chosen_item, dict):
@@ -338,23 +343,21 @@ def generate_stage(stage_number: int, words_file: Optional[str] = None) -> Dict[
         if description:
             hints.append(description)
         else:
-            hints.append(f"A {len(original_word)}-letter woodland word waiting to be unscrambled.")
+            hints.append("A woodland mystery word waiting to be unscrambled.")
 
     vowels = sorted(set(c for c in original_word if c in "AEIOUY"))
     vowels_desc = ", ".join(vowels) if vowels else "none"
 
     fallback_hints = [
-        f"This word begins with the letter '{original_word[0]}'.",
-        f"This word ends with the letter '{original_word[-1]}'.",
-        f"The word has {len(original_word)} letters with vowels: {vowels_desc}.",
-        f"Think of words related to nature starting with '{original_word[0]}'.",
+        "A concept closely connected to nature, creatures, and the wild.",
+        f"The mystery word begins with the letter '{original_word[0]}'.",
+        f"The mystery word concludes with the letter '{original_word[-1]}'.",
+        f"Starts with '{original_word[0]}' and ends with '{original_word[-1]}', featuring vowel(s): {vowels_desc}." if vowels_desc != "none" else f"Starts with '{original_word[0]}' and ends with '{original_word[-1]}'.",
     ]
     fb_idx = 0
     while len(hints) < 5 and fb_idx < len(fallback_hints):
         hints.append(fallback_hints[fb_idx])
         fb_idx += 1
-    while len(hints) < 5:
-        hints.append(f"Starts with '{original_word[0]}' and ends with '{original_word[-1]}'.")
 
     if not description:
         description = hints[0]

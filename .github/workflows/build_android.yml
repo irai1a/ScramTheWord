@@ -4,6 +4,10 @@ on:
   workflow_dispatch: # Allows manual trigger from GitHub Actions tab
   push:
     branches: [ main, master ]
+    paths-ignore:
+      - 'flutter_migration/**'
+      - '.github/workflows/build_flutter.yml'
+      - 'scratch/**'
 
 jobs:
   build:
