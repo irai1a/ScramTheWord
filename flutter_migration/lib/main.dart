@@ -86,12 +86,15 @@ class _GameCoordinatorState extends State<GameCoordinator> {
       case AppRoute.map:
         return MapScreen(
           onBackToMenu: () => _navigateTo(AppRoute.mainMenu),
-          onLaunchStage: (stageNum) => _navigateTo(AppRoute.stageMode, stage: stageNum),
+          onLaunchStage: (stageNum) =>
+              _navigateTo(AppRoute.stageMode, stage: stageNum),
         );
 
       case AppRoute.stageMode:
         return StageModeScreen(
-          initialStage: _selectedStage > 0 ? _selectedStage : PlayerDataService.instance.currentStage,
+          initialStage: _selectedStage > 0
+              ? _selectedStage
+              : PlayerDataService.instance.currentStage,
           onBackToMap: () => _navigateTo(AppRoute.map),
         );
 
